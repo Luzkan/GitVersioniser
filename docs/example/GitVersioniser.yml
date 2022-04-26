@@ -1,0 +1,42 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  repository_versioning:
+    runs-on: ubuntu-latest
+    name: Repository Versioning via GitVersioniser
+    steps:
+      - name: Repository Checkout
+        uses: actions/checkout@v3
+        with:
+          path: target_repository
+          fetch-depth: 0
+      - name: Running GitVersioniser
+        id: GitVersioniser
+        uses: luzkan/GitVersioniser@v0
+        with:
+          # ---------------------------
+          # Versioniser Git Credentials
+          # ----
+          versioniser-username: "GitVersioniser"
+          versioniser-email: "luzkan.gitversioniser@github.com"
+
+          # ---------------------------
+          # Main
+          # ----
+          routine_version: "last_gitversioniser_commit"
+          routine_contribution: "push_main_amend"
+          routine_commit_message: "prefix_tag"
+
+          # ---------------------------
+          # Changelog Handling
+          # -----
+          routine_changelog: "commit_pattern"
+
+          # ---------------------------
+          # File Versioning
+          # ----
+          routine_file_updater: "versionise_files"
+          versioned_files: "README.md main.py"

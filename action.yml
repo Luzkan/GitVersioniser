@@ -1,0 +1,66 @@
+name: 'GH Versioniser'
+description: 'Updates the Semantic Version of the Repository & tracks the changes.'
+inputs:
+  # ---------------------------
+  # Versioniser Git Credentials
+  versioniser-username:
+    description: '(Git Credential) Username for the Versioniser that will be displayed in the commit.'
+    required: false
+    default: 'GitVersioniser'
+  versioniser-email:
+    description: '(Git Credential) Email for the Versioniser.'
+    required: false
+    default: 'luzkan.gitversioniser@github.com'
+  # ---------------------------
+  # (Routine) Main
+  routine_version:
+    description: '(Routine) Routine which will the GitVersioniser follow when versionising your repository.'
+    required: false
+    default: 'last_gitversioniser_commit'
+  routine_contribution:
+    description: '(Routine) The way of contributing changes made by GitVersioniser to your repository.'
+    required: false
+    default: 'push_main_amend'
+  routine_commit_message:
+    description: '(Routine) Decides how the Commit Message made by GitVersioniser will be made.'
+    required: false
+    default: 'prefix_tag'
+  # ---------------------------
+  # (Routine) Changelog Handling
+  routine_changelog:
+    description: '(Routine) Handles the changelog automatically.'
+    required: false
+    default: 'commit_pattern'
+  # ---------------------------
+  # (Routine) File Versioning
+  routine_file_updater:
+    description: '(Routine) Decides how files will be versionised.'
+    required: false
+    default: 'versionise_files'
+  versioned_files:
+    description: '(Setting) Decides which files will be versionised.'
+    required: false
+    default: 'README.md'
+outputs:
+  time:
+    description: 'Example of Returning Variables as Output'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    # ---------------------------
+    # Versioniser Git Credentials
+    - ${{ inputs.versioniser-username }}
+    - ${{ inputs.versioniser-email }}
+    # ---------------------------
+    # (Routine) Main
+    - ${{ inputs.routine_version }}
+    - ${{ inputs.routine_contribution }}
+    - ${{ inputs.routine_commit_message }}
+    # ---------------------------
+    # (Routine) Changelog Handling
+    - ${{ inputs.routine_changelog }}
+    # ---------------------------
+    # (Routine) File Versioning
+    - ${{ inputs.routine_file_updater }}
+    - ${{ inputs.versioned_files }}

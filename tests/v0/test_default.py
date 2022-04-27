@@ -1,34 +1,13 @@
-import unittest
-from unittest.mock import patch
-
-from gitversioniser.config.arguments import Arguments
 from gitversioniser.config.commit_tag import CommitTag
-from gitversioniser.config.config import Config
 from gitversioniser.config.increment import Increment
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 from gitversioniser.helpers.version_bump import VersionBump
+from tests.v0.utils.default_v0 import TestDefaultV0
 
 
-class TestDefaultConfig(unittest.TestCase):
-    """
-    Changing or removing any single line in this file means breaking the API (config) promise,
-    thus must result in a major increment of the version of this repository.
-    """
-
-    def get_config(self) -> Config:
-        with patch('sys.argv', ['']) as _:
-            arguments = Arguments.get_arguments()
-            return Config(
-                target_repository_path=arguments.target_directory,
-                versioned_files=arguments.versioned_files,
-                routines=arguments.routines,
-            )
-
-    def setUp(self):
-        self.config: Config = self.get_config()
-
+class TestDefaultConfig(TestDefaultV0):
     def test_default_arguments_main(self):
-        self.assertEqual(self.config.target_repository_path, '.')
+        self.assertEqual(self.config.target_repository_path, '../gitversioniser_test/')
         self.assertEqual(self.config.versioned_files, [])
 
     def test_default_arguments_routines(self):

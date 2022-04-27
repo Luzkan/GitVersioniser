@@ -1,9 +1,9 @@
-from config.arguments import Arguments
-from config.config import Config
-from domain.versioniser.versioniser import Versioniser
+from gitversioniser.config.arguments import Arguments
+from gitversioniser.config.config import Config
+from gitversioniser.domain.versioniser.versioniser import Versioniser
 
 
-__version__ = '0.0.1'
+__version__ = '0.0.0'
 
 
 def config() -> Config:

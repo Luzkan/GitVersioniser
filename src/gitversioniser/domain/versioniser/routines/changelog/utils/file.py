@@ -52,8 +52,8 @@ class ChangelogFile:
         )
 
     def _recreate(self, **kwargs: Path | list[str] | int) -> 'ChangelogFile':
-        attributes = self.__dict__.copy() | kwargs
-        return ChangelogFile(**attributes)
+        attributes: dict[str, Path | list[str] | int] = self.__dict__.copy() | kwargs
+        return ChangelogFile(**attributes)  # type: ignore [arg-type]
 
     def _insert_lines_between_index(self, new_lines: list[str], index: int):
         return [*self.lines[:index], *new_lines, '\n', *self.lines[index:]]

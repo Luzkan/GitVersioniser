@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from git import Commit as GitCommit
+from git.objects import Commit as GitCommit
 
 from gitversioniser.config.config import Config
 from gitversioniser.domain.repository.commit_utils.message import Message
@@ -24,7 +24,7 @@ class Commit:
 
     @property
     def get_parents_count(self) -> int:
-        return self._commit.count()
+        return int(self._commit.count())
 
     def get_parent(self) -> 'Commit':
         return Commit(self.config, _commit=self._commit.parents[0])

@@ -12,7 +12,7 @@ PYTHON_PYLINT_ARGUMENTS:
   - "--disable=E1101"  # Instance of 'Test*' has no '*' member (no-member)
   - "--disable=E1131"  # Unsupported operand type(s) for | (unsupported-binary-operation)
 EXCLUDED_DIRECTORIES:
-  - "./scripts/fix/history_module/"
+  - "./personal/"
 DISABLE:
   - COPYPASTE
   - SPELL

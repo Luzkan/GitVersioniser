@@ -20,7 +20,7 @@ class Tags:
 
     @property
     def get_sorted(self) -> list[str]:
-        return self.repo.git.tag("--sort=-v:refname").split('\n')
+        return [str(tag) for tag in self.repo.git.tag("--sort=-v:refname").split('\n')]
 
     @property
     def latest_semver(self) -> VersionInfo:

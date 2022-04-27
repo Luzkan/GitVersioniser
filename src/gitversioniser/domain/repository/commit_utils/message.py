@@ -1,10 +1,10 @@
 from dataclasses import dataclass, field
 
 from gitversioniser.config.config import Config
-from gitversioniser.domain.repository.commit_utils.bump_tag import BumpTagUtils
-from gitversioniser.domain.repository.commit_utils.commit_tag import CommitTagUtils
+from gitversioniser.domain.repository.commit_utils.bump_tag_utils import BumpTagUtils
+from gitversioniser.domain.repository.commit_utils.commit_tag_utils import CommitTagUtils
 from gitversioniser.domain.repository.commit_utils.summary import Summary
-from gitversioniser.domain.repository.commit_utils.version_tag import VersionTagUtils
+from gitversioniser.domain.repository.commit_utils.version_tag_utils import VersionTagUtils
 
 
 @dataclass

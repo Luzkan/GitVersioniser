@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from dataclasses import dataclass
 from typing import Callable
 
 from semver import VersionInfo
@@ -9,7 +8,6 @@ from gitversioniser.domain.versioniser.routines.version.utils.versions import Ve
 from gitversioniser.helpers.version_bump import VersionBump
 
 
-@dataclass
 class RoutineVersion(Routine, ABC):
     def run(self) -> Versions:
         return Versions(

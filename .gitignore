@@ -1,6 +1,7 @@
 # Cache
 __pycache__
 .pytest_cache
+.mypy_cache
 
 # Packaging
 gitversioniser.egg-info

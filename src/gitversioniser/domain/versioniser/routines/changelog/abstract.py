@@ -8,7 +8,7 @@ from gitversioniser.domain.versioniser.routines.changelog.utils.file import Chan
 from gitversioniser.domain.versioniser.routines.changelog.utils.finder import ChangelogFinder
 
 
-@dataclass
+@dataclass  # type: ignore [misc]
 class RoutineChangelog(Routine, ABC):
     changelog_finder: ChangelogFinder = field(init=False, default=ChangelogFinder())
 

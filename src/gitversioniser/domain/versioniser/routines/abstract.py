@@ -5,7 +5,7 @@ from gitversioniser.config.config import Config
 from gitversioniser.domain.repository.git_repository import GitRepository
 
 
-@dataclass
+@dataclass  # type: ignore [misc]
 class Routine(ABC):
     config: Config
     target_repo: GitRepository

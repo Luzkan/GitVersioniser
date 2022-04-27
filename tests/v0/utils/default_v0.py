@@ -1,6 +1,8 @@
 import unittest
 from unittest.mock import patch
 
+from hypothesis import settings
+
 from gitversioniser.config.arguments import Arguments
 from gitversioniser.config.config import Config
 
@@ -16,5 +18,6 @@ class TestDefaultV0(unittest.TestCase):
             )
 
     def setUp(self):
+        settings(deadline=None, max_examples=50)
         self.test_repo_path = '../gitversioniser_test/'
         self.config: Config = self.get_config()

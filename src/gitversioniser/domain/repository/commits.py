@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
 from git.repo import Repo
-from rich import print
 
 from gitversioniser.config.config import Config
 from gitversioniser.domain.repository.commit import Commit
@@ -26,7 +25,5 @@ class Commits:
         def recursivelly_check(current_commit: Commit, acc: list[Commit]) -> list[Commit]:
             if current_commit.is_made_by_author(author) or current_commit.get_parents_count <= 1:
                 return acc
-
-            print("Number of parents:", current_commit.get_parents_count)
             return recursivelly_check(current_commit.get_parent(), [current_commit] + acc)
         return recursivelly_check(self.latest, list())

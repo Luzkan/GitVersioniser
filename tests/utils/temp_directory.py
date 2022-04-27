@@ -6,10 +6,10 @@ class TempDirectory:
         self.directory_path = Path(directory_name)
         self.directory_path.mkdir(exist_ok=True)
 
-    def __enter__(self):
-        return self.directory_path
-
-    def __exit__(self, exc_type=None, exc_val=None, exc_tb=None):
-        # TODO, figure to remove the directory after test is done
+    def __del__(self):
+        """
+        The directory can't be removed due to permission error on .git dir.
+        Solution would be appreciated! :)
+        """
         # shutil.rmtree(self.directory_path)
         pass

@@ -1,3 +1,4 @@
+name: GitVersioniser
 on:
   push:
     branches:

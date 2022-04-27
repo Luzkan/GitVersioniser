@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.0.0+build.2]] - 2022-04-27
+
+### Changed
+- GitVersioniser now runs after Python Linters succeed
+
+
+
 ## [[0.0.0+build.1]] - 2022-04-27
 
 ### Added
@@ -20,4 +27,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0
 
 [0.0.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.1
+
+[0.0.0+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.2
 

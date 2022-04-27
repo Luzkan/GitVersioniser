@@ -1,9 +1,13 @@
+name: GitVersioniser
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Python Linter"]
+    branches: [main]
+    types:
+      - completed
 jobs:
   repository_versioning:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     name: Repository Versioning via GHVersioniser
     steps:

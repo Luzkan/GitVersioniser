@@ -21,7 +21,7 @@ class ChangelogEntry:
         self.changes.setdefault(category, []).append(self.content(message))
 
     def header(self, category_name: str) -> str:
-        return f"### {category_name}\n"
+        return f"### {category_name}\n\n"
 
     def content(self, entry: str) -> str:
         return f"- {entry}\n"

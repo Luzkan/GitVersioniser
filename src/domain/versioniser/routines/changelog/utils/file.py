@@ -34,7 +34,7 @@ class ChangelogFile:
         return self._recreate(lines=self._insert_lines_between_index(new_lines, self.line_index_for_new_entry))
 
     def add_footer(self, footer_line: str) -> 'ChangelogFile':
-        return self._recreate(lines=[*self.lines, footer_line, '\n'])
+        return self._recreate(lines=[*self.lines, footer_line])
 
     def save_file(self):
         with open(self.path, 'w') as changelog_file:

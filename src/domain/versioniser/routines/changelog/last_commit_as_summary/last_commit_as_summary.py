@@ -19,7 +19,7 @@ class LastCommitAsSummary(RoutineChangelog):
             ])
 
     def get_header(self, new_version) -> str:
-        return f"## [[{new_version}]] - {datetime.now().strftime('%Y-%m-%d')}\n"
+        return f"## [{new_version}] - {datetime.now().strftime('%Y-%m-%d')}\n"
 
     def get_description(self) -> str:
         return f"{self.target_repo.commits.latest.summary}\n"

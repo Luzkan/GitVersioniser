@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.0.2+build.4]] - 2022-04-27
+
+### Fixed
+- Links updated from `./src/*` to `./src/gitversioniser/*`
+
+
+
 ## [[0.0.2+build.3]] - 2022-04-27
 
 ### Changed
@@ -83,4 +90,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.2+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.2
 
 [0.0.2+build.3]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.3
+
+[0.0.2+build.4]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.4
 

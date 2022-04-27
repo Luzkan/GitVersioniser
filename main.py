@@ -3,7 +3,7 @@ from gitversioniser.config.config import Config
 from gitversioniser.domain.versioniser.versioniser import Versioniser
 
 
-__version__ = '0.0.2+build.3'
+__version__ = '0.0.2+build.4'
 
 
 def config() -> Config:

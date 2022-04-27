@@ -42,4 +42,4 @@ jobs:
           # File Versioning
           # ----
           routine_file_updater: "versionise_files"
-          versioned_files: "README.md main.py"
+          versioned_files: "README.md main.py setup.py arguments.py"

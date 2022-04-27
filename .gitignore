@@ -1,5 +1,12 @@
-# Python
+# Cache
 __pycache__
+.pytest_cache
+
+# Packaging
+gitversioniser.egg-info
+
+# Tests
+.coverage
 
 # Visual Studio Code
 .vscode

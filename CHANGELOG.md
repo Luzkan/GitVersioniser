@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.0.2+build.3]] - 2022-04-27
+
+### Changed
+- Moved `main.py` outside `/src/` to parent dir
+
+
+
 ## [[0.0.2+build.2]] - 2022-04-27
 
 ### Added
@@ -74,4 +81,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.2+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.1
 
 [0.0.2+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.2
+
+[0.0.2+build.3]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.3
 

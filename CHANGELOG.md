@@ -6,9 +6,18 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.0.0+build.1]] - 2022-04-27
+
+### Added
+- Logo (500x500 & GH-Wide)
+
+
+
 ## [[0.0.0]] - 2022-04-26
 
 
 
 [0.0.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0
+
+[0.0.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.1
 

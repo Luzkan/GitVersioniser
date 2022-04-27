@@ -3,7 +3,7 @@ from config.config import Config
 from domain.versioniser.versioniser import Versioniser
 
 
-__version__ = '0.0.0'
+__version__ = '0.0.0+build.1'
 
 
 def config() -> Config:

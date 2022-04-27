@@ -1,13 +1,14 @@
 <div align="center" style="margin-bottom: 30px;">
+    <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.0.0]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.0.0+build.1]</p>
     </div>
 </div>
 
 # Hey! 😸
 
-This repository contains an Automatic Git Repository Versioniser. It can be quickly introduced to any repository via Github Actions. If you ever felt too lazy to create individual tags for each change in your project, this tool will be handy.
+This repository contains a tool for automatic git repository versioning. It can be quickly introduced to any repository via Github Actions. If you ever felt too lazy to create individual tags for each change in your project, this tool will be handy.
 
 # Table of Contents
 

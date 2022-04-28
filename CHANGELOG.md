@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.1.0+build.1]] - 2022-04-28
+
+### Changed
+- Moved `test_*` files to `/core/` subdirectories
+
+
+
 ## [[0.1.0]] - 2022-04-28
 
 ### Added
@@ -119,4 +126,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.2+build.6]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.6
 
 [0.1.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0
+
+[0.1.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0+build.1
 

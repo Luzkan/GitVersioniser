@@ -3,8 +3,8 @@ from pathlib import Path
 
 from parameterized import parameterized
 from semver import VersionInfo
-from gitversioniser.config.config import Config
 
+from gitversioniser.config.config import Config
 from gitversioniser.domain.versioniser.routines.version.utils.versions import Versions
 from tests.v0.routines.file_updater.routine import TestRoutineFileUpdater
 
@@ -59,14 +59,14 @@ class TestVersioniseFiles(TestRoutineFileUpdater):
         self.assertIn(str(old_version), self.utils.open_file(test_path))
 
     @parameterized.expand([
-        ('woohoo/main.py', VersionInfo(1, 0, 0), VersionInfo(1, 0, 1)),
-        ('main/py/main.py', VersionInfo(6, 3, 6), VersionInfo(2, 3, 4)),
-        ('main.py', VersionInfo(1, 1, 2), VersionInfo(1, 1, 3)),
+        (Path('woohoo/main.py'), VersionInfo(1, 0, 0), VersionInfo(1, 0, 1)),
+        (Path('main/py/main.py'), VersionInfo(6, 3, 6), VersionInfo(2, 3, 4)),
+        (Path('main.py'), VersionInfo(1, 1, 2), VersionInfo(1, 1, 3)),
     ])
     def test_updating_strings_in_file(self, file_creation_path: Path, old_version: VersionInfo, new_version: VersionInfo):
         self.routine.config = Config(
             target_repository_path=self.test_repo_path,
-            versioned_files=['main.py'],
+            versioned_files=[file_creation_path.name],
             routines=self.config.routines,
         )
         test_path: Path = self.utils.prepare_environment(

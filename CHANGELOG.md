@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.0.2+build.5]] - 2022-04-28
+
+### Fixed
+- Changed path in `versionise_files` to use config instead of hardcoded value
+
+
+
 ## [[0.0.2+build.4]] - 2022-04-27
 
 ### Fixed
@@ -92,4 +99,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.2+build.3]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.3
 
 [0.0.2+build.4]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.4
+
+[0.0.2+build.5]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.5
 

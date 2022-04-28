@@ -15,7 +15,7 @@ class VersioniseFiles(RoutineFileUpdater):
             self.replace_version(self.find_file(filename), versions)
 
     def find_file(self, filename: str) -> Path:
-        return sorted(Path('.').glob(f'**/{filename}'))[0]
+        return sorted(Path(self.config.target_repository_path).glob(f'**/{filename}'))[0]
 
     def replace_version(self, filepath: Path, versions: Versions) -> None:
         with filepath.open('r') as file:

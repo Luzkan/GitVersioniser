@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.1.0+build.1]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.1.0]</p>
     </div>
 </div>
 
@@ -62,11 +62,23 @@ _Hint: Think about the repository as a device that can be entirely customized by
 - [Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_gitversioniser_commit.py) _(default)_
 - [Last Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_commit.py)
 
+### [**Tagging**](./src/gitversioniser/domain/versioniser/routines/tagging/):
+
+- [Always](./src/gitversioniser/domain/versioniser/routines/tagging/core/always.py) _(default)_
+- [If Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
+- [If Prerelease or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
+- [Null](./src/gitversioniser/domain/versioniser/routines/tagging/core/null.py)
+
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
 
 - [Prefix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_tag.py) _(default)_
 - [Suffix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_tag.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/commit_message/core/null.py)
+
+### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/contribution/):
+
+- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_amend.py) _(default)_
+- [Push Main New](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_new.py)
 
 ### [**File Updater**](./src/gitversioniser/domain/versioniser/routines/file_updater/):
 
@@ -75,11 +87,6 @@ _Hint: Think about the repository as a device that can be entirely customized by
 
 ### [**Changelog**](./src/gitversioniser/domain/versioniser/routines/changelog/):
 
-- [Commit Pattern](./src/gitversioniser/domain/versioniser/routines/changelog/commit_pattern/core/commit_pattern.py) _(default)_
-- [Last Commit as Summary](./src/gitversioniser/domain/versioniser/routines/changelog/last_commit_as_summary/core/last_commit_as_summary.py)
-- [Null](./src/gitversioniser/domain/versioniser/routines/changelog/null/core/null.py)
-
-### [**Contribution**](./src/gitversioniser/domain/versioniser/routines/contribution/):
-
-- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_amend.py) _(default)_
-- [Push Main New](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_new.py)
+- [Commit Pattern](./src/gitversioniser/domain/versioniser/routines/changelog/core/commit_pattern/commit_pattern.py) _(default)_
+- [Last Commit as Summary](./src/gitversioniser/domain/versioniser/routines/changelog/core/last_commit_as_summary/last_commit_as_summary.py)
+- [Null](./src/gitversioniser/domain/versioniser/routines/changelog/core/null/null.py)

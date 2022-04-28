@@ -1,6 +1,6 @@
 from gitversioniser.domain.versioniser.routines.file_updater.abstract import RoutineFileUpdater
-from gitversioniser.domain.versioniser.routines.file_updater.null import Null
-from gitversioniser.domain.versioniser.routines.file_updater.versionise_files import VersioniseFiles
+from gitversioniser.domain.versioniser.routines.file_updater.core.null import Null
+from gitversioniser.domain.versioniser.routines.file_updater.core.versionise_files import VersioniseFiles
 from gitversioniser.helpers.types import ROUTINE_FILE_UPDATER_TYPE
 
 

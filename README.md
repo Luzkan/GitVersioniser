@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.0.2+build.5]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.0.2+build.6]</p>
     </div>
 </div>
 
@@ -55,29 +55,31 @@ If you would like to contribute, you are more than welcome by opening a new disc
 
 If you want to adjust the way of working to your liking, feel free to check the available options! Because we are the developers, I believe that the [documentation](https://luzkan.github.io/smells/what-comment) for us is just [duplicated code](https://luzkan.github.io/smells/duplicated-code). Thus, I encourage you to trust the [communicative](https://luzkan.github.io/smells/uncommunicative-name) [method names](https://luzkan.github.io/smells/fallacious-method-name) and see the options through code for yourself! 🐱
 
+_Hint: Think about the repository as a device that can be entirely customized by the flavor-modules you choose to put in._
+
 ### [**Version**](./src/gitversioniser/domain/versioniser/routines/version/):
 
-- [Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/last_gitversioniser_commit.py) _(default)_
-- [Last Commit](./src/gitversioniser/domain/versioniser/routines/version/last_commit.py)
+- [Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_gitversioniser_commit.py) _(default)_
+- [Last Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_commit.py)
 
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
 
-- [Prefix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/prefix_tag.py) _(default)_
-- [Suffix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/suffix_tag.py)
-- [Null](./src/gitversioniser/domain/versioniser/routines/commit_message/null.py)
+- [Prefix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_tag.py) _(default)_
+- [Suffix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_tag.py)
+- [Null](./src/gitversioniser/domain/versioniser/routines/commit_message/core/null.py)
 
 ### [**File Updater**](./src/gitversioniser/domain/versioniser/routines/file_updater/):
 
-- [Versionise Files](./src/gitversioniser/domain/versioniser/routines/file_updater/versionise_files.py) _(default)_
-- [Null](./src/gitversioniser/domain/versioniser/routines/file_updater/null.py)
+- [Versionise Files](./src/gitversioniser/domain/versioniser/routines/file_updater/core/versionise_files.py) _(default)_
+- [Null](./src/gitversioniser/domain/versioniser/routines/file_updater/core/null.py)
 
 ### [**Changelog**](./src/gitversioniser/domain/versioniser/routines/changelog/):
 
-- [Commit Pattern](./src/gitversioniser/domain/versioniser/routines/changelog/commit_pattern/commit_pattern.py) _(default)_
-- [Last Commit as Summary](./src/gitversioniser/domain/versioniser/routines/changelog/last_commit_as_summary/last_commit_as_summary.py)
-- [Null](./src/gitversioniser/domain/versioniser/routines/changelog/null/null.py)
+- [Commit Pattern](./src/gitversioniser/domain/versioniser/routines/changelog/commit_pattern/core/commit_pattern.py) _(default)_
+- [Last Commit as Summary](./src/gitversioniser/domain/versioniser/routines/changelog/last_commit_as_summary/core/last_commit_as_summary.py)
+- [Null](./src/gitversioniser/domain/versioniser/routines/changelog/null/core/null.py)
 
 ### [**Contribution**](./src/gitversioniser/domain/versioniser/routines/contribution/):
 
-- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/contribution/push_main_amend.py) _(default)_
-- [Push Main New](./src/gitversioniser/domain/versioniser/routines/contribution/push_main_new.py)
+- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_amend.py) _(default)_
+- [Push Main New](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_new.py)

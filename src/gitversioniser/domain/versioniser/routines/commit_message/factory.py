@@ -1,7 +1,7 @@
 from gitversioniser.domain.versioniser.routines.commit_message.abstract import RoutineCommitMessage
-from gitversioniser.domain.versioniser.routines.commit_message.null import Null
-from gitversioniser.domain.versioniser.routines.commit_message.prefix_tag import PrefixTag
-from gitversioniser.domain.versioniser.routines.commit_message.suffix_tag import SuffixTag
+from gitversioniser.domain.versioniser.routines.commit_message.core.null import Null
+from gitversioniser.domain.versioniser.routines.commit_message.core.prefix_tag import PrefixTag
+from gitversioniser.domain.versioniser.routines.commit_message.core.suffix_tag import SuffixTag
 from gitversioniser.helpers.types import ROUTINE_COMMIT_MESSAGE_TYPE
 
 

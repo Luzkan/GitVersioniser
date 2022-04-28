@@ -1,6 +1,6 @@
 from gitversioniser.domain.versioniser.routines.version.abstract import RoutineVersion
-from gitversioniser.domain.versioniser.routines.version.last_commit import LastCommit
-from gitversioniser.domain.versioniser.routines.version.last_gitversioniser_commit import LastGitVersioniserCommit
+from gitversioniser.domain.versioniser.routines.version.core.last_commit import LastCommit
+from gitversioniser.domain.versioniser.routines.version.core.last_gitversioniser_commit import LastGitVersioniserCommit
 from gitversioniser.helpers.types import ROUTINE_VERSION_TYPE
 
 

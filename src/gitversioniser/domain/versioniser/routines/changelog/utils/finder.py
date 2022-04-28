@@ -17,7 +17,7 @@ class ChangelogFinder:
 
     def init_changelog_template(self) -> Path:
         def load_template() -> str:
-            with open(Path('/src/gitversioniser/domain/versioniser/routines/changelog/init_template.md'), 'r') as f:
+            with open(Path('/src/gitversioniser/domain/versioniser/routines/changelog/utils/init_template.md'), 'r') as f:
                 return f.read()
 
         with open(Path('./CHANGELOG.md'), 'w') as f:

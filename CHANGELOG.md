@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.0.2+build.6]] - 2022-04-28
+
+### Changed
+- Routines moved to subdirectory `/core/`
+
+
+
 ## [[0.0.2+build.5]] - 2022-04-28
 
 ### Fixed
@@ -101,4 +108,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.2+build.4]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.4
 
 [0.0.2+build.5]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.5
+
+[0.0.2+build.6]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.6
 

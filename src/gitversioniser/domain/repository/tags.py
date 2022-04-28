@@ -4,7 +4,7 @@ from git import TagReference
 from git.repo import Repo
 from semver import VersionInfo
 
-from gitversioniser.helpers.regex.pattern_semver import regex_pattern_semver
+from gitversioniser.helpers.regex_pattern import RegexPattern
 
 
 @dataclass
@@ -28,6 +28,6 @@ class Tags:
             return tag_semver[1:] if tag_semver and tag_semver[1] == 'v' else tag_semver
 
         for tag in self.get_sorted:
-            if regex_pattern_semver(truncate_v_from_semver(tag)):
+            if RegexPattern.semver(truncate_v_from_semver(tag)):
                 return VersionInfo.parse(tag)
         return VersionInfo(0, 0, 0)

@@ -30,7 +30,8 @@ jobs:
           # Main
           # ----
           routine_version: "last_gitversioniser_commit"
-          routine_contribution: "push_main_amend"
+          routine_commiting: "push_main_amend"
+          routine_tagging: "always"
           routine_commit_message: "prefix_tag"
 
           # ---------------------------

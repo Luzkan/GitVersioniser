@@ -6,6 +6,13 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.1.0]] - 2022-04-28
+
+### Added
+- New Routine: `tagging` #minor
+
+
+
 ## [[0.0.2+build.6]] - 2022-04-28
 
 ### Changed
@@ -110,4 +117,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.2+build.5]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.5
 
 [0.0.2+build.6]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.6
+
+[0.1.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0
 

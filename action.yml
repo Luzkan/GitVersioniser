@@ -17,10 +17,14 @@ inputs:
     description: '(Routine) Routine which will the GitVersioniser follow when versionising your repository.'
     required: false
     default: 'last_gitversioniser_commit'
-  routine_contribution:
+  routine_commiting:
     description: '(Routine) The way of contributing changes made by GitVersioniser to your repository.'
     required: false
     default: 'push_main_amend'
+  routine_tagging:
+    description: '(Routine) When should GitVersioniser tag your repository.'
+    required: false
+    default: 'always'
   routine_commit_message:
     description: '(Routine) Decides how the Commit Message made by GitVersioniser will be made.'
     required: false
@@ -55,7 +59,8 @@ runs:
     # ---------------------------
     # (Routine) Main
     - ${{ inputs.routine_version }}
-    - ${{ inputs.routine_contribution }}
+    - ${{ inputs.routine_commiting }}
+    - ${{ inputs.routine_tagging }}
     - ${{ inputs.routine_commit_message }}
     # ---------------------------
     # (Routine) Changelog Handling

@@ -12,7 +12,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.0.2+build.6]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.1.0]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -34,12 +34,16 @@ class Arguments:
             help="(Routine) Decides which files will be versionised. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rc", "--routine_contribution", default='push_main_amend',
+            "-rc", "--routine_commiting", default='push_main_amend',
             help="(Routine) The way of contributing the GitVersioniser changes to remote repository. (default: %(default)s)"
         )
         parser.add_argument(
             "-rcl", "--routine_changelog", default='commit_pattern',
             help="(Routine) The way GitVersioniser will handle changelog. (default: %(default)s)"
+        )
+        parser.add_argument(
+            "-rt", "--routine_tagging", default='always',
+            help="(Routine) When should GitVersioniser tag the repository. (default: %(default)s)"
         )
         parsed_arguments = parser.parse_args()
         return Arguments(
@@ -49,7 +53,8 @@ class Arguments:
                 version=parsed_arguments.routine_version,
                 commit_message=parsed_arguments.routine_commit_message,
                 file_updater=parsed_arguments.routine_file_updater,
-                contribution=parsed_arguments.routine_contribution,
-                changelog=parsed_arguments.routine_changelog
+                commiting=parsed_arguments.routine_commiting,
+                changelog=parsed_arguments.routine_changelog,
+                tagging=parsed_arguments.routine_tagging
             ),
         )

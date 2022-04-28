@@ -14,7 +14,7 @@ class TestDefaultConfig(TestDefaultV0):
         self.assertEqual(self.config.routines.version, 'last_gitversioniser_commit')
         self.assertEqual(self.config.routines.commit_message, 'prefix_tag')
         self.assertEqual(self.config.routines.file_updater, 'versionise_files')
-        self.assertEqual(self.config.routines.contribution, 'push_main_amend')
+        self.assertEqual(self.config.routines.commiting, 'push_main_amend')
         self.assertEqual(self.config.routines.changelog, 'commit_pattern')
 
     def test_default_configuration_credentials(self):

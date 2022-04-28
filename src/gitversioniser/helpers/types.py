@@ -15,6 +15,12 @@ ROUTINE_CONTRIBUTION_TYPE = Literal[
     "push_main_amend",
     "push_main_new"
 ]
+ROUTINE_TAGGING_TYPE = Literal[
+    "null",
+    "always",
+    "if_patch_or_higher",
+    "if_prerelease_or_higher"
+]
 ROUTINE_FILE_UPDATER_TYPE = Literal[
     "null",
     "versionise_files"

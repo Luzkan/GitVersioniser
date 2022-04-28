@@ -14,4 +14,3 @@ class TestRoutineFileUpdater(TestDefaultV0):
     def setUp(self):
         super().setUp()
         self.temp_directory = TempDirectory(self.test_repo_path)
-        self.routine = self.get_routine('versionise_files')

@@ -1,7 +1,7 @@
 name: GitVersioniser
 on:
   workflow_run:
-    workflows: ["Python Linter"]
+    workflows: ["Python Linter", "Markdown Linter"]
     branches: [main]
     types:
       - completed

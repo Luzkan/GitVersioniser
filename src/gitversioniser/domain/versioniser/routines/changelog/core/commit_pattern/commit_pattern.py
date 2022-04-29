@@ -4,7 +4,7 @@ from datetime import datetime
 from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.routines.changelog.abstract import RoutineChangelog
-from gitversioniser.domain.versioniser.routines.changelog.commit_pattern.entry import ChangelogEntry
+from gitversioniser.domain.versioniser.routines.changelog.core.commit_pattern.entry import ChangelogEntry
 from gitversioniser.domain.versioniser.routines.changelog.utils.file import ChangelogFile
 
 

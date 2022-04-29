@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.1.0]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.2.0]</p>
     </div>
 </div>
 
@@ -55,7 +55,7 @@ If you would like to contribute, you are more than welcome by opening a new disc
 
 If you want to adjust the way of working to your liking, feel free to check the available options! Because we are the developers, I believe that the [documentation](https://luzkan.github.io/smells/what-comment) for us is just [duplicated code](https://luzkan.github.io/smells/duplicated-code). Thus, I encourage you to trust the [communicative](https://luzkan.github.io/smells/uncommunicative-name) [method names](https://luzkan.github.io/smells/fallacious-method-name) and see the options through code for yourself! 🐱
 
-_Hint: Think about the repository as a device that can be entirely customized by the flavor-modules you choose to put in._
+_Hint: Think about the repository as a device that can be entirely customized by the flavor-modules you choose to plug-in._
 
 ### [**Version**](./src/gitversioniser/domain/versioniser/routines/version/):
 
@@ -71,14 +71,20 @@ _Hint: Think about the repository as a device that can be entirely customized by
 
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
 
-- [Prefix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_tag.py) _(default)_
-- [Suffix Tag](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_tag.py)
+- _[Prefix Version](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/):_
+  - [Full](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/full.py) _(default)_
+  - [Major Minor Patch](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch.py)
+  - [Major Minor Patch Prerelease](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch_prerelease.py)
+- _[Suffix Version](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/):_
+  - [Full](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/full.py)
+  - [Major Minor Patch](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch.py)
+  - [Major Minor Patch Prerelease](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch_prerelease.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/commit_message/core/null.py)
 
-### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/contribution/):
+### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/commiting/):
 
-- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_amend.py) _(default)_
-- [Push Main New](./src/gitversioniser/domain/versioniser/routines/contribution/core/push_main_new.py)
+- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_amend.py) _(default)_
+- [Push Main New](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_new.py)
 
 ### [**File Updater**](./src/gitversioniser/domain/versioniser/routines/file_updater/):
 

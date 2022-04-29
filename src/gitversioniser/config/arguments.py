@@ -12,7 +12,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.1.0+build.3]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.2.0]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -26,7 +26,7 @@ class Arguments:
             help="(Routine) The way the repository should be versionised. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rcm", "--routine_commit_message", default='prefix_tag',
+            "-rcm", "--routine_commit_message", default='prefix_version_full',
             help="(Routine) Decides how the Commit Message made by GitVersioniser will be made. (default: %(default)s)"
         )
         parser.add_argument(

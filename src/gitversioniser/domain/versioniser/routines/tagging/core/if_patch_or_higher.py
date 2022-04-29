@@ -5,7 +5,7 @@ from gitversioniser.domain.versioniser.routines.tagging.abstract import RoutineT
 
 
 @dataclass
-class TagIfPatchOrHigher(RoutineTagging):
+class IfPatchOrHigher(RoutineTagging):
     def run(self, result: VersionisingResult):
         if any([
             result.versions.new.major > result.versions.old.major,

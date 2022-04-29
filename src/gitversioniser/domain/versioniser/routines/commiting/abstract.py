@@ -4,7 +4,7 @@ from gitversioniser.domain.versioniser.helpers.routine_result import Versionisin
 from gitversioniser.domain.versioniser.routines.abstract import Routine
 
 
-class RoutineContribution(Routine, ABC):
+class RoutineCommiting(Routine, ABC):
 
     @abstractmethod
     def run(self, result: VersionisingResult):

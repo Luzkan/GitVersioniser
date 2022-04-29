@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 
 from gitversioniser.domain.versioniser.helpers.routine_result import VersionisingResult
-from gitversioniser.domain.versioniser.routines.contribution.abstract import RoutineContribution
+from gitversioniser.domain.versioniser.routines.commiting.abstract import RoutineCommiting
 
 
 @dataclass
-class PushMainAmend(RoutineContribution):
+class PushMainAmend(RoutineCommiting):
     def run(self, result: VersionisingResult):
         self.target_repo.remote.raise_if_changes()
         self.target_repo.files.add_all()

@@ -7,7 +7,7 @@ from tests.v0.routines.commit_message.routine import TestRoutineCommitMessage
 class TestSuffixTag(TestRoutineCommitMessage):
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('suffix_tag')
+        self.routine = self.get_routine('suffix_version')
 
     @parameterized.expand([
         (VersionInfo(4, 4, 4), '[`4.4.4`]', '[`4.4.4`] [`4.4.4`]'),

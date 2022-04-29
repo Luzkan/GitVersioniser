@@ -6,18 +6,10 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 
 
 @dataclass
-class SuffixTag(RoutineCommitMessage):
-    """
-    Adds the new version to the commit message as a prefix.
-
-    Examples:
-        Added Foo to Goo [`1.0.1`]
-        Tweaked the main div margin [`1.4.3+build.2`]
-    """
-
+class SuffixVersionFull(RoutineCommitMessage):
     def run(self, new_version: VersionInfo) -> str:
         return f"{self.target_repo.commits.latest.summary} [`{str(new_version)}`]"
 
     @staticmethod
     def factory_name() -> str:
-        return 'suffix_tag'
+        return 'suffix_version'

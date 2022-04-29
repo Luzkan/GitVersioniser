@@ -1,7 +1,7 @@
 name: GitVersioniser
 on:
   workflow_run:
-    workflows: ["Python Linter", "Markdown Linter"]
+    workflows: ["Linters"]
     branches: [main]
     types:
       - completed
@@ -32,7 +32,7 @@ jobs:
           routine_version: "last_gitversioniser_commit"
           routine_commiting: "push_main_amend"
           routine_tagging: "always"
-          routine_commit_message: "prefix_tag"
+          routine_commit_message: "prefix_version_full"
 
           # ---------------------------
           # Changelog Handling

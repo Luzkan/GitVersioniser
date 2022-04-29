@@ -31,4 +31,12 @@ git config --global user.email "$2"
 # -----------------
 # Running the Script
 cd target_repository
-python /main.py -d . --routine_version $3 --routine_contribution $4 --routine_tagging $5 --routine_commit_message $5 --routine_file_updater $6 --routine_file_updater $7 --versioned_files $8
+python -m pip install -e .
+python /src/main.py -d . \
+    --routine_version $3 \
+    --routine_commiting $4 \
+    --routine_tagging $5 \
+    --routine_commit_message $6 \
+    --routine_changelog $7 \
+    --routine_file_updater $8 \
+    --versioned_files $9

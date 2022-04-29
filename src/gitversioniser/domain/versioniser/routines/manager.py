@@ -6,9 +6,9 @@ from gitversioniser.domain.versioniser.helpers.routine_result import Versionisin
 from gitversioniser.domain.versioniser.routines.changelog.abstract import RoutineChangelog
 from gitversioniser.domain.versioniser.routines.changelog.factory import RoutineChangelogFactory
 from gitversioniser.domain.versioniser.routines.commit_message.abstract import RoutineCommitMessage
-from gitversioniser.domain.versioniser.routines.commit_message.factory import RoutineCommitFactory
-from gitversioniser.domain.versioniser.routines.contribution.abstract import RoutineContribution
-from gitversioniser.domain.versioniser.routines.contribution.factory import RoutineContributionFactory
+from gitversioniser.domain.versioniser.routines.commit_message.factory import RoutineCommitMessageFactory
+from gitversioniser.domain.versioniser.routines.commiting.abstract import RoutineCommiting
+from gitversioniser.domain.versioniser.routines.commiting.factory import RoutineCommitingFactory
 from gitversioniser.domain.versioniser.routines.file_updater.abstract import RoutineFileUpdater
 from gitversioniser.domain.versioniser.routines.file_updater.factory import RoutineFileUpdaterFactory
 from gitversioniser.domain.versioniser.routines.tagging.abstract import RoutineTagging
@@ -23,7 +23,7 @@ class RoutineManager:
     target_repo: GitRepository
     version: RoutineVersion = field(init=False)
     commit_message: RoutineCommitMessage = field(init=False)
-    contribution: RoutineContribution = field(init=False)
+    commiting: RoutineCommiting = field(init=False)
     file_updater: RoutineFileUpdater = field(init=False)
     changelog: RoutineChangelog = field(init=False)
     tagging: RoutineTagging = field(init=False)
@@ -31,8 +31,8 @@ class RoutineManager:
     def __post_init__(self):
         def init_submodules():
             self.version = RoutineVersionFactory.create(self.config.routines.version)(self.config, self.target_repo)
-            self.commit_message = RoutineCommitFactory.create(self.config.routines.commit_message)(self.config, self.target_repo)
-            self.contribution = RoutineContributionFactory.create(self.config.routines.commiting)(self.config, self.target_repo)
+            self.commit_message = RoutineCommitMessageFactory.create(self.config.routines.commit_message)(self.config, self.target_repo)
+            self.commiting = RoutineCommitingFactory.create(self.config.routines.commiting)(self.config, self.target_repo)
             self.file_updater = RoutineFileUpdaterFactory.create(self.config.routines.file_updater)(self.config, self.target_repo)
             self.changelog = RoutineChangelogFactory.create(self.config.routines.changelog)(self.config, self.target_repo)
             self.tagging = RoutineTaggingFactory.create(self.config.routines.tagging)(self.config, self.target_repo)
@@ -49,7 +49,7 @@ class RoutineManager:
         )
 
     def contribute(self, result: VersionisingResult):
-        self.contribution.run(result)
+        self.commiting.run(result)
         self.tagging.run(result)
 
     def run(self):

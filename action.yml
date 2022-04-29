@@ -28,7 +28,7 @@ inputs:
   routine_commit_message:
     description: '(Routine) Decides how the Commit Message made by GitVersioniser will be made.'
     required: false
-    default: 'prefix_tag'
+    default: 'prefix_version_full'
   # ---------------------------
   # (Routine) Changelog Handling
   routine_changelog:

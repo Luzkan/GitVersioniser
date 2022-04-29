@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.2.0]] - 2022-04-29
+
+### Added
+
+- Commit Messages Suffix/Prefix Variations #minor
+
+
+
 ## [[0.1.0+build.3]] - 2022-04-28
 
 ### Changed
@@ -124,26 +132,15 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.0.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.1
 [0.0.0+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.2
 [0.0.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.1
-
 [0.0.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2
-
 [0.0.2+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.1
-
 [0.0.2+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.2
-
 [0.0.2+build.3]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.3
-
 [0.0.2+build.4]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.4
-
 [0.0.2+build.5]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.5
-
 [0.0.2+build.6]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.2+build.6
-
 [0.1.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0
-
 [0.1.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0+build.1
-
 [0.1.0+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0+build.2
-
 [0.1.0+build.3]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0+build.3
-
+[0.2.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.0

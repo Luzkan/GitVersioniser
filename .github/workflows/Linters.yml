@@ -1,13 +1,46 @@
-name: Markdown Linter
+---
+# Mega-Linter GitHub Action configuration file
+# More info at https://nvuillam.github.io/mega-linter
+name: Linters
 
 on:
-  pull_request:
   push:
+  pull_request:
     branches:
       - main
 
+env:
+  APPLY_FIXES: none
+  APPLY_FIXES_EVENT: pull_request
+  APPLY_FIXES_MODE: commit
+
 jobs:
-  markdownlint:
+  cancel_duplicates:
+    name: Cancel duplicate jobs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fkirc/skip-duplicate-actions@master
+        with:
+          github_token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+  python_lint:
+    name: Bandit, Pylint, Flake8 (Mega-Linter)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Mega-Linter
+        id: ml
+        uses: nvuillam/mega-linter/flavors/python@v4
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  markdown_lint:
     name: Markdown Lint
     runs-on: ubuntu-latest
 

@@ -12,7 +12,7 @@ class TestDefaultConfig(TestDefaultV0):
 
     def test_default_arguments_routines(self):
         self.assertEqual(self.config.routines.version, 'last_gitversioniser_commit')
-        self.assertEqual(self.config.routines.commit_message, 'prefix_tag')
+        self.assertEqual(self.config.routines.commit_message, 'prefix_version_full')
         self.assertEqual(self.config.routines.file_updater, 'versionise_files')
         self.assertEqual(self.config.routines.commiting, 'push_main_amend')
         self.assertEqual(self.config.routines.tagging, 'always')

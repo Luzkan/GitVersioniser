@@ -6,7 +6,7 @@ from gitversioniser.helpers.regex_pattern import RegexPattern
 
 
 @dataclass
-class TagIfPrereleaseOrHigher(RoutineTagging):
+class IfPrereleaseOrHigher(RoutineTagging):
     def run(self, result: VersionisingResult):
         if any([
             result.versions.new.major > result.versions.old.major,

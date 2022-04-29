@@ -7,10 +7,14 @@ ROUTINE_VERSION_TYPE = Literal[
 ]
 ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
     "null",
-    "prefix_tag",
-    "suffix_tag"
+    "prefix_version_full",
+    "prefix_version_major_minor_patch",
+    "prefix_version_major_minor_patch_prerelease",
+    "suffix_version",
+    "suffix_version_major_minor_patch",
+    "suffix_version_major_minor_patch_prerelease",
 ]
-ROUTINE_CONTRIBUTION_TYPE = Literal[
+ROUTINE_COMMITING_TYPE = Literal[
     "null",
     "push_main_amend",
     "push_main_new"

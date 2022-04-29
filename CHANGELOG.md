@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[0.2.0+build.1]] - 2022-04-29
+
+### Changed
+
+- Arguments in `entrypoint.sh` are now named
+
+
+
 ## [[0.2.0]] - 2022-04-29
 
 ### Added
@@ -17,6 +25,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.1.0+build.3]] - 2022-04-28
 
 ### Changed
+
 - Start GitVersioniser after Markdown Linter succeeds
 
 
@@ -24,6 +33,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.1.0+build.2]] - 2022-04-28
 
 ### Added
+
 - Markdown Linter & Link Checker
 
 
@@ -31,6 +41,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.1.0+build.1]] - 2022-04-28
 
 ### Changed
+
 - Moved `test_*` files to `/core/` subdirectories
 
 
@@ -38,6 +49,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.1.0]] - 2022-04-28
 
 ### Added
+
 - New Routine: `tagging` #minor
 
 
@@ -45,6 +57,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2+build.6]] - 2022-04-28
 
 ### Changed
+
 - Routines moved to subdirectory `/core/`
 
 
@@ -52,6 +65,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2+build.5]] - 2022-04-28
 
 ### Fixed
+
 - Changed path in `versionise_files` to use config instead of hardcoded value
 
 
@@ -59,6 +73,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2+build.4]] - 2022-04-27
 
 ### Fixed
+
 - Links updated from `./src/*` to `./src/gitversioniser/*`
 
 
@@ -66,6 +81,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2+build.3]] - 2022-04-27
 
 ### Changed
+
 - Moved `main.py` outside `/src/` to parent dir
 
 
@@ -73,6 +89,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2+build.2]] - 2022-04-27
 
 ### Added
+
 - Tests for Commit Messages & File Updater
 
 
@@ -80,6 +97,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2+build.1]] - 2022-04-27
 
 ### Changed
+
 - Naming of GitVersioniser in .github/workflows
 
 
@@ -87,12 +105,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.2]] - 2022-04-27
 
 ### Changed
+
 - Changelog `last_commit_as_summary`: Double Squared Brackets to Single Squared Brackets
 - Moved `src` directories to `src/gitversioniser`
 - Renamed `test` directory to `tests`
 - Adjusted Repository for mypy #patch
 
 ### Added
+
 - Environmental Configuration & Specifications
 - Tests for Default Arguments
 - Tests for Default Config
@@ -102,6 +122,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 ## [[0.0.1]] - 2022-04-27
 
 ### Fixed
+
 - Adjusted the `\n` in changelog `commit_pattern` #patch
 
 
@@ -126,8 +147,6 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 **Repository Initialized**
 
-
-
 [0.0.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0
 [0.0.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.1
 [0.0.0+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.0.0+build.2
@@ -144,3 +163,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.1.0+build.2]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0+build.2
 [0.1.0+build.3]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.1.0+build.3
 [0.2.0]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.0
+[0.2.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.0+build.1

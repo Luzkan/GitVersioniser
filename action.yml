@@ -57,15 +57,19 @@ runs:
     - ${{ inputs.versioniser-username }}
     - ${{ inputs.versioniser-email }}
     # ---------------------------
-    # (Routine) Main
-    - ${{ inputs.routine_version }}
+    # Contributing
     - ${{ inputs.routine_commiting }}
     - ${{ inputs.routine_tagging }}
+    # ---------------------------
+    # Versionising
+    - ${{ inputs.routine_version }}
+    # ---------------------------
+    # Commiting Message
     - ${{ inputs.routine_commit_message }}
     # ---------------------------
-    # (Routine) Changelog Handling
+    # Changelog Handling
     - ${{ inputs.routine_changelog }}
     # ---------------------------
-    # (Routine) File Versioning
+    # File Versioning
     - ${{ inputs.routine_file_updater }}
     - ${{ inputs.versioned_files }}

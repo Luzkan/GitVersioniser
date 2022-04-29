@@ -2,41 +2,43 @@
 
 # -----------------
 # Arguments:
-
-# $1 - [Git Credential] Username
-# $2 - [Git Credential] Email Address
 # ----
-# Main
+# Versioniser Credentials
+git_credential_username=$1      # [Git Credential]
+git_credential_email=$2         # [Git Credential]
 # ----
-# $3 - [Routine] Version
-# $4 - [Routine] Commiting
-# $5 - [Routine] Tagging
-# $6 - [Routine] Commit Messages
+# Contributing
+routine_commiting=$3            # [Routine]
+routine_tagging=$4              # [Routine]
+# ----
+# Versionising
+routine_version=$5              # [Routine]
+# ----
+# Commit Message
+routine_commit_message=$6       # [Routine]
 # ----
 # Changelog
-# ----
-# $7 - [Routine] Changelog
+routine_changelog=$7            # [Routine]
 # ----
 # File Updating
-# ----
-# $8 - [Routine] File Updater
-# $9 - [Setting] File List
+routine_file_updater=$8         # [Routine]
+versionised_files=$9            # [Setting] For: routine_file_updater
 
 # -----------------
 # Git Configuration
 git config --global --add safe.directory /github/workspace/target_repository
-git config --global user.name "$1"
-git config --global user.email "$2"
+git config --global user.name "$git_credential_username"
+git config --global user.email "$git_credential_email"
 
 # -----------------
 # Running the Script
 cd target_repository
 python -m pip install -e .
 python /src/main.py -d . \
-    --routine_version $3 \
-    --routine_commiting $4 \
-    --routine_tagging $5 \
-    --routine_commit_message $6 \
-    --routine_changelog $7 \
-    --routine_file_updater $8 \
-    --versioned_files $9
+    --routine_commiting $routine_commiting \
+    --routine_tagging $routine_tagging \
+    --routine_version $routine_version \
+    --routine_commit_message $routine_commit_message \
+    --routine_changelog $routine_changelog \
+    --routine_file_updater $routine_file_updater \
+    --versioned_files $versionised_files

@@ -20,9 +20,9 @@ class LastCommit(RoutineVersion):
         return self.bump_version(latest_commit, last_version)
 
     def bump_version(self, commit: Commit, version: VersionInfo) -> VersionInfo:
-        if not commit.summary.bump_tag.exist():
+        if not commit.message.bump_tag.exist():
             return version.bump_build()
-        return self.default_bump_mapping(version)[commit.summary.bump_tag.get()]()
+        return self.default_bump_mapping(version)[commit.message.bump_tag.get()]()
 
     @staticmethod
     def factory_name() -> str:

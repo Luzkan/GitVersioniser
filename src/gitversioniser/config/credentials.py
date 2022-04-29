@@ -4,4 +4,4 @@ from dataclasses import dataclass
 @dataclass
 class Credentials:
     username: str = "GitVersioniser"
-    email: str = "git@versioniser.com"
+    email: str = "luzkan.gitversioniser@github.com"

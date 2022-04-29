@@ -16,7 +16,7 @@ inputs:
   routine_version:
     description: '(Routine) Routine which will the GitVersioniser follow when versionising your repository.'
     required: false
-    default: 'last_gitversioniser_commit'
+    default: 'commits_till_last_gitversioniser_commit'
   routine_commiting:
     description: '(Routine) The way of contributing changes made by GitVersioniser to your repository.'
     required: false

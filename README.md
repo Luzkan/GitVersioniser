@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.2.0+build.1]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.2.1]</p>
     </div>
 </div>
 
@@ -57,9 +57,9 @@ If you want to adjust the way of working to your liking, feel free to check the 
 
 _Hint: Think about the repository as a device that can be entirely customized by the flavor-modules you choose to plug-in._
 
-### [**Version**](./src/gitversioniser/domain/versioniser/routines/version/):
+### [**Version**](./src/gitversioniser/domain/versioniser/routines/version/) based on:
 
-- [Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_gitversioniser_commit.py) _(default)_
+- [Commits Till Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/commits_till_last_gitversioniser_commit.py) _(default)_
 - [Last Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_commit.py)
 
 ### [**Tagging**](./src/gitversioniser/domain/versioniser/routines/tagging/):

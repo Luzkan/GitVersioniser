@@ -11,7 +11,7 @@ class TestDefaultConfig(TestDefaultV0):
         self.assertEqual(self.config.versioned_files, [])
 
     def test_default_arguments_routines(self):
-        self.assertEqual(self.config.routines.version, 'last_gitversioniser_commit')
+        self.assertEqual(self.config.routines.version, 'commits_till_last_gitversioniser_commit')
         self.assertEqual(self.config.routines.commit_message, 'prefix_version_full')
         self.assertEqual(self.config.routines.file_updater, 'versionise_files')
         self.assertEqual(self.config.routines.commiting, 'push_main_amend')
@@ -20,7 +20,7 @@ class TestDefaultConfig(TestDefaultV0):
 
     def test_default_configuration_credentials(self):
         self.assertEqual(self.config.credentials.username, "GitVersioniser")
-        self.assertEqual(self.config.credentials.email, "git@versioniser.com")
+        self.assertEqual(self.config.credentials.email, "luzkan.gitversioniser@github.com")
 
     def test_default_configuration_patterns_increments(self):
         self.assertEqual(self.config.patterns.increments.major, Increment("#major", VersionBump.MAJOR))

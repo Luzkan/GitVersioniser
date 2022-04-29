@@ -12,7 +12,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.2.0+build.1]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.2.1]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -22,7 +22,7 @@ class Arguments:
             help="(Setting) Decides which files will be versionised. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rv", "--routine_version", default='last_gitversioniser_commit',
+            "-rv", "--routine_version", default='commits_till_last_gitversioniser_commit',
             help="(Routine) The way the repository should be versionised. (default: %(default)s)"
         )
         parser.add_argument(

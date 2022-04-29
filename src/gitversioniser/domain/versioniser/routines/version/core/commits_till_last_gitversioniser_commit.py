@@ -7,10 +7,8 @@ from gitversioniser.domain.versioniser.routines.version.abstract import RoutineV
 
 
 @dataclass
-class LastGitVersioniserCommit(RoutineVersion):
+class CommitsTillLastGitVersioniserCommits(RoutineVersion):
     """
-    Increments the version based on commit messages up until last commit made by GitVersioniser.
-
     Works best with:
         - Pushing to main repository branch with multiple commits
         - Merging develop branches to main repository branch
@@ -23,10 +21,10 @@ class LastGitVersioniserCommit(RoutineVersion):
         return last_version
 
     def bump_version(self, commit: Commit, version: VersionInfo) -> VersionInfo:
-        if not commit.summary.bump_tag.exist():
+        if not commit.message.bump_tag.exist():
             return version.bump_build()
-        return self.default_bump_mapping(version)[commit.summary.bump_tag.get()]()
+        return self.default_bump_mapping(version)[commit.message.bump_tag.get()]()
 
     @staticmethod
     def factory_name() -> str:
-        return 'last_gitversioniser_commit'
+        return 'commits_till_last_gitversioniser_commit'

@@ -19,7 +19,7 @@ class Commits:
         self.repo.git.commit("--allow-empty", "-m", message)
 
     def commit_amend(self, message: str):
-        self.repo.git.commit("--amend", "-m", message)
+        self.repo.git.commit("--allow-empty", "--amend", "-m", message)
 
     def get_commits_till_last_commit_made_by_author(self, author: str) -> list[Commit]:
         def recursivelly_check(current_commit: Commit, acc: list[Commit]) -> list[Commit]:

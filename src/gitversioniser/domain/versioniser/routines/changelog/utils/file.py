@@ -7,6 +7,7 @@ class ChangelogFile:
     path: Path = field(repr=False)
     lines: list[str] = field(default_factory=list)
     header_length: int = field(default=0, repr=False)
+    entry_length: int = field(default=0, repr=False)
 
     @property
     def line_index_for_new_header(self):
@@ -31,7 +32,10 @@ class ChangelogFile:
         )
 
     def add_entry(self, new_lines: list[str]) -> 'ChangelogFile':
-        return self._recreate(lines=self._insert_lines_between_index(new_lines, self.line_index_for_new_entry))
+        return self._recreate(
+            lines=self._insert_lines_between_index(new_lines, self.line_index_for_new_entry),
+            entry_length=len(new_lines)
+        )
 
     def add_footer(self, footer_line: str) -> 'ChangelogFile':
         return self._recreate(lines=[*self.lines, footer_line])
@@ -58,3 +62,6 @@ class ChangelogFile:
 
     def _insert_lines_between_index(self, new_lines: list[str], index: int):
         return [*self.lines[:index], *new_lines, '\n', *self.lines[index:]]
+
+    def __str__(self) -> str:
+        return '\n'.join(self.lines[self.line_index_for_new_header:self.line_index_for_new_header+self.entry_length])

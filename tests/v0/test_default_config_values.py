@@ -2,10 +2,10 @@ from gitversioniser.config.commit_tag import CommitTag
 from gitversioniser.config.increment import Increment
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 from gitversioniser.helpers.version_bump import VersionBump
-from tests.v0.utils.default_v0 import TestDefaultV0
+from tests.v0.default_scenario_v0 import TestDefaultScenarioV0
 
 
-class TestDefaultConfig(TestDefaultV0):
+class TestDefaultConfigValues(TestDefaultScenarioV0):
     def test_default_arguments_main(self):
         self.assertEqual(self.config.target_repository_path, '../gitversioniser_test/')
         self.assertEqual(self.config.versioned_files, [])

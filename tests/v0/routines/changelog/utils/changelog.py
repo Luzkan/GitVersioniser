@@ -29,9 +29,3 @@ class TestChangelogManager:
         generated_changelog: Path = ChangelogFinder().get_changelog()
         generated_changelog.unlink()
         self.old_changelog.rename(self.old_changelog.parent / 'CHANGELOG.md')
-
-    def delete_remotes(self):
-        try:
-            self.routine.repo._repo.delete_remote(self.routine.repo._repo.remote('origin'))
-        except ValueError:
-            pass

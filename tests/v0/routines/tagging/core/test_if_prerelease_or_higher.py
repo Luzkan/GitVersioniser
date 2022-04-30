@@ -5,7 +5,7 @@ from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
 from gitversioniser.domain.versioniser.helpers.versions import Versions
-from tests.utils.repo_utils import RepoUtils
+from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.tagging.routine import TestRoutineTagging
 
 
@@ -44,7 +44,7 @@ class TestIfPrereleaseOrHigher(TestRoutineTagging):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('if_prerelease_or_higher')
-        self.repo_utils = RepoUtils(self.routine)
+        self.repo_utils = PseudoRepo(self.routine)
 
     def tearDown(self):
         self.repo_utils.delete_all_tags()

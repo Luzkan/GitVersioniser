@@ -1,7 +1,7 @@
 from parameterized import parameterized
 from semver import VersionInfo
 
-from tests.utils.repo_utils import RepoUtils
+from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.changelog.routine import TestRoutineChangelog
 from tests.v0.routines.changelog.utils.changelog import TestChangelogManager
 
@@ -53,7 +53,7 @@ class TestLastCommitAsSummary(TestRoutineChangelog):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('last_commit_message_as_description')
-        self.repo_utils = RepoUtils(self.routine)
+        self.repo_utils = PseudoRepo(self.routine)
         self.repo_utils.delete_remote()
         self.repo_utils.create_remote()
         self.test_changelog_manager = TestChangelogManager(self.routine, 'last_commit_message_as_description')

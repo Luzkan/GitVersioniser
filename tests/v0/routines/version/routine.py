@@ -4,10 +4,10 @@ from gitversioniser.domain.repository.git_repository import GitRepository
 from gitversioniser.domain.versioniser.routines.version.factory import RoutineVersionFactory
 from gitversioniser.helpers.types import ROUTINE_VERSION_TYPE
 from tests.utils.temp_directory import TempDirectory
-from tests.v0.utils.default_v0 import TestDefaultV0
+from tests.v0.default_scenario_v0 import TestDefaultScenarioV0
 
 
-class TestRoutineVersion(TestDefaultV0):
+class TestRoutineVersion(TestDefaultScenarioV0):
     def get_routine(self, routine_name: ROUTINE_VERSION_TYPE):
         return RoutineVersionFactory.create(routine_name)(self.config, GitRepository(self.config, _repo=Repo.init(self.test_repo_path, mkdir=True)))
 

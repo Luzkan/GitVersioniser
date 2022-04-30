@@ -2,7 +2,7 @@ from parameterized import parameterized
 from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.helpers.versions import Versions
-from tests.utils.repo_utils import RepoUtils
+from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.version.routine import TestRoutineVersion
 
 
@@ -37,7 +37,7 @@ class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('commits_till_last_gitversioniser_commit')
-        self.repo_utils = RepoUtils(self.routine)
+        self.repo_utils = PseudoRepo(self.routine)
 
     def tearDown(self):
         self.repo_utils.delete_all_tags()

@@ -4,7 +4,7 @@ from gitversioniser.domain.versioniser.routines.abstract import Routine
 
 
 @dataclass
-class RepoUtils:
+class PseudoRepo:
     routine: Routine
 
     def create_commits(self, commit_messages: list[str]) -> None:

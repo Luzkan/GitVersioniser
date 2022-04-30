@@ -7,7 +7,7 @@ from gitversioniser.config.arguments import Arguments
 from gitversioniser.config.config import Config
 
 
-class TestDefaultV0(unittest.TestCase):
+class TestDefaultScenarioV0(unittest.TestCase):
     def get_config(self) -> Config:
         with patch('sys.argv', ['']) as _:
             arguments = Arguments.get_arguments()

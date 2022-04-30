@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.2.2`]] - 2022-04-30
+
+### Added
+
+- Changelog Routine Tests #patch
+
+
+
 ## [[0.2.1+build.1]] - 2022-04-29
 
 ### Added
@@ -182,3 +190,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [0.2.0+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.0+build.1
 [0.2.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.1
 [0.2.1+build.1]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.1+build.1
+[`0.2.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.2

@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Check out repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Markdown Linting Action
         uses: avto-dev/markdown-lint@v1.5.0
@@ -63,9 +63,13 @@ jobs:
           #   MD022 - Blanks around headings
           #   MD032 - Blanks around lists
           #   MD012 - No multiple blanks
-          args: "./README.md ./content/*.md ./docs/*.md"
+          args: "./README.md ./docs/*.md"
+
       - name: Link Checker
         id: lc
-        uses: peter-evans/link-checker@v1
+        uses: lycheeverse/lychee-action@v1.4.1
+        with:
+          args: --verbose "./README.md ./CHANGELOG.md ./docs/*.md"
+
       - name: Fail if links are broken
         run: exit ${{ steps.lc.outputs.exit_code }}

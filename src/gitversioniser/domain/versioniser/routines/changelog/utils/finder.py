@@ -1,8 +1,6 @@
-from dataclasses import dataclass
 from pathlib import Path
 
 
-@dataclass
 class ChangelogFinder:
     def get_changelog(self) -> Path:
         if not self.is_changelog_present():
@@ -16,13 +14,16 @@ class ChangelogFinder:
         return self._find_changelog()[0]
 
     def init_changelog_template(self) -> Path:
-        def load_template() -> str:
-            with open(Path('/src/gitversioniser/domain/versioniser/routines/changelog/utils/init_template.md'), 'r') as f:
+        def load_template(template: Path) -> str:
+            if not template.exists():
+                with open(Path(f'.{template}'), 'r') as f:
+                    return f.read()
+            with open(template, 'r') as f:
                 return f.read()
 
         with open(Path('./CHANGELOG.md'), 'w') as f:
-            f.write(load_template())
+            f.write(load_template(Path('/src/gitversioniser/domain/versioniser/routines/changelog/utils/init_template.md')))
         return Path('./CHANGELOG.md')
 
     def _find_changelog(self) -> list[Path]:
-        return list(Path('.').glob('**/CHANGELOG.md'))
+        return list(Path('.').glob('./**/CHANGELOG.md'))

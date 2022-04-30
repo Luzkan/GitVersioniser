@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.2.1+build.1]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.2.2]</p>
     </div>
 </div>
 
@@ -94,5 +94,5 @@ _Hint: Think about the repository as a device that can be entirely customized by
 ### [**Changelog**](./src/gitversioniser/domain/versioniser/routines/changelog/):
 
 - [Commit Pattern](./src/gitversioniser/domain/versioniser/routines/changelog/core/commit_pattern/commit_pattern.py) _(default)_
-- [Last Commit as Summary](./src/gitversioniser/domain/versioniser/routines/changelog/core/last_commit_as_summary/last_commit_as_summary.py)
+- [Last Commit Message as Description](./src/gitversioniser/domain/versioniser/routines/changelog/core/last_commit_message_as_description/last_commit_message_as_description.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/changelog/core/null/null.py)

@@ -8,7 +8,7 @@ from gitversioniser.domain.versioniser.routines.changelog.utils.file import Chan
 
 
 @dataclass
-class LastCommitAsSummary(RoutineChangelog):
+class LastCommitMessageAsDescription(RoutineChangelog):
     def update_changelog(self, new_version: VersionInfo, changelog: ChangelogFile) -> ChangelogFile:
         return changelog\
             .add_header([
@@ -16,14 +16,20 @@ class LastCommitAsSummary(RoutineChangelog):
                 "\n",
                 self.get_description(),
                 "\n"
-            ])
+            ])\
+            .add_footer(
+                self.get_footer(str(new_version), self.target_repo.github_user_repo, self.target_repo.repo_name)
+            )
 
     def get_header(self, new_version) -> str:
-        return f"## [{new_version}] - {datetime.now().strftime('%Y-%m-%d')}\n"
+        return f"## [[`{new_version}`]] - {datetime.now().strftime('%Y-%m-%d')}\n"
+
+    def get_footer(self, version: str, github_user: str, repo_name: str) -> str:
+        return f"[`{version}`]: https://github.com/{github_user}/{repo_name}/releases/tag/{version}\n"
 
     def get_description(self) -> str:
-        return f"{self.target_repo.commits.latest.summary}\n"
+        return f"{self.target_repo.commits.latest.message.value}\n"
 
     @staticmethod
     def factory_name() -> str:
-        return 'last_commit_as_summary'
+        return 'last_commit_message_as_description'

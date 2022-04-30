@@ -31,5 +31,6 @@ ROUTINE_FILE_UPDATER_TYPE = Literal[
 ]
 ROUTINE_CHANGELOG_TYPE = Literal[
     "null",
-    "commit_pattern"
+    "commit_pattern",
+    "last_commit_message_as_description"
 ]

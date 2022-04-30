@@ -1,11 +1,9 @@
 from gitversioniser.domain.versioniser.routines.commit_message.abstract import RoutineCommitMessage
-from gitversioniser.domain.versioniser.routines.commit_message.core.null import Null
-from gitversioniser.domain.versioniser.routines.commit_message.core.prefix_version import (
+from gitversioniser.domain.versioniser.routines.commit_message.core import (
+    Null,
     PrefixVersionFull,
     PrefixVersionMajorMinorPatch,
     PrefixVersionMajorMinorPatchPrerelease,
-)
-from gitversioniser.domain.versioniser.routines.commit_message.core.suffix_version import (
     SuffixVersionFull,
     SuffixVersionMajorMinorPatch,
     SuffixVersionMajorMinorPatchPrerelease,

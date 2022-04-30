@@ -1,8 +1,5 @@
 from gitversioniser.domain.versioniser.routines.tagging.abstract import RoutineTagging
-from gitversioniser.domain.versioniser.routines.tagging.core.always import Always
-from gitversioniser.domain.versioniser.routines.tagging.core.if_patch_or_higher import IfPatchOrHigher
-from gitversioniser.domain.versioniser.routines.tagging.core.if_prerelease_or_higher import IfPrereleaseOrHigher
-from gitversioniser.domain.versioniser.routines.tagging.core.null import Null
+from gitversioniser.domain.versioniser.routines.tagging.core import Always, IfPatchOrHigher, IfPrereleaseOrHigher, Null
 from gitversioniser.helpers.types import ROUTINE_TAGGING_TYPE
 
 

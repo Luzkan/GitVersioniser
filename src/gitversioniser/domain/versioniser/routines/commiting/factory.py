@@ -1,7 +1,5 @@
 from gitversioniser.domain.versioniser.routines.commiting.abstract import RoutineCommiting
-from gitversioniser.domain.versioniser.routines.commiting.core.null import Null
-from gitversioniser.domain.versioniser.routines.commiting.core.push_main_amend import PushMainAmend
-from gitversioniser.domain.versioniser.routines.commiting.core.push_main_new import PushMainNew
+from gitversioniser.domain.versioniser.routines.commiting.core import Null, PushMainAmend, PushMainNew
 from gitversioniser.helpers.types import ROUTINE_COMMITING_TYPE
 
 

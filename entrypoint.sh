@@ -11,7 +11,7 @@ git_credential_email=$2         # [Git Credential]
 routine_commiting=$3            # [Routine]
 routine_tagging=$4              # [Routine]
 # ----
-# Versionising
+# Versioning
 routine_version=$5              # [Routine]
 # ----
 # Commit Message

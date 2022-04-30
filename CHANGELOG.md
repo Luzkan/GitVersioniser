@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.2.2+build.3`]] - 2022-04-30
+
+### Added
+
+- VersioningResult output printout
+
+
+
 ## [[`0.2.2+build.2`]] - 2022-04-30
 
 ### Changed
@@ -209,3 +217,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.2.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.2
 [`0.2.2+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.2+build.1
 [`0.2.2+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.2+build.2
+[`0.2.2+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.2.2+build.3

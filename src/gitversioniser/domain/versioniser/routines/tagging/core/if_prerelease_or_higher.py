@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 
-from gitversioniser.domain.versioniser.helpers.routine_result import VersionisingResult
+from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
 from gitversioniser.domain.versioniser.routines.tagging.abstract import RoutineTagging
 from gitversioniser.helpers.regex_pattern import RegexPattern
 
 
 @dataclass
 class IfPrereleaseOrHigher(RoutineTagging):
-    def run(self, result: VersionisingResult):
+    def run(self, result: VersioningResult):
         if any([
             result.versions.new.major > result.versions.old.major,
             result.versions.new.minor > result.versions.old.minor,
@@ -22,7 +22,7 @@ class IfPrereleaseOrHigher(RoutineTagging):
         match = RegexPattern.prerelease(prerelease)
         return int(match.group(1)) if match else 0
 
-    def tag(self, result: VersionisingResult):
+    def tag(self, result: VersioningResult):
         self.target_repo.remote.create_tag(version=str(result.versions.new))
         self.target_repo.remote.push_tags()
 

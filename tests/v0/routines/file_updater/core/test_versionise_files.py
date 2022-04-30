@@ -5,7 +5,7 @@ from parameterized import parameterized
 from semver import VersionInfo
 
 from gitversioniser.config.config import Config
-from gitversioniser.domain.versioniser.routines.version.utils.versions import Versions
+from gitversioniser.domain.versioniser.helpers.versions import Versions
 from tests.v0.routines.file_updater.routine import TestRoutineFileUpdater
 
 

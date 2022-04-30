@@ -1,8 +1,10 @@
+from unittest.mock import Mock
+
 from parameterized import parameterized
 from semver import VersionInfo
 
-from gitversioniser.domain.versioniser.helpers.routine_result import VersionisingResult
-from gitversioniser.domain.versioniser.routines.version.utils.versions import Versions
+from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
+from gitversioniser.domain.versioniser.helpers.versions import Versions
 from tests.v0.routines.tagging.routine import TestRoutineTagging
 
 
@@ -14,7 +16,7 @@ class TestAlways(TestRoutineTagging):
     def test_bump(self, old_version, new_version, commit_message):
         self.routine.target_repo.tags.create(str(old_version))
         try:
-            self.routine.run(VersionisingResult(Versions(old_version, new_version), commit_message))
+            self.routine.run(VersioningResult(Versions(old_version, new_version), commit_message, Mock, Mock))
         except ValueError as error:
             self.assertEqual(error.args[0], "Remote named 'origin' didn't exist")
             self.assertEqual(self.routine.target_repo.tags.latest_semver, new_version)
@@ -26,7 +28,7 @@ class TestAlways(TestRoutineTagging):
     def test_no_bump(self, old_version, new_version, commit_message):
         self.routine.target_repo.tags.create(str(old_version))
         try:
-            self.routine.run(VersionisingResult(Versions(old_version, new_version), commit_message))
+            self.routine.run(VersioningResult(Versions(old_version, new_version), commit_message, Mock, Mock))
         except ValueError as error:
             self.assertEqual(error.args[0], "Remote named 'origin' didn't exist")
             self.assertEqual(self.routine.target_repo.tags.latest_semver, old_version)

@@ -1,12 +1,12 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 
 @dataclass(frozen=True)
 class ChangelogFile:
-    path: Path
-    lines: list[str]
-    header_length: int = 0
+    path: Path = field(repr=False)
+    lines: list[str] = field(default_factory=list)
+    header_length: int = field(default=0, repr=False)
 
     @property
     def line_index_for_new_header(self):
@@ -36,9 +36,10 @@ class ChangelogFile:
     def add_footer(self, footer_line: str) -> 'ChangelogFile':
         return self._recreate(lines=[*self.lines, footer_line])
 
-    def save_file(self):
+    def save_file(self) -> 'ChangelogFile':
         with open(self.path, 'w') as changelog_file:
             changelog_file.writelines(self.lines)
+        return self
 
     @staticmethod
     def init_from_path(changelog_path: Path) -> 'ChangelogFile':

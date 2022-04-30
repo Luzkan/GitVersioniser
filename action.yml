@@ -14,7 +14,7 @@ inputs:
   # ---------------------------
   # (Routine) Main
   routine_version:
-    description: '(Routine) Routine which will the GitVersioniser follow when versionising your repository.'
+    description: '(Routine) Routine which will the GitVersioniser follow when versioning your repository.'
     required: false
     default: 'commits_till_last_gitversioniser_commit'
   routine_commiting:
@@ -61,7 +61,7 @@ runs:
     - ${{ inputs.routine_commiting }}
     - ${{ inputs.routine_tagging }}
     # ---------------------------
-    # Versionising
+    # Versioning
     - ${{ inputs.routine_version }}
     # ---------------------------
     # Commiting Message

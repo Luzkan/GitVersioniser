@@ -1,9 +1,11 @@
+from unittest.mock import Mock
+
 from git import GitCommandError
 from parameterized import parameterized
 from semver import VersionInfo
 
-from gitversioniser.domain.versioniser.helpers.routine_result import VersionisingResult
-from gitversioniser.domain.versioniser.routines.version.utils.versions import Versions
+from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
+from gitversioniser.domain.versioniser.helpers.versions import Versions
 from tests.v0.routines.commiting.routine import TestRoutineCommiting
 
 
@@ -14,10 +16,7 @@ class TestPushMainNew(TestRoutineCommiting):
 
     def cant_test_through_routine_because_no_remote_assigned(self, commit_message_for_amend: str):
         try:
-            self.routine.run(VersionisingResult(
-                versions=Versions(old=VersionInfo(1, 0, 0), new=VersionInfo(1, 0, 0)),
-                commit_message=commit_message_for_amend
-            ))
+            self.routine.run(VersioningResult(Versions(VersionInfo(1, 0, 0), VersionInfo(1, 0, 0)), commit_message_for_amend, Mock, Mock))
         except GitCommandError as error:
             self.assertEqual(error.args[0], ['git', 'pull', '--ff-only'])
 

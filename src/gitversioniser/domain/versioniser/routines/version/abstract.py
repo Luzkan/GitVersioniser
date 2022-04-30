@@ -3,8 +3,8 @@ from typing import Callable
 
 from semver import VersionInfo
 
+from gitversioniser.domain.versioniser.helpers.versions import Versions
 from gitversioniser.domain.versioniser.routines.abstract import Routine
-from gitversioniser.domain.versioniser.routines.version.utils.versions import Versions
 from gitversioniser.helpers.version_bump import VersionBump
 
 

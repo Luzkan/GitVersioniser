@@ -7,10 +7,10 @@ from gitversioniser.domain.versioniser.routines.commiting.abstract import Routin
 @dataclass
 class PushMainNew(RoutineCommiting):
     def run(self, result: VersioningResult):
-        self.target_repo.remote.raise_if_changes()
-        self.target_repo.files.add_all()
-        self.target_repo.commits.commit(message=result.commit_message)
-        self.target_repo.remote.push()
+        self.repo.remote.raise_if_changes()
+        self.repo.files.add_all()
+        self.repo.commits.commit(message=result.commit_message)
+        self.repo.remote.push()
 
     @staticmethod
     def factory_name() -> str:

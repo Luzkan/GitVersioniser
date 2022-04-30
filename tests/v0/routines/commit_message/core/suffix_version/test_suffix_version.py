@@ -16,7 +16,7 @@ class TestSuffixTag(TestRoutineCommitMessage):
         (VersionInfo(0, 0, 0, prerelease='gamma'), 'I will never release', 'I will never release [`0.0.0-gamma`]')
     ])
     def test_suffix(self, version_info, commit_message, expected_commit_message):
-        self.routine.target_repo.commits.commit(commit_message)
+        self.routine.repo.commits.commit(commit_message)
         self.assertEqual(self.routine.run(version_info), expected_commit_message)
 
     # TODO: Sanitize commit inputs first.

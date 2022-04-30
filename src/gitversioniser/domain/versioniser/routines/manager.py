@@ -14,10 +14,10 @@ from gitversioniser.domain.versioniser.routines.version import RoutineVersion, R
 @dataclass
 class RoutineManager:
     config: Config
-    target_repo: GitRepository
+    repository: GitRepository
 
     def __post_init__(self):
-        deps: tuple[Config, GitRepository] = (self.config, self.target_repo)
+        deps: tuple[Config, GitRepository] = (self.config, self.repository)
         self.version: RoutineVersion = RoutineVersionFactory.create(self.config.routines.version)(*deps)
         self.commit_message: RoutineCommitMessage = RoutineCommitMessageFactory.create(self.config.routines.commit_message)(*deps)
         self.commiting: RoutineCommiting = RoutineCommitingFactory.create(self.config.routines.commiting)(*deps)
@@ -38,6 +38,5 @@ class RoutineManager:
         self.commiting.run(result)
         self.tagging.run(result)
 
-    def run(self):
-        result: VersioningResult = self.versionise()
-        self.contribute(result)
+    def run(self) -> None:
+        self.contribute(self.versionise())

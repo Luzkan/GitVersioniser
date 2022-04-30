@@ -13,5 +13,5 @@ class TestNull(TestRoutineCommitMessage):
     ])
     def test_null(self, version_info, commit_message,):
         self.routine = self.get_routine('null')
-        self.routine.target_repo.commits.commit(commit_message)
+        self.routine.repo.commits.commit(commit_message)
         self.assertEqual(self.routine.run(version_info), commit_message)

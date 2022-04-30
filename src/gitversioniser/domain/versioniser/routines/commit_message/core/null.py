@@ -12,7 +12,7 @@ class Null(RoutineCommitMessage):
     """
 
     def run(self, new_version: VersionInfo) -> str:
-        return str(self.target_repo.commits.latest.summary)
+        return str(self.repo.commits.latest.summary)
 
     @staticmethod
     def factory_name() -> str:

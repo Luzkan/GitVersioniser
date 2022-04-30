@@ -32,9 +32,6 @@ class TestChangelogManager:
 
     def delete_remotes(self):
         try:
-            self.routine.target_repo.repo.delete_remote(self.routine.target_repo.repo.remote('origin'))
+            self.routine.repo._repo.delete_remote(self.routine.repo._repo.remote('origin'))
         except ValueError:
             pass
-
-    def create_remotes(self):
-        self.routine.target_repo.repo.create_remote('origin', 'https://github.com/Luzkan/GitVersioniserTest.git')

@@ -18,7 +18,7 @@ class LastCommitMessageAsDescription(RoutineChangelog):
                 "\n"
             ])\
             .add_footer(
-                self.get_footer(str(new_version), self.target_repo.github_user_repo, self.target_repo.repo_name)
+                self.get_footer(str(new_version), self.repo.github_user_repo, self.repo.repo_name)
             )
 
     def get_header(self, new_version) -> str:
@@ -28,7 +28,7 @@ class LastCommitMessageAsDescription(RoutineChangelog):
         return f"[`{version}`]: https://github.com/{github_user}/{repo_name}/releases/tag/{version}\n"
 
     def get_description(self) -> str:
-        return f"{self.target_repo.commits.latest.message.value}\n"
+        return f"{self.repo.commits.latest.message.value}\n"
 
     @staticmethod
     def factory_name() -> str:

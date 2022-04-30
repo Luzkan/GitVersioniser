@@ -8,7 +8,7 @@ from gitversioniser.domain.repository.git_repository import GitRepository
 @dataclass  # type: ignore [misc]
 class Routine(ABC):
     config: Config
-    target_repo: GitRepository
+    repo: GitRepository
 
     @staticmethod
     @abstractmethod

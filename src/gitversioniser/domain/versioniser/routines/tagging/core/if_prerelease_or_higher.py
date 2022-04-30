@@ -23,8 +23,8 @@ class IfPrereleaseOrHigher(RoutineTagging):
         return int(match.group(1)) if match else 0
 
     def tag(self, result: VersioningResult):
-        self.target_repo.remote.create_tag(version=str(result.versions.new))
-        self.target_repo.remote.push_tags()
+        self.repo.remote.create_tag(version=str(result.versions.new))
+        self.repo.remote.push_tags()
 
     @staticmethod
     def factory_name() -> str:

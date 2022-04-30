@@ -17,7 +17,7 @@ class TestPrefixVersionFull(TestRoutineCommitMessage):
         (VersionInfo(0, 0, 0, prerelease='rc.3', build='build.7'), ':3', '[`0.0.0-rc.3+build.7`] :3'),
     ])
     def test_true(self, version_info, commit_message, expected_commit_message):
-        self.routine.target_repo.commits.commit(commit_message)
+        self.routine.repo.commits.commit(commit_message)
         self.assertEqual(self.routine.run(version_info), expected_commit_message)
 
     # TODO: Sanitize commit inputs first.

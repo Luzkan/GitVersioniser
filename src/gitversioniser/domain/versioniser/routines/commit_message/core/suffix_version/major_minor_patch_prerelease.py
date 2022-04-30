@@ -11,7 +11,7 @@ class SuffixVersionMajorMinorPatchPrerelease(RoutineCommitMessage):
         version_tag = f"{str(new_version.major)}.{str(new_version.minor)}.{str(new_version.patch)}"
         if new_version.prerelease:
             version_tag += f"-{str(new_version.prerelease)}"
-        return f"{self.target_repo.commits.latest.summary} [`{version_tag}`]"
+        return f"{self.repo.commits.latest.summary} [`{version_tag}`]"
 
     @staticmethod
     def factory_name() -> str:

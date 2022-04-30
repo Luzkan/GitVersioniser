@@ -15,8 +15,8 @@ class CommitsTillLastGitVersioniserCommits(RoutineVersion):
     """
 
     def generate_new_version(self) -> VersionInfo:
-        last_version: VersionInfo = self.target_repo.tags.latest_semver
-        for commit in self.target_repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
+        last_version: VersionInfo = self.repo.tags.latest_semver
+        for commit in self.repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
             last_version: VersionInfo = self.bump_version(commit, last_version)  # type: ignore [no-redef]
         return last_version
 

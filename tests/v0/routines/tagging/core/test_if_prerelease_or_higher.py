@@ -5,6 +5,7 @@ from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
 from gitversioniser.domain.versioniser.helpers.versions import Versions
+from tests.utils.repo_utils import RepoUtils
 from tests.v0.routines.tagging.routine import TestRoutineTagging
 
 
@@ -19,12 +20,12 @@ class TestIfPrereleaseOrHigher(TestRoutineTagging):
         (VersionInfo(1, 2, 3, 'alpha.1'), VersionInfo(1, 2, 3, 'beta.1'), 'R: Feature'),
     ])
     def test_bump(self, old_version, new_version, commit_message):
-        self.routine.target_repo.tags.create(str(old_version))
+        self.routine.repo.tags.create(str(old_version))
         try:
             self.routine.run(VersioningResult(Versions(old_version, new_version), commit_message, Mock, Mock))
         except ValueError as error:
             self.assertEqual(error.args[0], "Remote named 'origin' didn't exist")
-            self.assertEqual(self.routine.target_repo.tags.latest_semver, new_version)
+            self.assertEqual(self.routine.repo.tags.latest_semver, new_version)
 
     @parameterized.expand([
         (VersionInfo(1, 2, 3, 'rc.2'), VersionInfo(1, 2, 3, 'rc.1'), 'A: New Feature'),
@@ -33,17 +34,17 @@ class TestIfPrereleaseOrHigher(TestRoutineTagging):
         (VersionInfo(0, 0, 1, build='build.4'), VersionInfo(0, 0, 1, build='build.5'), 'S: The Feature'),
     ])
     def test_no_bump(self, old_version, new_version, commit_message):
-        self.routine.target_repo.tags.create(str(old_version))
+        self.routine.repo.tags.create(str(old_version))
         try:
             self.routine.run(VersioningResult(Versions(old_version, new_version), commit_message, Mock, Mock))
         except ValueError as error:
             self.assertEqual(error.args[0], "Remote named 'origin' didn't exist")
-            self.assertEqual(self.routine.target_repo.tags.latest_semver, old_version)
+            self.assertEqual(self.routine.repo.tags.latest_semver, old_version)
 
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('if_prerelease_or_higher')
+        self.repo_utils = RepoUtils(self.routine)
 
     def tearDown(self):
-        for tag in self.routine.target_repo.tags.get_sorted:
-            self.routine.target_repo.repo.git.tag('-d', tag)
+        self.repo_utils.delete_all_tags()

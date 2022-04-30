@@ -6,7 +6,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
-## [[`1.2.3-rc.2+build.2`]] - [date]
+## [[`1.2.3-rc.2+build.3`]] - [date]
 
 Feature: New Mechanism
 This is a description of the Merge Request
@@ -14,4 +14,4 @@ Maybe a little bit more messages
 
 
 
-[`1.2.3-rc.2+build.2`]: https://github.com/Luzkan/GitVersioniserTest/releases/tag/1.2.3-rc.2+build.2
+[`1.2.3-rc.2+build.3`]: https://github.com/Luzkan/GitVersioniserTest/releases/tag/1.2.3-rc.2+build.3

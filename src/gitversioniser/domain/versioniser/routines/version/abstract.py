@@ -11,7 +11,7 @@ from gitversioniser.helpers.version_bump import VersionBump
 class RoutineVersion(Routine, ABC):
     def run(self) -> Versions:
         return Versions(
-            old=self.target_repo.tags.latest_semver,
+            old=self.repo.tags.latest_semver,
             new=self.generate_new_version()
         )
 

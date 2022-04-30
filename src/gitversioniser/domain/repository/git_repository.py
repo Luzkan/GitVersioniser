@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from git.repo import Repo
 
@@ -12,25 +12,18 @@ from gitversioniser.domain.repository.tags import Tags
 @dataclass
 class GitRepository:
     config: Config
-    repo: Repo = field(default=Repo())
-    files: Files = field(init=False)
-    remote: Remote = field(init=False)
-    tags: Tags = field(init=False)
-    commits: Commits = field(init=False)
+    _repo: Repo
 
     def __post_init__(self):
-        def init_submodules():
-            self.files = Files(self.repo)
-            self.remote = Remote(self.repo)
-            self.tags = Tags(self.repo)
-            self.commits = Commits(self.config, self.repo)
-
-        init_submodules()
+        self.files = Files(self._repo)
+        self.remote = Remote(self._repo)
+        self.tags = Tags(self._repo)
+        self.commits = Commits(self.config, self._repo)
 
     @property
     def github_user_repo(self) -> str:
-        return self.repo.remotes.origin.url.split('.git')[0].split('/')[-2]
+        return self._repo.remotes.origin.url.split('.git')[0].split('/')[-2]
 
     @property
     def repo_name(self) -> str:
-        return self.repo.remotes.origin.url.split('.git')[0].split('/')[-1]
+        return self._repo.remotes.origin.url.split('.git')[0].split('/')[-1]

@@ -15,8 +15,8 @@ class LastCommit(RoutineVersion):
     """
 
     def generate_new_version(self) -> VersionInfo:
-        latest_commit: Commit = self.target_repo.commits.latest
-        last_version: VersionInfo = self.target_repo.tags.latest_semver
+        latest_commit: Commit = self.repo.commits.latest
+        last_version: VersionInfo = self.repo.tags.latest_semver
         return self.bump_version(latest_commit, last_version)
 
     def bump_version(self, commit: Commit, version: VersionInfo) -> VersionInfo:

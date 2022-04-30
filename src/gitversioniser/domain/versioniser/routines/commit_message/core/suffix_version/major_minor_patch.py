@@ -8,7 +8,7 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 @dataclass
 class SuffixVersionMajorMinorPatch(RoutineCommitMessage):
     def run(self, new_version: VersionInfo) -> str:
-        return f"{self.target_repo.commits.latest.summary} " +\
+        return f"{self.repo.commits.latest.summary} " +\
                f"[`{str(new_version.major)}.{str(new_version.minor)}.{str(new_version.patch)}`]"
 
     @staticmethod

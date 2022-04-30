@@ -2,16 +2,17 @@ from parameterized import parameterized
 from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.helpers.versions import Versions
+from tests.utils.repo_utils import RepoUtils
 from tests.v0.routines.version.routine import TestRoutineVersion
 
 
 class TestLastCommit(TestRoutineVersion):
 
     def perform_version_test(self, old_version, last_commit_message, new_version):
-        self.routine.target_repo.tags.create(str(old_version))
-        self.routine.target_repo.commits.commit(str(last_commit_message))
+        self.routine.repo.tags.create(str(old_version))
+        self.routine.repo.commits.commit(str(last_commit_message))
         versions: Versions = self.routine.run()
-        self.assertEqual(versions.old, self.routine.target_repo.tags.latest_semver)
+        self.assertEqual(versions.old, self.routine.repo.tags.latest_semver)
         self.assertEqual(versions.new, new_version)
 
     @parameterized.expand([
@@ -53,7 +54,7 @@ class TestLastCommit(TestRoutineVersion):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('last_commit')
+        self.repo_utils = RepoUtils(self.routine)
 
     def tearDown(self):
-        for tag in self.routine.target_repo.tags.get_sorted:
-            self.routine.target_repo.repo.git.tag('-d', tag)
+        self.repo_utils.delete_all_tags()

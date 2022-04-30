@@ -20,7 +20,7 @@ class CommitPattern(RoutineChangelog):
                 *self.get_entry()
             ])\
             .add_footer(
-                self.get_footer(str(new_version), self.target_repo.github_user_repo, self.target_repo.repo_name)
+                self.get_footer(str(new_version), self.repo.github_user_repo, self.repo.repo_name)
             )
 
     def get_header(self, new_version):
@@ -34,7 +34,7 @@ class CommitPattern(RoutineChangelog):
 
     def get_entries_from_commit_messages(self) -> ChangelogEntry:
         changelog_changes = ChangelogEntry()
-        for commit in self.target_repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
+        for commit in self.repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
             if commit.summary.commit_tag.exist():
                 changelog_changes.add(*commit.summary.commit_tag.get())
             else:

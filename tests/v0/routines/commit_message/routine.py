@@ -9,7 +9,7 @@ from tests.v0.utils.default_v0 import TestDefaultV0
 
 class TestRoutineCommitMessage(TestDefaultV0):
     def get_routine(self, routine_name: ROUTINE_COMMIT_MESSAGE_TYPE):
-        return RoutineCommitMessageFactory.create(routine_name)(self.config, GitRepository(self.config, repo=Repo.init(self.test_repo_path)))
+        return RoutineCommitMessageFactory.create(routine_name)(self.config, GitRepository(self.config, _repo=Repo.init(self.test_repo_path)))
 
     def setUp(self):
         super().setUp()

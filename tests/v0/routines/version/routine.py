@@ -9,7 +9,7 @@ from tests.v0.utils.default_v0 import TestDefaultV0
 
 class TestRoutineVersion(TestDefaultV0):
     def get_routine(self, routine_name: ROUTINE_VERSION_TYPE):
-        return RoutineVersionFactory.create(routine_name)(self.config, GitRepository(self.config, repo=Repo.init(self.test_repo_path, mkdir=True)))
+        return RoutineVersionFactory.create(routine_name)(self.config, GitRepository(self.config, _repo=Repo.init(self.test_repo_path, mkdir=True)))
 
     def setUp(self):
         super().setUp()

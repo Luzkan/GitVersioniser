@@ -9,7 +9,7 @@ from tests.v0.utils.default_v0 import TestDefaultV0
 
 class TestRoutineFileUpdater(TestDefaultV0):
     def get_routine(self, routine_name: ROUTINE_FILE_UPDATER_TYPE):
-        return RoutineFileUpdaterFactory.create(routine_name)(self.config, GitRepository(self.config, repo=Repo.init(self.test_repo_path)))
+        return RoutineFileUpdaterFactory.create(routine_name)(self.config, GitRepository(self.config, _repo=Repo.init(self.test_repo_path)))
 
     def setUp(self):
         super().setUp()

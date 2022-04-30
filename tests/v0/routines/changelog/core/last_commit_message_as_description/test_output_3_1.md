@@ -6,7 +6,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
-## [[`3.63.19-build.55323`]] - [date]
+## [[`3.63.19-build.55323+build.1`]] - [date]
 
 ### Styling markdown
 
@@ -18,4 +18,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 
 
-[`3.63.19-build.55323`]: https://github.com/Luzkan/GitVersioniserTest/releases/tag/3.63.19-build.55323
+[`3.63.19-build.55323+build.1`]: https://github.com/Luzkan/GitVersioniserTest/releases/tag/3.63.19-build.55323+build.1

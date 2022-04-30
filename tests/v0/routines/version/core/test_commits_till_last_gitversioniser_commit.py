@@ -2,19 +2,14 @@ from parameterized import parameterized
 from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.helpers.versions import Versions
+from tests.utils.repo_utils import RepoUtils
 from tests.v0.routines.version.routine import TestRoutineVersion
 
 
 class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
-    def create_commits(self, commit_messages):
-        git_versioniser_author_argument = f"--author={self.routine.config.credentials.username} <{self.routine.config.credentials.email}>"
-        self.routine.target_repo.repo.git.commit("--allow-empty", "-m", commit_messages[0], git_versioniser_author_argument)
-        for commit_message in commit_messages[1:]:
-            self.routine.target_repo.repo.git.commit("--allow-empty", "-m", commit_message, "--author=Bob <bob@github.com>")
-
     @parameterized.expand([
         (VersionInfo(1, 2, 3), VersionInfo(2, 1, 2, build='build.1'), [
-            'A: New Feature #patch',  # This one is made by supposedly gitversioniser
+            'A: New Feature #patch',
             'F: New Feature',
             'C: New Feature #major',
             'R: New Feature #minor',
@@ -23,7 +18,7 @@ class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
             'A: New Feature',
         ]),
         (VersionInfo(1, 88, 232, 'rc.4', build='build.1'), VersionInfo(2, 1, 2, build='build.1'), [
-            'A: New Feature',  # This one is made by supposedly gitversioniser
+            'A: New Feature',
             'F: New Feature',
             'C: New Feature #major',
             'R: New Feature #minor',
@@ -33,15 +28,16 @@ class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
         ]),
     ])
     def test_true(self, old_version, new_version, commit_messages):
-        self.routine.target_repo.tags.create(str(old_version))
-        self.create_commits(commit_messages)
+        self.routine.repo.tags.create(str(old_version))
+        self.repo_utils.create_gitversioniser_commit(commit_messages[0])
+        self.repo_utils.create_commits(commit_messages[1:])
         versions: Versions = self.routine.run()
         self.assertEqual(versions.new, new_version)
 
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('commits_till_last_gitversioniser_commit')
+        self.repo_utils = RepoUtils(self.routine)
 
     def tearDown(self):
-        for tag in self.routine.target_repo.tags.get_sorted:
-            self.routine.target_repo.repo.git.tag('-d', tag)
+        self.repo_utils.delete_all_tags()

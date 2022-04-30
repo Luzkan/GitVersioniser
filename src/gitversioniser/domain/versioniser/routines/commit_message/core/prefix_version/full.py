@@ -8,7 +8,7 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 @dataclass
 class PrefixVersionFull(RoutineCommitMessage):
     def run(self, new_version: VersionInfo) -> str:
-        return f"[`{str(new_version)}`] {self.target_repo.commits.latest.summary}"
+        return f"[`{str(new_version)}`] {self.repo.commits.latest.summary}"
 
     @staticmethod
     def factory_name() -> str:

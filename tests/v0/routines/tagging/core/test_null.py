@@ -5,6 +5,7 @@ from semver import VersionInfo
 
 from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
 from gitversioniser.domain.versioniser.helpers.versions import Versions
+from tests.utils.repo_utils import RepoUtils
 from tests.v0.routines.tagging.routine import TestRoutineTagging
 
 
@@ -16,14 +17,14 @@ class TestNull(TestRoutineTagging):
         (VersionInfo(1, 1, 1), VersionInfo(0, 0, 0), 'S: The Feature'),
     ])
     def test_no_bump(self, old_version, new_version, commit_message):
-        self.routine.target_repo.tags.create(str(old_version))
+        self.routine.repo.tags.create(str(old_version))
         self.routine.run(VersioningResult(Versions(old_version, new_version), commit_message, Mock, Mock))
-        self.assertEqual(self.routine.target_repo.tags.latest_semver, old_version)
+        self.assertEqual(self.routine.repo.tags.latest_semver, old_version)
 
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('null')
+        self.repo_utils = RepoUtils(self.routine)
 
     def tearDown(self):
-        for tag in self.routine.target_repo.tags.get_sorted:
-            self.routine.target_repo.repo.git.tag('-d', tag)
+        self.repo_utils.delete_all_tags()

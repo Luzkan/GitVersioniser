@@ -1,9 +1,10 @@
 from gitversioniser.config.arguments import Arguments
 from gitversioniser.config.config import Config
 from gitversioniser.domain.versioniser.versioniser import Versioniser
+from gitversioniser.helpers.logger import CONSOLE
 
 
-__version__ = '0.3.2+build.1'
+__version__ = '0.3.2+build.2'
 
 
 def config() -> Config:
@@ -15,7 +16,15 @@ def config() -> Config:
     )
 
 
+def greetings():
+    CONSOLE.rule('[b]GitVersioniser[/b]')
+    CONSOLE.print('Automatic Semantic Versioniser & Change Tracker', style="b green", justify="center")
+    CONSOLE.print('https://github.com/Luzkan/GitVersioniser', style="magenta", justify="center")
+    CONSOLE.print(f'v{__version__}', style="b green", justify="center")
+
+
 def main():
+    greetings()
     versioniser = Versioniser(config=config())
     versioniser.run()
 

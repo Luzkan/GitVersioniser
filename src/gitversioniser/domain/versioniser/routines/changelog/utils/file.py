@@ -65,8 +65,8 @@ class ChangelogFile:
 
     def __repr__(self) -> str:
         return ''.join([
-            '-- -- -- -- --',
             '\n',
+            '-- -- -- -- --\n',
             *self.lines[self.line_index_for_new_header:self.line_index_for_new_header+self.entry_length+1],
             '-- -- -- -- --'
         ])

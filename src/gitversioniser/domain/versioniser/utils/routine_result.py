@@ -1,10 +1,9 @@
 from dataclasses import dataclass
 
-from rich import print
-
 from gitversioniser.domain.versioniser.routines.changelog.utils.file import ChangelogFile
 from gitversioniser.domain.versioniser.routines.file_updater.utils.updated_files import UpdatedFiles
 from gitversioniser.domain.versioniser.utils.versions import Versions
+from gitversioniser.helpers.logger import CONSOLE
 
 
 @dataclass(frozen=True)
@@ -16,4 +15,5 @@ class VersioningResult:
     changelog: ChangelogFile
 
     def __post_init__(self):
-        print(self)
+        CONSOLE.rule('Versioning Result')
+        CONSOLE.print(self)

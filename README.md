@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.2+build.1]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.2+build.2]</code></i>
     </div>
 </div>
 
@@ -55,7 +55,7 @@ If you would like to contribute, you are more than welcome by opening a new disc
 
 If you want to adjust the way of working to your liking, feel free to check the available options! Because we are the developers, I believe that the [documentation](https://luzkan.github.io/smells/what-comment) for us is just [duplicated code](https://luzkan.github.io/smells/duplicated-code). Thus, I encourage you to trust the [communicative](https://luzkan.github.io/smells/uncommunicative-name) [method names](https://luzkan.github.io/smells/fallacious-method-name) and see the options through code for yourself! 🐱
 
-_Hint: Think about the repository as a device that can be entirely customized by the flavor-modules you choose to plug-in._
+_Hint: Think about the repository as a device that can be entirely customized by the flavor-modules you choose to plug-in. Use the string from factory method and replace it in [yml config](./docs/example/GitVersioniser.yml)._
 
 ### [**Version**](./src/gitversioniser/domain/versioniser/routines/version/) based on:
 
@@ -75,7 +75,7 @@ _Hint: Think about the repository as a device that can be entirely customized by
 - [Force](./src/gitversioniser/domain/versioniser/routines/tagging/core/force.py)
 - [Never](./src/gitversioniser/domain/versioniser/routines/tagging/core/never.py)
 
-### [**Prefix Tag with 'V'**](./src/gitversioniser/domain/versioniser/routines/tagging/):
+### [**Prefix Tag with '`v`'**](./src/gitversioniser/domain/versioniser/routines/tagging/):
 
 - [Always](./src/gitversioniser/domain/versioniser/routines/tagging/core/always.py) _(default)_
 - [If _(new version is)_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_build_or_higher.py)

@@ -25,9 +25,10 @@ class Tags:
     @property
     def latest_semver(self) -> VersionInfo:
         def truncate_v_from_semver(tag_semver: str) -> str:
-            return tag_semver[1:] if tag_semver and tag_semver[1] == 'v' else tag_semver
+            return tag_semver[1:] if tag_semver and tag_semver[0] == 'v' else tag_semver
 
         for tag in self.get_sorted:
-            if RegexPattern.semver(truncate_v_from_semver(tag)):
-                return VersionInfo.parse(tag)
+            normalized_tag: str = truncate_v_from_semver(tag)
+            if RegexPattern.semver(truncate_v_from_semver(normalized_tag)):
+                return VersionInfo.parse(normalized_tag)
         return VersionInfo(0, 0, 0)

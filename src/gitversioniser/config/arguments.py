@@ -12,7 +12,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.3.1]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.3.2]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -38,16 +38,20 @@ class Arguments:
             help="(Routine) The way of contributing the GitVersioniser changes to remote repository. (default: %(default)s)"
         )
         parser.add_argument(
+            "-rptwv", "--routine_prefix_tag_with_v", default='always',
+            help="(Routine) When the tag should receive the 'v' letter as prefix. (default: %(default)s)"
+        )
+        parser.add_argument(
             "-rsc", "--routine_should_contribute", default='if_build_or_higher',
-            help="(Routine) The way of contributing the GitVersioniser changes to remote repository. (default: %(default)s)"
+            help="(Routine) When should the GitVersioniser contribute anything to the remote repository. (default: %(default)s)"
         )
         parser.add_argument(
             "-rcl", "--routine_changelog", default='commit_pattern',
             help="(Routine) The way GitVersioniser will handle changelog. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rt", "--routine_tagging", default='always',
-            help="(Routine) When should GitVersioniser tag the repository. (default: %(default)s)"
+            "-rt", "--routine_tagging", default='regular',
+            help="(Routine) How should GitVersioniser tag the repository. (default: %(default)s)"
         )
         parsed_arguments = parser.parse_args()
         return Arguments(
@@ -59,6 +63,7 @@ class Arguments:
                 commiting=parsed_arguments.routine_commiting,
                 file_updater=parsed_arguments.routine_file_updater,
                 should_contribute=parsed_arguments.routine_should_contribute,
+                prefix_tag_with_v=parsed_arguments.routine_prefix_tag_with_v,
                 tagging=parsed_arguments.routine_tagging,
                 version=parsed_arguments.routine_version
             ),

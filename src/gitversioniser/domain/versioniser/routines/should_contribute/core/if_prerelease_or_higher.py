@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
+from gitversioniser.domain.versioniser.helpers.version_comparer import VersionComparer
 from gitversioniser.domain.versioniser.routines.should_contribute.abstract import RoutineShouldContribute
-from gitversioniser.domain.versioniser.routines.should_contribute.utils.version_comparer import VersionComparer
+from gitversioniser.domain.versioniser.utils.routine_result import VersioningResult
 
 
 @dataclass

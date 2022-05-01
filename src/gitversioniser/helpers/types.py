@@ -3,7 +3,7 @@ from typing import Literal
 
 ROUTINE_VERSION_TYPE = Literal[
     "last_commit",
-    "commits_till_last_gitversioniser_commit"
+    "commits_till_last_gitversioniser_commit",
 ]
 ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
     "null",
@@ -19,26 +19,32 @@ ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
 ROUTINE_COMMITING_TYPE = Literal[
     "null",
     "push_main_amend",
-    "push_main_new"
+    "push_main_new",
 ]
 ROUTINE_TAGGING_TYPE = Literal[
-    "null",
-    "always",
-    "if_patch_or_higher",
-    "if_prerelease_or_higher"
+    "force",
+    "regular",
+    "never",
 ]
 ROUTINE_SHOULD_CONTRIBUTE = Literal[
     "never",
     "if_build_or_higher",
     "if_patch_or_higher",
-    "if_prerelease_or_higher"
+    "if_prerelease_or_higher",
+]
+ROUTINE_PREFIX_TAG_WITH_V = Literal[
+    "never",
+    "if_build_or_higher",
+    "if_patch_or_higher",
+    "if_prerelease_or_higher",
+    "always",
 ]
 ROUTINE_FILE_UPDATER_TYPE = Literal[
     "null",
-    "versionise_files"
+    "versionise_files",
 ]
 ROUTINE_CHANGELOG_TYPE = Literal[
     "null",
     "commit_pattern",
-    "last_commit_message_as_description"
+    "last_commit_message_as_description",
 ]

@@ -1,7 +1,7 @@
 from parameterized import parameterized
 from semver import VersionInfo
 
-from gitversioniser.domain.versioniser.helpers.versions import Versions
+from gitversioniser.domain.versioniser.utils.versions import Versions
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.version.routine import TestRoutineVersion
 

@@ -3,8 +3,8 @@ from unittest.mock import Mock
 from parameterized import parameterized
 from semver import VersionInfo
 
-from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
-from gitversioniser.domain.versioniser.helpers.versions import Versions
+from gitversioniser.domain.versioniser.utils.routine_result import VersioningResult
+from gitversioniser.domain.versioniser.utils.versions import Versions
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.should_contribute.routine import TestRoutineShouldContribute
 
@@ -20,7 +20,7 @@ class TestNever(TestRoutineShouldContribute):
     ])
     def test_false(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))
-        self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock))
+        self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock, Mock))
         self.assertEqual(self.routine.repo.tags.latest_semver, old_version)
 
     def setUp(self):

@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.2`]] - 2022-05-01
+
+### Added
+
+- New Routine: Prefix Tag with V #patch
+
+
+
 ## [[`0.3.1`]] - 2022-05-01
 
 ### Added
@@ -263,3 +271,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.0+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.0+build.2
 [`0.3.0+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.0+build.3
 [`0.3.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.1
+[`0.3.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2

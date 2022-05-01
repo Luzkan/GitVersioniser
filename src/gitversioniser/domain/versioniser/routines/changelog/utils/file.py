@@ -5,7 +5,7 @@ from pathlib import Path
 @dataclass(frozen=True)
 class ChangelogFile:
     path: Path = field(repr=False)
-    lines: list[str] = field(default_factory=list)
+    lines: list[str] = field(default_factory=list, repr=False)
     header_length: int = field(default=0, repr=False)
     entry_length: int = field(default=0, repr=False)
 
@@ -63,5 +63,5 @@ class ChangelogFile:
     def _insert_lines_between_index(self, new_lines: list[str], index: int):
         return [*self.lines[:index], *new_lines, '\n', *self.lines[index:]]
 
-    def __str__(self) -> str:
+    def __repr__(self) -> str:
         return '\n'.join(self.lines[self.line_index_for_new_header:self.line_index_for_new_header+self.entry_length])

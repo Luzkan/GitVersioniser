@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.1]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.2]</code></i>
     </div>
 </div>
 
@@ -71,10 +71,17 @@ _Hint: Think about the repository as a device that can be entirely customized by
 
 ### [**Tagging**](./src/gitversioniser/domain/versioniser/routines/tagging/):
 
+- [Regular](./src/gitversioniser/domain/versioniser/routines/tagging/core/regular.py) _(default)_
+- [Force](./src/gitversioniser/domain/versioniser/routines/tagging/core/force.py)
+- [Never](./src/gitversioniser/domain/versioniser/routines/tagging/core/never.py)
+
+### [**Prefix Tag with 'V'**](./src/gitversioniser/domain/versioniser/routines/tagging/):
+
 - [Always](./src/gitversioniser/domain/versioniser/routines/tagging/core/always.py) _(default)_
-- [If Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
-- [If Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
-- [Null](./src/gitversioniser/domain/versioniser/routines/tagging/core/null.py)
+- [If _(new version is)_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_build_or_higher.py)
+- [If _(new version is)_ Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
+- [If _(new version is)_ Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
+- [Never](./src/gitversioniser/domain/versioniser/routines/tagging/core/never.py)
 
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
 

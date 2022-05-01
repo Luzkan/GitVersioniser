@@ -22,3 +22,6 @@ class Remote:
 
     def push_tags(self):
         return self.repo.remote("origin").push(tags=True)
+
+    def push_tags_force(self):
+        return self.repo.remote("origin").push(tags=True, force=True)

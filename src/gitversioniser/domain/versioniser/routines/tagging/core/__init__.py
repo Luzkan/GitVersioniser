@@ -1,12 +1,10 @@
-from .always import Always
-from .if_patch_or_higher import IfPatchOrHigher
-from .if_prerelease_or_higher import IfPrereleaseOrHigher
-from .null import Null
+from .force import Force
+from .never import Never
+from .regular import Regular
 
 
 __all__ = [
-    'Always',
-    'IfPatchOrHigher',
-    'IfPrereleaseOrHigher',
-    'Null',
+    'Force',
+    'Never',
+    'Regular',
 ]

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from gitversioniser.domain.versioniser.helpers.versions import Versions
 from gitversioniser.domain.versioniser.routines.file_updater.abstract import RoutineFileUpdater
+from gitversioniser.domain.versioniser.utils.versions import Versions
 
 
 @dataclass

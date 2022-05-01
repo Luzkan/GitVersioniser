@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from gitversioniser.domain.versioniser.helpers.versions import Versions
+from gitversioniser.domain.versioniser.utils.versions import Versions
 from gitversioniser.helpers.regex_pattern import RegexPattern
 
 

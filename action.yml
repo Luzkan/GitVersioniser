@@ -12,23 +12,37 @@ inputs:
     required: false
     default: 'luzkan.gitversioniser@github.com'
   # ---------------------------
-  # (Routine) Main
+  # (Routine) Versioning
   routine_version:
     description: '(Routine) Routine which will the GitVersioniser follow when versioning your repository.'
     required: false
     default: 'commits_till_last_gitversioniser_commit'
+  # ---------------------------
+  # (Routine) Contributing
+  routine_should_contribute:
+    description: '(Routine) When should the GitVersioniser contribute anything to the remote repository.'
+    required: false
+    default: 'if_build_or_higher'
   routine_commiting:
     description: '(Routine) The way of contributing changes made by GitVersioniser to your repository.'
     required: false
     default: 'push_main_amend'
-  routine_tagging:
-    description: '(Routine) When should GitVersioniser tag your repository.'
-    required: false
-    default: 'always'
+  # ---------------------------
+  # (Routine) Commit Message
   routine_commit_message:
     description: '(Routine) Decides how the Commit Message made by GitVersioniser will be made.'
     required: false
     default: 'prefix_version_full'
+  # ---------------------------
+  # (Routine) Tagging
+  routine_tagging:
+    description: '(Routine) How should GitVersioniser tag your repository.'
+    required: false
+    default: 'regular'
+  routine_prefix_tag_with_v:
+    description: '(Routine) When the tag should receive the "v" letter as prefix.'
+    required: false
+    default: 'always'
   # ---------------------------
   # (Routine) Changelog Handling
   routine_changelog:
@@ -57,15 +71,19 @@ runs:
     - ${{ inputs.versioniser-username }}
     - ${{ inputs.versioniser-email }}
     # ---------------------------
-    # Contributing
-    - ${{ inputs.routine_commiting }}
-    - ${{ inputs.routine_tagging }}
-    # ---------------------------
     # Versioning
     - ${{ inputs.routine_version }}
     # ---------------------------
+    # Contributing
+    - ${{ inputs.routine_should_contribute }}
+    - ${{ inputs.routine_commiting }}
+    # ---------------------------
     # Commiting Message
     - ${{ inputs.routine_commit_message }}
+    # ---------------------------
+    # Tagging
+    - ${{ inputs.routine_tagging }}
+    - ${{ inputs.routine_prefix_tag_with_v }}
     # ---------------------------
     # Changelog Handling
     - ${{ inputs.routine_changelog }}

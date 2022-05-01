@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-from gitversioniser.domain.versioniser.helpers.versions import Versions
 from gitversioniser.domain.versioniser.routines.file_updater.abstract import RoutineFileUpdater
 from gitversioniser.domain.versioniser.routines.file_updater.utils.updated_files import UpdatedFiles
+from gitversioniser.domain.versioniser.utils.versions import Versions
 
 
 @dataclass

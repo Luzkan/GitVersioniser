@@ -25,20 +25,28 @@ jobs:
           # ----
           versioniser-username: "GitVersioniser"
           versioniser-email: "luzkan.gitversioniser@github.com"
-
           # ---------------------------
-          # Main
+          # Versioning
           # ----
           routine_version: "commits_till_last_gitversioniser_commit"
+          # ---------------------------
+          # Contributing
+          # ----
+          routine_should_contribute: "if_build_or_higher"
           routine_commiting: "push_main_amend"
-          routine_tagging: "always"
+          # ---------------------------
+          # Commit Message
+          # ----
           routine_commit_message: "prefix_version_full_only_numbers"
-
+          # ---------------------------
+          # Tagging
+          # ----
+          routine_tagging: "regular"
+          routine_prefix_tag_with_v: "always"
           # ---------------------------
           # Changelog Handling
           # -----
           routine_changelog: "commit_pattern"
-
           # ---------------------------
           # File Versioning
           # ----

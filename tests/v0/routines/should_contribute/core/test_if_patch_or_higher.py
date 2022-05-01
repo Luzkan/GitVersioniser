@@ -3,8 +3,8 @@ from unittest.mock import Mock
 from parameterized import parameterized
 from semver import VersionInfo
 
-from gitversioniser.domain.versioniser.helpers.routine_result import VersioningResult
-from gitversioniser.domain.versioniser.helpers.versions import Versions
+from gitversioniser.domain.versioniser.utils.routine_result import VersioningResult
+from gitversioniser.domain.versioniser.utils.versions import Versions
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.should_contribute.routine import TestRoutineShouldContribute
 
@@ -17,7 +17,7 @@ class TestIfPatchOrHigher(TestRoutineShouldContribute):
     ])
     def test_true(self, old_version: VersionInfo, new_version: VersionInfo):
         self.routine.repo.tags.create(str(old_version))
-        self.assertEqual(self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock)), True)
+        self.assertEqual(self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock, Mock)), True)
 
     @parameterized.expand([
         (VersionInfo(2, 0, 0, 'rc.1'), VersionInfo(2, 0, 0, 'rc.2')),
@@ -27,7 +27,7 @@ class TestIfPatchOrHigher(TestRoutineShouldContribute):
     ])
     def test_false(self, old_version: VersionInfo, new_version: VersionInfo):
         self.routine.repo.tags.create(str(old_version))
-        self.assertEqual(self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock)), False)
+        self.assertEqual(self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock, Mock)), False)
 
     def setUp(self):
         super().setUp()

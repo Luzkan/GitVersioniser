@@ -5,6 +5,7 @@ from rich import pretty
 from rich.console import Console
 from rich.logging import RichHandler
 
+
 pretty.install()
 
 CONSOLE_LOG_LEVEL: Literal['CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG'] = 'INFO'

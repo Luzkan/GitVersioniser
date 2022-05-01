@@ -26,7 +26,7 @@ class TestAlways(TestRoutinePrefixTagWithV):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('if_build_or_higher')
-        self.repo_utils = PseudoRepo(self.routine)
+        self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):
         self.repo_utils.delete_all_tags()

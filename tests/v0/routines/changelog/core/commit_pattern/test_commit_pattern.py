@@ -62,7 +62,7 @@ class TestCommitPattern(TestRoutineChangelog):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('commit_pattern')
-        self.repo_utils = PseudoRepo(self.routine)
+        self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
         self.repo_utils.delete_remote()
         self.repo_utils.create_remote()
         self.test_changelog_manager = TestChangelogManager(self.routine, 'commit_pattern')

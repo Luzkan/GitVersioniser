@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.2+build.2]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.2+build.3]</code></i>
     </div>
 </div>
 
@@ -13,10 +13,11 @@ This repository contains a tool for automatic git repository versioning. It can 
 # Table of Contents
 
 1. [Features](#-features)
-2. [Benefits](#-benefits)
-3. [How can I run this?](#-how-can-i-run-this)
+2. [How can I run this?](#-how-can-i-run-this)
+3. [How can I use this?](#-how-can-i-use-this)
 4. [How can I contribute?](#-how-can-i-contribute)
-5. [Explore More!](#-explore-more)
+5. [Benefits](#-benefits)
+6. [Explore More!](#-explore-more)
 
 ---
 
@@ -29,6 +30,25 @@ This repository contains a tool for automatic git repository versioning. It can 
 
 ---
 
+## 🚀 **How can I run this?**
+
+Copy the [GitVersioniser.yml](./docs/example/GitVersioniser.yml) to the `.github/workflows/` in your repository!
+
+---
+
+## 🙌 **How can I use this?**
+
+- You can start commit message with `A:`, `F:`, `R:`, ... etc., to [tag](commit_tags) that you _added_, _fixed_, _removed_ something, which will create corresponding changelog entry.
+- You can add `#major`, `#minor`, `#patch`, ... etc., to [increment](src\gitversioniser\config\increments.py) version of the repository.
+
+---
+
+## 🤔 **How can I contribute?**
+
+If you would like to contribute, you are more than welcome by opening a new discussion on the [issues](https://github.com/Luzkan/gitversioniser/issues) or directly adding changes by opening new [merge requests](https://github.com/Luzkan/gitversioniser/pulls).
+
+---
+
 ## 💰 **Benefits**
 
 First and foremost - this tool will automatically create new semantic version tags for your repository. It will increment the build version by default, but you can choose what will get bumped using the [increment tags](./src/gitversioniser/config/increments.py). GitVersioniser will automatically add the version tag to the commit message in the default version, which gives an excellent overview of which files were when modified.
@@ -36,18 +56,6 @@ First and foremost - this tool will automatically create new semantic version ta
 Using this repository out-of-the-box gives you a free, automatically managed `CHANGELOG.md` file. It uses [prefix tags](./src/gitversioniser/config/commit_tags.py) that are one-letter shorthands of the joint summarization of a commit. This will encourage the developers to create tiny and descriptive commits. Additionally, there will be no more fights over the usage of imperative _"Fix"_ or declarative _"Fixed"_. Everyone can add the rest individually in their thoughts to their liking.
 
 _This repository is written to be understood as easily as reading documentation._
-
----
-
-## 🚀 **How can I run this?**
-
-Copy the [GitVersioniser.yml](./docs/example/GitVersioniser.yml) to the `.github/workflows/` in your repository!
-
----
-
-## 🤔 **How can I contribute?**
-
-If you would like to contribute, you are more than welcome by opening a new discussion on the [issues](https://github.com/Luzkan/gitversioniser/issues) or directly adding changes by opening new [merge requests](https://github.com/Luzkan/gitversioniser/pulls).
 
 ---
 

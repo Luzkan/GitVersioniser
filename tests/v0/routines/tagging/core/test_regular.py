@@ -11,11 +11,13 @@ from tests.v0.routines.tagging.routine import TestRoutineTagging
 
 class TestRegular(TestRoutineTagging):
     @parameterized.expand([
+        (VersionInfo(1, 2, 3), VersionInfo(2, 0, 0)),
+        (VersionInfo(1, 2, 3), VersionInfo(1, 3, 0)),
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4)),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 3, 0, 1)),
-        (VersionInfo(5, 0, 0), VersionInfo(6, 0, 0)),
+        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4, 'rc.1')),
+        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 3, build='build.1')),
     ])
-    def test_tagged(self, old_version, new_version):
+    def test_tagged(self, old_version: VersionInfo, new_version: VersionInfo):
         self.routine.repo.tags.create(str(old_version))
         self._run_routine(old_version, new_version)
         self.assertEqual(self.routine.repo.tags.latest_semver, new_version)
@@ -38,7 +40,7 @@ class TestRegular(TestRoutineTagging):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('regular')
-        self.repo_utils = PseudoRepo(self.routine)
+        self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):
         self.repo_utils.delete_all_tags()

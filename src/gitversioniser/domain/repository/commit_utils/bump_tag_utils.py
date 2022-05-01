@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 
+from gitversioniser.config.increment import Increment
 from gitversioniser.domain.repository.commit_utils.tag import TagUtils
-from gitversioniser.helpers.version_bump import VersionBump
 
 
 @dataclass
-class BumpTagUtils(TagUtils):
+class IncrementTagUtils(TagUtils):
     def exist(self) -> bool:
-        return self.config.patterns.increments.has_version_bump(self.value.lower())
+        return self.config.patterns.increments.has_increment(self.value.lower())
 
-    def get(self) -> VersionBump:
-        return self.config.patterns.increments.parse_version_bump(self.value.lower())
+    def get(self) -> list[Increment]:
+        return sorted(self.config.patterns.increments.parse_increments(self.value.lower()))

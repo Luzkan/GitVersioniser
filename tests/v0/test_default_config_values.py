@@ -1,7 +1,5 @@
 from gitversioniser.config.commit_tag import CommitTag
-from gitversioniser.config.increment import Increment
 from gitversioniser.helpers.changelog_category import ChangelogCategory
-from gitversioniser.helpers.version_bump import VersionBump
 from tests.v0.default_scenario_v0 import TestDefaultScenarioV0
 
 
@@ -15,7 +13,7 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
         self.assertEqual(self.config.routines.commit_message, 'prefix_version_full')
         self.assertEqual(self.config.routines.file_updater, 'versionise_files')
         self.assertEqual(self.config.routines.commiting, 'push_main_amend')
-        self.assertEqual(self.config.routines.tagging, 'always')
+        self.assertEqual(self.config.routines.tagging, 'regular')
         self.assertEqual(self.config.routines.changelog, 'commit_pattern')
 
     def test_default_configuration_credentials(self):
@@ -23,9 +21,20 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
         self.assertEqual(self.config.credentials.email, "luzkan.gitversioniser@github.com")
 
     def test_default_configuration_patterns_increments(self):
-        self.assertEqual(self.config.patterns.increments.major, Increment("#major", VersionBump.MAJOR))
-        self.assertEqual(self.config.patterns.increments.minor, Increment("#minor", VersionBump.MINOR))
-        self.assertEqual(self.config.patterns.increments.patch, Increment("#patch", VersionBump.PATCH))
+        self.assertEqual(self.config.patterns.increments.major.pattern, '#major')
+        self.assertEqual(self.config.patterns.increments.major.precedence, 1)
+        self.assertEqual(self.config.patterns.increments.minor.pattern, '#minor')
+        self.assertEqual(self.config.patterns.increments.minor.precedence, 1)
+        self.assertEqual(self.config.patterns.increments.patch.pattern, '#patch')
+        self.assertEqual(self.config.patterns.increments.patch.precedence, 1)
+        self.assertEqual(self.config.patterns.increments.alpha.pattern, '#alpha')
+        self.assertEqual(self.config.patterns.increments.alpha.precedence, 2)
+        self.assertEqual(self.config.patterns.increments.beta.pattern, '#beta')
+        self.assertEqual(self.config.patterns.increments.beta.precedence, 3)
+        self.assertEqual(self.config.patterns.increments.prerelease.pattern, '#prerelease')
+        self.assertEqual(self.config.patterns.increments.prerelease.precedence, 4)
+        self.assertEqual(self.config.patterns.increments.finalized.pattern, '#fin')
+        self.assertEqual(self.config.patterns.increments.finalized.precedence, 9)
 
     def test_default_configuration_patterns_commit_tags(self):
         self.assertEqual(self.config.patterns.commit_tags.added, CommitTag("A:", ChangelogCategory.ADDED))

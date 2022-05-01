@@ -26,7 +26,7 @@ class TestNever(TestRoutineShouldContribute):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('never')
-        self.repo_utils = PseudoRepo(self.routine)
+        self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):
         self.repo_utils.delete_all_tags()

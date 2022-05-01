@@ -13,7 +13,6 @@ class TestForce(TestRoutineTagging):
     @parameterized.expand([
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4)),
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 3)),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 2)),
         (VersionInfo(1, 2, 3, 'rc.1', 'build.1'), VersionInfo(1, 2, 3, 'rc.1', 'build.1')),
     ])
     def test_tag(self, old_version: VersionInfo, new_version: VersionInfo):
@@ -30,7 +29,7 @@ class TestForce(TestRoutineTagging):
     def setUp(self):
         super().setUp()
         self.routine = self.get_routine('force')
-        self.repo_utils = PseudoRepo(self.routine)
+        self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):
         self.repo_utils.delete_all_tags()

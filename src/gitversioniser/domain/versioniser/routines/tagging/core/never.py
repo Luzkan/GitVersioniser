@@ -11,4 +11,4 @@ class Never(RoutineTagging):
 
     @staticmethod
     def factory_name() -> str:
-        return 'null'
+        return 'never'

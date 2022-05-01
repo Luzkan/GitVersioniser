@@ -27,6 +27,8 @@ class TestIfPrereleaseOrHigher(TestRoutineShouldContribute):
         (VersionInfo(1, 2, 3, 'rc.4', 'build.5'), VersionInfo(0, 3, 4, 'rc.3', 'build.6')),
         (VersionInfo(0, 0, 0, 'alpha.2'), VersionInfo(0, 0, 0, 'alpha.1')),
         (VersionInfo(0, 0, 1, build='build.4'), VersionInfo(0, 0, 1, build='build.5')),
+        (VersionInfo(0, 3, 2, None, None), VersionInfo(0, 3, 2, build='build.1')),
+        (VersionInfo(0, 3, 2, None, None), VersionInfo(0, 3, 2, prerelease='rc.1')),
     ])
     def test_false(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))

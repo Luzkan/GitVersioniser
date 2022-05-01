@@ -9,10 +9,11 @@ from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.should_contribute.routine import TestRoutineShouldContribute
 
 
-class TestAlways(TestRoutineShouldContribute):
+class TestIfBuildOrHigher(TestRoutineShouldContribute):
     @parameterized.expand([
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4)),
         (VersionInfo(5, 0, 0), VersionInfo(6, 0, 0)),
+        (VersionInfo(0, 3, 2, None, None), VersionInfo(0, 3, 2, build='build.1')),
     ])
     def test_true(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))
@@ -21,6 +22,7 @@ class TestAlways(TestRoutineShouldContribute):
     @parameterized.expand([
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 2)),
         (VersionInfo(1, 1, 1), VersionInfo(0, 0, 0)),
+        (VersionInfo(0, 3, 2, None, 'build.2'), VersionInfo(0, 3, 2, build='build.1')),
     ])
     def test_false(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))

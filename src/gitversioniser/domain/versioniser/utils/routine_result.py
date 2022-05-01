@@ -11,9 +11,9 @@ from gitversioniser.domain.versioniser.utils.versions import Versions
 class VersioningResult:
     versions: Versions
     commit_message: str
+    prefix_tag_with_v: bool
     updated_files: UpdatedFiles
     changelog: ChangelogFile
-    prefix_tag_with_v: bool
 
     def __post_init__(self):
         print(self)

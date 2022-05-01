@@ -35,9 +35,9 @@ class RoutineManager:
         return VersioningResult(
             versions=versions,
             commit_message=self.commit_message.run(versions.new),
+            prefix_tag_with_v=self.prefix_tag_with_v.run(versions),
             updated_files=self.file_updater.run(versions),
             changelog=self.changelog.run(versions.new),
-            prefix_tag_with_v=self.prefix_tag_with_v.run(versions)
         )
 
     def contribute(self, result: VersioningResult) -> None:

@@ -24,6 +24,7 @@ class TestIfPatchOrHigher(TestRoutineShouldContribute):
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 3, 'build.1')),
         (VersionInfo(1, 2, 3), VersionInfo(1, 2, 2)),
         (VersionInfo(0, 0, 1, build='build.4'), VersionInfo(0, 0, 1, build='build.5')),
+        (VersionInfo(0, 3, 2, None, None), VersionInfo(0, 3, 2, build='build.1')),
     ])
     def test_false(self, old_version: VersionInfo, new_version: VersionInfo):
         self.routine.repo.tags.create(str(old_version))

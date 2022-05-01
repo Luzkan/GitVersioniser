@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.3.0+build.1]</p>
+        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.3.0+build.2]</p>
     </div>
 </div>
 
@@ -66,19 +66,21 @@ _Hint: Think about the repository as a device that can be entirely customized by
 
 - [Always](./src/gitversioniser/domain/versioniser/routines/tagging/core/always.py) _(default)_
 - [If Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
-- [If Prerelease or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
+- [If Pre-release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/tagging/core/null.py)
 
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
 
 - _[Prefix Version](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/):_
   - [Full](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/full.py) _(default)_
+  - [Full _(only numbers)_](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/full_only_numbers.py)
   - [Major Minor Patch](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch.py)
-  - [Major Minor Patch Prerelease](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch_prerelease.py)
+  - [Major Minor Patch Pre-release](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch_prerelease.py)
 - _[Suffix Version](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/):_
   - [Full](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/full.py)
+  - [Full _(only numbers)_](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/full_only_numbers.py)
   - [Major Minor Patch](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch.py)
-  - [Major Minor Patch Prerelease](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch_prerelease.py)
+  - [Major Minor Patch Pre-release](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch_prerelease.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/commit_message/core/null.py)
 
 ### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/commiting/):

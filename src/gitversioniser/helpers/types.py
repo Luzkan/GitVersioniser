@@ -8,9 +8,11 @@ ROUTINE_VERSION_TYPE = Literal[
 ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
     "null",
     "prefix_version_full",
+    "prefix_version_full_only_numbers",
     "prefix_version_major_minor_patch",
     "prefix_version_major_minor_patch_prerelease",
     "suffix_version",
+    "suffix_version_full_only_numbers",
     "suffix_version_major_minor_patch",
     "suffix_version_major_minor_patch_prerelease",
 ]

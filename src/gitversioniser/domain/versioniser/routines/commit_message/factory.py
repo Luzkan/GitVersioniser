@@ -2,9 +2,11 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 from gitversioniser.domain.versioniser.routines.commit_message.core import (
     Null,
     PrefixVersionFull,
+    PrefixVersionFullOnlyNumbers,
     PrefixVersionMajorMinorPatch,
     PrefixVersionMajorMinorPatchPrerelease,
     SuffixVersionFull,
+    SuffixVersionFullOnlyNumbers,
     SuffixVersionMajorMinorPatch,
     SuffixVersionMajorMinorPatchPrerelease,
 )
@@ -17,9 +19,11 @@ class RoutineCommitMessageFactory:
         return {
             Null.factory_name(): Null,
             PrefixVersionFull.factory_name(): PrefixVersionFull,
+            PrefixVersionFullOnlyNumbers.factory_name(): PrefixVersionFullOnlyNumbers,
             PrefixVersionMajorMinorPatch.factory_name(): PrefixVersionMajorMinorPatch,
             PrefixVersionMajorMinorPatchPrerelease.factory_name(): PrefixVersionMajorMinorPatchPrerelease,
             SuffixVersionFull.factory_name(): SuffixVersionFull,
+            SuffixVersionFullOnlyNumbers.factory_name(): SuffixVersionFullOnlyNumbers,
             SuffixVersionMajorMinorPatch.factory_name(): SuffixVersionMajorMinorPatch,
             SuffixVersionMajorMinorPatchPrerelease.factory_name(): SuffixVersionMajorMinorPatchPrerelease,
         }[routine_commit_name]

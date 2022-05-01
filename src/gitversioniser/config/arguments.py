@@ -12,7 +12,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.3.0+build.3]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.3.1]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -38,6 +38,10 @@ class Arguments:
             help="(Routine) The way of contributing the GitVersioniser changes to remote repository. (default: %(default)s)"
         )
         parser.add_argument(
+            "-rsc", "--routine_should_contribute", default='if_build_or_higher',
+            help="(Routine) The way of contributing the GitVersioniser changes to remote repository. (default: %(default)s)"
+        )
+        parser.add_argument(
             "-rcl", "--routine_changelog", default='commit_pattern',
             help="(Routine) The way GitVersioniser will handle changelog. (default: %(default)s)"
         )
@@ -50,11 +54,12 @@ class Arguments:
             target_directory=parsed_arguments.target_directory,
             versioned_files=parsed_arguments.versioned_files,
             routines=Routines(
-                version=parsed_arguments.routine_version,
-                commit_message=parsed_arguments.routine_commit_message,
-                file_updater=parsed_arguments.routine_file_updater,
-                commiting=parsed_arguments.routine_commiting,
                 changelog=parsed_arguments.routine_changelog,
-                tagging=parsed_arguments.routine_tagging
+                commit_message=parsed_arguments.routine_commit_message,
+                commiting=parsed_arguments.routine_commiting,
+                file_updater=parsed_arguments.routine_file_updater,
+                should_contribute=parsed_arguments.routine_should_contribute,
+                tagging=parsed_arguments.routine_tagging,
+                version=parsed_arguments.routine_version
             ),
         )

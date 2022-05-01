@@ -2,4 +2,4 @@ from setuptools import setup
 
 
 if __name__ == "__main__":
-    setup(version='0.3.0+build.3')
+    setup(version='0.3.1')

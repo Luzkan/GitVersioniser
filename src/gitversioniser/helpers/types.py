@@ -27,6 +27,12 @@ ROUTINE_TAGGING_TYPE = Literal[
     "if_patch_or_higher",
     "if_prerelease_or_higher"
 ]
+ROUTINE_SHOULD_CONTRIBUTE = Literal[
+    "never",
+    "if_build_or_higher",
+    "if_patch_or_higher",
+    "if_prerelease_or_higher"
+]
 ROUTINE_FILE_UPDATER_TYPE = Literal[
     "null",
     "versionise_files"

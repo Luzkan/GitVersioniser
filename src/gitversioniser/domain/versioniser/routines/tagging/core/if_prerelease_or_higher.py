@@ -19,7 +19,7 @@ class IfPrereleaseOrHigher(RoutineTagging):
     def prerelease_number(self, prerelease: str | None) -> int:
         if not prerelease:
             return 0
-        match = RegexPattern.prerelease(prerelease)
+        match = RegexPattern.semver_substring_to_number(prerelease)
         return int(match.group(1)) if match else 0
 
     def tag(self, result: VersioningResult):

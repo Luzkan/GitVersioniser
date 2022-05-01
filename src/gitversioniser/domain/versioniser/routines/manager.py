@@ -7,6 +7,7 @@ from gitversioniser.domain.versioniser.routines.changelog import RoutineChangelo
 from gitversioniser.domain.versioniser.routines.commit_message import RoutineCommitMessage, RoutineCommitMessageFactory
 from gitversioniser.domain.versioniser.routines.commiting import RoutineCommiting, RoutineCommitingFactory
 from gitversioniser.domain.versioniser.routines.file_updater import RoutineFileUpdater, RoutineFileUpdaterFactory
+from gitversioniser.domain.versioniser.routines.should_contribute import RoutineShouldContribute, RoutineShouldContributeFactory
 from gitversioniser.domain.versioniser.routines.tagging import RoutineTagging, RoutineTaggingFactory
 from gitversioniser.domain.versioniser.routines.version import RoutineVersion, RoutineVersionFactory
 
@@ -18,12 +19,13 @@ class RoutineManager:
 
     def __post_init__(self):
         deps: tuple[Config, GitRepository] = (self.config, self.repository)
+        self.tagging: RoutineTagging = RoutineTaggingFactory.create(self.config.routines.tagging)(*deps)
         self.version: RoutineVersion = RoutineVersionFactory.create(self.config.routines.version)(*deps)
-        self.commit_message: RoutineCommitMessage = RoutineCommitMessageFactory.create(self.config.routines.commit_message)(*deps)
+        self.changelog: RoutineChangelog = RoutineChangelogFactory.create(self.config.routines.changelog)(*deps)
         self.commiting: RoutineCommiting = RoutineCommitingFactory.create(self.config.routines.commiting)(*deps)
         self.file_updater: RoutineFileUpdater = RoutineFileUpdaterFactory.create(self.config.routines.file_updater)(*deps)
-        self.changelog: RoutineChangelog = RoutineChangelogFactory.create(self.config.routines.changelog)(*deps)
-        self.tagging: RoutineTagging = RoutineTaggingFactory.create(self.config.routines.tagging)(*deps)
+        self.commit_message: RoutineCommitMessage = RoutineCommitMessageFactory.create(self.config.routines.commit_message)(*deps)
+        self.should_contribute: RoutineShouldContribute = RoutineShouldContributeFactory.create(self.config.routines.should_contribute)(*deps)
 
     def versionise(self) -> VersioningResult:
         versions = self.version.run()
@@ -34,7 +36,10 @@ class RoutineManager:
             changelog=self.changelog.run(versions.new)
         )
 
-    def contribute(self, result: VersioningResult):
+    def contribute(self, result: VersioningResult) -> None:
+        if not self.should_contribute.run(result):
+            return
+
         self.commiting.run(result)
         self.tagging.run(result)
 

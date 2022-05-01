@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.0+build.3]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.1]</code></i>
     </div>
 </div>
 
@@ -62,11 +62,18 @@ _Hint: Think about the repository as a device that can be entirely customized by
 - [Commits Till Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/commits_till_last_gitversioniser_commit.py) _(default)_
 - [Last Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_commit.py)
 
+### [**Should Contribute**](./src/gitversioniser/domain/versioniser/routines/version/) when:
+
+- [If _(new version is)_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_build_or_higher.py) _(default)_
+- [If _(new version is)_ Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_prerelease_or_higher.py)
+- [If _(new version is)_ Patch or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_patch_or_higher.py)
+- [Never](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/never.py)
+
 ### [**Tagging**](./src/gitversioniser/domain/versioniser/routines/tagging/):
 
 - [Always](./src/gitversioniser/domain/versioniser/routines/tagging/core/always.py) _(default)_
 - [If Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
-- [If Pre-release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
+- [If Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/tagging/core/null.py)
 
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
@@ -75,12 +82,12 @@ _Hint: Think about the repository as a device that can be entirely customized by
   - [Full](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/full.py) _(default)_
   - [Full _(only numbers)_](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/full_only_numbers.py)
   - [Major Minor Patch](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch.py)
-  - [Major Minor Patch Pre-release](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch_prerelease.py)
+  - [Major Minor Patch Pre-Release](./src/gitversioniser/domain/versioniser/routines/commit_message/core/prefix_version/major_minor_patch_prerelease.py)
 - _[Suffix Version](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/):_
   - [Full](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/full.py)
   - [Full _(only numbers)_](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/full_only_numbers.py)
   - [Major Minor Patch](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch.py)
-  - [Major Minor Patch Pre-release](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch_prerelease.py)
+  - [Major Minor Patch Pre-Release](./src/gitversioniser/domain/versioniser/routines/commit_message/core/suffix_version/major_minor_patch_prerelease.py)
 - [Null](./src/gitversioniser/domain/versioniser/routines/commit_message/core/null.py)
 
 ### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/commiting/):

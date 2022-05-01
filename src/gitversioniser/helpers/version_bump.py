@@ -5,3 +5,4 @@ class VersionBump(Enum):
     MAJOR = "major"
     MINOR = "minor"
     PATCH = "patch"
+    PRERELEASE = "prerelease"

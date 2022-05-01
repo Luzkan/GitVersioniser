@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <p style="font-style: italic;">Automatic Semantic Versioniser & Change Tracker [0.3.0+build.2]</p>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.0+build.3]</code></i>
     </div>
 </div>
 

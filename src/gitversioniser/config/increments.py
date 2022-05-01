@@ -9,6 +9,7 @@ class Increments:
     major: Increment = Increment("#major", VersionBump.MAJOR)
     minor: Increment = Increment("#minor", VersionBump.MINOR)
     patch: Increment = Increment("#patch", VersionBump.PATCH)
+    prerelease: Increment = Increment("#prerelease", VersionBump.PRERELEASE)
 
     def parse_version_bump(self, commit_message: str) -> VersionBump:
         increment: Increment

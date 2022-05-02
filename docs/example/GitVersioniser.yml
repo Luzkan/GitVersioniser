@@ -49,5 +49,5 @@ jobs:
           # File Versioning
           # ----
           routine_file_updater: "versionise_files"
-          versioned_files: "README.md"
+          versioned_files: ""
           

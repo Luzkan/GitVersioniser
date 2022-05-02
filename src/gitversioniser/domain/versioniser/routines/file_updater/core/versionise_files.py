@@ -9,10 +9,15 @@ from gitversioniser.domain.versioniser.utils.versions import Versions
 @dataclass
 class VersioniseFiles(RoutineFileUpdater):
     def run(self, versions: Versions) -> UpdatedFiles:
-        return UpdatedFiles.init_normalize([self._replace_version(self._find_file(filename), versions) for filename in self.config.versioned_files])
+        return UpdatedFiles.init_normalize([
+            self._replace_version(self._find_file(filename), versions) for filename in self.config.versioned_files
+        ])
 
     def _find_file(self, filename: str) -> Path:
-        return sorted(Path(self.config.target_repository_path).glob(f'**/{filename}'))[0]
+        try:
+            return sorted(Path(self.config.target_repository_path).glob(f'**/{filename}'))[0]
+        except IndexError:
+            raise FileNotFoundError(f'File {filename} not found in the repository.')
 
     @staticmethod
     def _replace_version(filepath: Path, versions: Versions) -> Path | None:

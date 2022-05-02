@@ -1,16 +1,17 @@
 import logging
 from typing import Literal
 
-from rich import pretty
+from rich import pretty, traceback
 from rich.console import Console
 from rich.logging import RichHandler
 
 
-pretty.install()
-
-CONSOLE_LOG_LEVEL: Literal['CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG'] = 'INFO'
 CONSOLE = Console(width=140, force_terminal=True)
 
+pretty.install(console=CONSOLE)
+traceback.install(console=CONSOLE)
+
+CONSOLE_LOG_LEVEL: Literal['CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG'] = 'INFO'
 
 logging.basicConfig(
     level=CONSOLE_LOG_LEVEL,

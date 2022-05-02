@@ -1,6 +1,6 @@
 from parameterized import parameterized
-from semver import VersionInfo
 
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.changelog.routine import TestRoutineChangelog
 from tests.v0.routines.changelog.utils.changelog import TestChangelogManager
@@ -9,7 +9,7 @@ from tests.v0.routines.changelog.utils.changelog import TestChangelogManager
 class TestCommitPattern(TestRoutineChangelog):
     @parameterized.expand([
         (
-            VersionInfo(1, 2, 3, 'rc.2', 'build.2'),
+            SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
             [
                 'A: Feature1',
                 'A: Feature2',
@@ -20,7 +20,7 @@ class TestCommitPattern(TestRoutineChangelog):
             ('test_output_1',)
         ),
         (
-            VersionInfo(1, 2, 3, 'rc.2', 'build.2'),
+            SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
             [
                 'C: Feature1',
                 'C: Feature2',
@@ -33,7 +33,7 @@ class TestCommitPattern(TestRoutineChangelog):
             ('test_output_2',)
         ),
         (
-            VersionInfo(3, 63, 19, 'build.55323'),
+            SemverTag.init_spec(3, 63, 19, 'build.55323'),
             [
                 'A: Versioniser',
                 'A: Added Add',
@@ -46,8 +46,8 @@ class TestCommitPattern(TestRoutineChangelog):
             ('test_output_3_1', 'test_output_3_2')
         ),
     ])
-    def test_create_changelog(self, new_version: VersionInfo, commit_messages: list[str], test_output_names: tuple[str]):
-        def mini_routine(new_version: VersionInfo, test_output: str):
+    def test_create_changelog(self, new_version: SemverTag, commit_messages: list[str], test_output_names: tuple[str]):
+        def mini_routine(new_version: SemverTag, test_output: str):
             self.repo_utils.create_gitversioniser_commit(commit_messages[0])
             self.repo_utils.create_commits(commit_messages[1:])
             self.routine.run(new_version)

@@ -1,15 +1,14 @@
 from dataclasses import dataclass
 from datetime import datetime
 
-from semver import VersionInfo
-
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.routines.changelog.abstract import RoutineChangelog
 from gitversioniser.domain.versioniser.routines.changelog.utils.file import ChangelogFile
 
 
 @dataclass
 class LastCommitMessageAsDescription(RoutineChangelog):
-    def update_changelog(self, new_version: VersionInfo, changelog: ChangelogFile) -> ChangelogFile:
+    def update_changelog(self, new_version: SemverTag, changelog: ChangelogFile) -> ChangelogFile:
         return changelog\
             .add_header([
                 self._get_header(str(new_version)),

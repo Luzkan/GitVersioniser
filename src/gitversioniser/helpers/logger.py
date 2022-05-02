@@ -5,6 +5,7 @@ from rich import pretty, traceback
 from rich.console import Console
 from rich.logging import RichHandler
 
+
 CONSOLE_WIDTH: int = 140
 CONSOLE: Console = Console(width=CONSOLE_WIDTH, force_terminal=True)
 

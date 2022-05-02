@@ -1,6 +1,6 @@
 from parameterized import parameterized
-from semver import VersionInfo
 
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.utils.versions import Versions
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.version.routine import TestRoutineVersion
@@ -8,48 +8,48 @@ from tests.v0.routines.version.routine import TestRoutineVersion
 
 class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
     @parameterized.expand([
-        (VersionInfo(1, 2, 3), VersionInfo(1, 3, 0), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 3, 0), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #minor',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 3, 0, prerelease='alpha.1'), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 3, 0, prerelease='alpha.1'), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #minor #alpha',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 3, 0, prerelease='alpha.1'), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 3, 0, prerelease='alpha.1'), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #alpha #minor',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 4), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #patch #patch #patch',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(2, 1, 1), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(2, 1, 1), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #patch #major #minor #patch',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(2, 0, 0, prerelease='beta.1'), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(2, 0, 0, prerelease='beta.1'), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #major #beta',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(2, 0, 0, prerelease='rc.1'), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(2, 0, 0, prerelease='rc.1'), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #major #prerelease',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(2, 0, 0), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(2, 0, 0), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #major #fin #prerelease',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(2, 0, 0), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(2, 0, 0), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #major #prerelease #fin ',
         ]),
-        (VersionInfo(1, 88, 232, 'rc.4', build='build.1'), VersionInfo(1, 88, 232, build='build.1'), [
+        (SemverTag.init_spec(1, 88, 232, 'rc.4', build='build.1'), SemverTag.init_spec(1, 88, 232, build='build.1'), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something. #fin',
             'F: Something. ',
         ]),
-        (VersionInfo(1, 2, 3), VersionInfo(2, 1, 2, build='build.1'), [
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(2, 1, 2, build='build.1'), [
             'A: This is last GitVerisoniser Commit. #patch',
             'F: Something.',
             'C: Something. #major',
@@ -58,7 +58,7 @@ class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
             'R: Something. #patch',
             'A: Something.',
         ]),
-        (VersionInfo(1, 88, 232, 'rc.4', build='build.1'), VersionInfo(2, 1, 2, build='build.1'), [
+        (SemverTag.init_spec(1, 88, 232, 'rc.4', build='build.1'), SemverTag.init_spec(2, 1, 2, build='build.1'), [
             'A: This is last GitVerisoniser Commit.',
             'F: Something.',
             'C: Something. #major',

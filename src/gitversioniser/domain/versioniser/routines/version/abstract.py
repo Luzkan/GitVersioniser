@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 
-from semver import VersionInfo
-
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.routines.abstract import Routine
 from gitversioniser.domain.versioniser.utils.versions import Versions
 
@@ -14,5 +13,5 @@ class RoutineVersion(Routine, ABC):
         )
 
     @abstractmethod
-    def generate_new_version(self) -> VersionInfo:
+    def generate_new_version(self) -> SemverTag:
         pass

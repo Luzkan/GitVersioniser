@@ -1,6 +1,6 @@
 from parameterized import parameterized
-from semver import VersionInfo
 
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.changelog.routine import TestRoutineChangelog
 from tests.v0.routines.changelog.utils.changelog import TestChangelogManager
@@ -9,7 +9,7 @@ from tests.v0.routines.changelog.utils.changelog import TestChangelogManager
 class TestLastCommitAsSummary(TestRoutineChangelog):
     @parameterized.expand([
         (
-            VersionInfo(1, 2, 3, 'rc.2', 'build.2'),
+            SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
             [
                 'R: Something',
                 'C: Something1',
@@ -20,7 +20,7 @@ class TestLastCommitAsSummary(TestRoutineChangelog):
             ('test_output_1',)
         ),
         (
-            VersionInfo(1, 2, 3, 'rc.2', 'build.2'),
+            SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
             [
                 'R: Something',
                 'A: Feature\nSome Text\nMaybe a little bit more messages',
@@ -28,7 +28,7 @@ class TestLastCommitAsSummary(TestRoutineChangelog):
             ('test_output_2',)
         ),
         (
-            VersionInfo(3, 63, 19, 'build.55323'),
+            SemverTag.init_spec(3, 63, 19, 'build.55323'),
             [
                 'R: Something',
                 '### Styling markdown\n\n#### Right from the commit message\n\n- Test1\n- Test2\n- Test3',
@@ -36,8 +36,8 @@ class TestLastCommitAsSummary(TestRoutineChangelog):
             ('test_output_3_1', 'test_output_3_2')
         ),
     ])
-    def test_create_changelog(self, new_version: VersionInfo, commit_messages: list[str], test_output_names: tuple[str]):
-        def mini_routine(new_version: VersionInfo, test_output: str) -> None:
+    def test_create_changelog(self, new_version: SemverTag, commit_messages: list[str], test_output_names: tuple[str]):
+        def mini_routine(new_version: SemverTag, test_output: str) -> None:
             self.repo_utils.create_gitversioniser_commit(commit_messages[0])
             self.repo_utils.create_commits(commit_messages[1:])
             self.routine.run(new_version)

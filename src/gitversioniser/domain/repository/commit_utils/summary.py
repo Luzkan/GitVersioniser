@@ -8,7 +8,7 @@ from gitversioniser.domain.repository.commit_utils.version_tag_utils import Vers
 
 @dataclass
 class Summary:
-    config: Config
+    config: Config = field(repr=False)
     value: str
     bump_tag: IncrementTagUtils = field(init=False)
     commit_tag: CommitTagUtils = field(init=False)

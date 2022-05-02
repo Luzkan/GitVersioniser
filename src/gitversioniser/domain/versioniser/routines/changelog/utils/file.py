@@ -12,11 +12,11 @@ class ChangelogFile:
     @property
     def line_index_for_new_header(self):
         two_lines_after_horizontal_separator = 2
-        return self.horizontal_line_index+two_lines_after_horizontal_separator
+        return self.horizontal_line_index + two_lines_after_horizontal_separator
 
     @property
     def line_index_for_new_entry(self):
-        return self.line_index_for_new_header+self.header_length
+        return self.line_index_for_new_header + self.header_length
 
     @property
     def horizontal_line_index(self) -> int:
@@ -67,6 +67,6 @@ class ChangelogFile:
         return ''.join([
             '\n',
             '-- -- -- -- --\n',
-            *self.lines[self.line_index_for_new_header:self.line_index_for_new_header+self.entry_length+1],
+            *self.lines[self.line_index_for_new_header:self.line_index_for_new_header + self.entry_length + 1],
             '-- -- -- -- --'
         ])

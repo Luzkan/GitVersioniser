@@ -9,7 +9,7 @@ from gitversioniser.domain.repository.commit_utils.version_tag_utils import Vers
 
 @dataclass
 class Message:
-    config: Config
+    config: Config = field(repr=False)
     value: str
     summary: Summary = field(init=False)
     increment_tag: IncrementTagUtils = field(init=False)

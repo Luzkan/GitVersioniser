@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
 from gitversioniser.domain.versioniser.routines.changelog.utils.file import ChangelogFile
+from gitversioniser.domain.versioniser.routines.commit_message.utils.commit_message_result import CommitMessageResult
 from gitversioniser.domain.versioniser.routines.file_updater.utils.updated_files import UpdatedFiles
 from gitversioniser.domain.versioniser.utils.versions import Versions
 from gitversioniser.helpers.logger import CONSOLE
@@ -9,7 +10,7 @@ from gitversioniser.helpers.logger import CONSOLE
 @dataclass(frozen=True)
 class VersioningResult:
     versions: Versions
-    commit_message: str
+    commit_message: CommitMessageResult
     prefix_tag_with_v: bool
     updated_files: UpdatedFiles
     changelog: ChangelogFile

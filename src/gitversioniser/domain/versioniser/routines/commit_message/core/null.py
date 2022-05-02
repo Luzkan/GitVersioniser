@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
-from semver import VersionInfo
-
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.routines.commit_message.abstract import RoutineCommitMessage
 
 
@@ -11,8 +10,8 @@ class Null(RoutineCommitMessage):
     Does not change the original commit message.
     """
 
-    def run(self, new_version: VersionInfo) -> str:
-        return str(self.repo.commits.latest.summary)
+    def new_commit_message(self, new_version: SemverTag) -> str:
+        return str(self.repo.commits.latest.message.value.rstrip())
 
     @staticmethod
     def factory_name() -> str:

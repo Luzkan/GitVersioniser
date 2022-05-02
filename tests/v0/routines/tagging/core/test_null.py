@@ -1,8 +1,8 @@
 from unittest.mock import Mock
 
 from parameterized import parameterized
-from semver import VersionInfo
 
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.utils.routine_result import VersioningResult
 from gitversioniser.domain.versioniser.utils.versions import Versions
 from tests.utils.pseudo_repo import PseudoRepo
@@ -11,10 +11,10 @@ from tests.v0.routines.tagging.routine import TestRoutineTagging
 
 class TestNever(TestRoutineTagging):
     @parameterized.expand([
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4)),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 2)),
-        (VersionInfo(5, 0, 0), VersionInfo(6, 0, 0)),
-        (VersionInfo(1, 1, 1), VersionInfo(0, 0, 0)),
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 4)),
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 2)),
+        (SemverTag.init_spec(5, 0, 0), SemverTag.init_spec(6, 0, 0)),
+        (SemverTag.init_spec(1, 1, 1), SemverTag.init_spec(0, 0, 0)),
     ])
     def test_no_bump(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))

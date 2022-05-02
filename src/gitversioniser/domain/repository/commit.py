@@ -10,8 +10,8 @@ from gitversioniser.domain.repository.commit_utils.summary import Summary
 @dataclass
 class Commit:
     """ Couldn't make it with inheritance. """
-    config: Config
-    _commit: GitCommit
+    config: Config = field(repr=False)
+    _commit: GitCommit = field(repr=False)
     message: Message = field(init=False)
 
     @property

@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 
-from semver import VersionInfo
+from gitversioniser.domain.repository.semver_tag import SemverTag
 
 
 @dataclass
 class Versions:
-    old: VersionInfo
-    new: VersionInfo
+    old: SemverTag
+    new: SemverTag

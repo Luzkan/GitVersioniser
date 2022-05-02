@@ -1,6 +1,6 @@
 from parameterized import parameterized
-from semver import VersionInfo
 
+from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.utils.versions import Versions
 from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.prefix_tag_with_v.routine import TestRoutinePrefixTagWithV
@@ -8,12 +8,12 @@ from tests.v0.routines.prefix_tag_with_v.routine import TestRoutinePrefixTagWith
 
 class TestNever(TestRoutinePrefixTagWithV):
     @parameterized.expand([
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 4)),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 3)),
-        (VersionInfo(1, 2, 3), VersionInfo(1, 2, 2)),
-        (VersionInfo(5, 0, 0), VersionInfo(6, 0, 0)),
-        (VersionInfo(1, 1, 1), VersionInfo(0, 0, 0)),
-        (VersionInfo(3, 3, 3), VersionInfo(3, 3, 3)),
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 4)),
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 3)),
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 2)),
+        (SemverTag.init_spec(5, 0, 0), SemverTag.init_spec(6, 0, 0)),
+        (SemverTag.init_spec(1, 1, 1), SemverTag.init_spec(0, 0, 0)),
+        (SemverTag.init_spec(3, 3, 3), SemverTag.init_spec(3, 3, 3)),
     ])
     def test_false(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))

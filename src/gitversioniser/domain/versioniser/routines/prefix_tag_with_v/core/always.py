@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 
 from gitversioniser.domain.versioniser.routines.should_contribute.abstract import RoutineShouldContribute
-from gitversioniser.domain.versioniser.utils.versions import Versions
+from gitversioniser.domain.versioniser.utils.routine_result import VersioningResult
 
 
 @dataclass
 class Always(RoutineShouldContribute):
-    def run(self, versions: Versions) -> bool:
+    def run(self, result: VersioningResult) -> bool:
         return True
 
     @staticmethod

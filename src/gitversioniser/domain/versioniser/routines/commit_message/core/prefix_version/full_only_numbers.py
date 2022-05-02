@@ -10,12 +10,13 @@ class PrefixVersionFullOnlyNumbers(RoutineCommitMessage):
     def run(self, new_version: VersionInfo) -> str:
         version_tag = f"{str(new_version.major)}.{str(new_version.minor)}.{str(new_version.patch)}"
         if new_version.prerelease:
-            version_tag += f"-{self.filter_only_digits(str(new_version.prerelease))}"
+            version_tag += f"-{self._filter_only_digits(str(new_version.prerelease))}"
         if new_version.build:
-            version_tag += f"+{self.filter_only_digits(str(new_version.build))}"
+            version_tag += f"+{self._filter_only_digits(str(new_version.build))}"
         return f"[`{version_tag}`] {self.repo.commits.latest.summary}"
 
-    def filter_only_digits(self, version: str) -> str:
+    @staticmethod
+    def _filter_only_digits(version: str) -> str:
         return "".join(filter(str.isdigit, version))
 
     @staticmethod

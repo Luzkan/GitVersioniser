@@ -18,10 +18,3 @@ class TestSuffixTag(TestRoutineCommitMessage):
     def test_suffix(self, version_info, commit_message, expected_commit_message):
         self.routine.repo.commits.commit(commit_message)
         self.assertEqual(self.routine.run(version_info), expected_commit_message)
-
-    # TODO: Sanitize commit inputs first.
-    # @given(text(min_size=1))
-    # def test_suffix_exhausted(self, text):
-    #     self.routine = self.get_routine('prefix_tag')
-    #     self.routine.target_repo.commits.commit(text)
-    #     self.assertEqual(self.routine.run(VersionInfo(0, 0, 1)), f"{text} [`0.0.1`]")

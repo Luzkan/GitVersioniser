@@ -10,18 +10,20 @@ class ChangelogEntry:
 
     def create_category_entries(self) -> Generator[str, None, None]:
         for category, changes in self.changes.items():
-            yield self.header(category) if changes else ""
+            yield self._header(category) if changes else ""
             yield from changes
             yield "\n"
 
     def add(self, category: ChangelogCategory, message: str):
-        self.changes.setdefault(str(category.value), []).append(self.content(message))
+        self.changes.setdefault(str(category.value), []).append(self._content(message))
 
     def add_custom(self, category: str, message: str):
-        self.changes.setdefault(category, []).append(self.content(message))
+        self.changes.setdefault(category, []).append(self._content(message))
 
-    def header(self, category_name: str) -> str:
+    @staticmethod
+    def _header(category_name: str) -> str:
         return f"### {category_name}\n\n"
 
-    def content(self, entry: str) -> str:
+    @staticmethod
+    def _content(entry: str) -> str:
         return f"- {entry}\n"

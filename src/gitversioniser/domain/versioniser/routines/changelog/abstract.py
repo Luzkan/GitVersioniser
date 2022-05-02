@@ -16,5 +16,5 @@ class RoutineChangelog(Routine, ABC):
         return self.update_changelog(new_version, ChangelogFile.init_from_path(self.changelog_finder.get_changelog())).save_file()
 
     @abstractmethod
-    def update_changelog(self, new_version: VersionInfo, changelog_file: ChangelogFile) -> ChangelogFile:
+    def update_changelog(self, new_version: VersionInfo, changelog: ChangelogFile) -> ChangelogFile:
         """ Must return updated changelog."""

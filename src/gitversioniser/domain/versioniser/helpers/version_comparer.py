@@ -29,7 +29,7 @@ class VersionComparer:
             self.versions.new.major == self.versions.old.major,
             self.versions.new.minor == self.versions.old.minor,
             self.versions.new.patch == self.versions.old.patch,
-            self.semver_substring_to_number(self.versions.new.prerelease) > self.semver_substring_to_number(self.versions.old.prerelease)
+            self._semver_substring_to_number(self.versions.new.prerelease) > self._semver_substring_to_number(self.versions.old.prerelease)
         ])
 
     def is_new_build(self) -> bool:
@@ -37,11 +37,12 @@ class VersionComparer:
             self.versions.new.major == self.versions.old.major,
             self.versions.new.minor == self.versions.old.minor,
             self.versions.new.patch == self.versions.old.patch,
-            self.semver_substring_to_number(self.versions.new.prerelease) == self.semver_substring_to_number(self.versions.old.prerelease),
-            self.semver_substring_to_number(self.versions.new.build) > self.semver_substring_to_number(self.versions.old.build)
+            self._semver_substring_to_number(self.versions.new.prerelease) == self._semver_substring_to_number(self.versions.old.prerelease),
+            self._semver_substring_to_number(self.versions.new.build) > self._semver_substring_to_number(self.versions.old.build)
         ])
 
-    def semver_substring_to_number(self, semver_substring: str | None) -> int:
+    @staticmethod
+    def _semver_substring_to_number(semver_substring: str | None) -> int:
         if not semver_substring:
             return 0
         match = RegexPattern.semver_substring_to_number(semver_substring)

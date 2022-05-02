@@ -13,26 +13,28 @@ class CommitPattern(RoutineChangelog):
     def update_changelog(self, new_version: VersionInfo, changelog: ChangelogFile) -> ChangelogFile:
         return changelog\
             .add_header([
-                self.get_header(str(new_version)),
+                self._get_header(str(new_version)),
                 "\n"
             ])\
             .add_entry([
-                *self.get_entry()
+                *self._get_entry()
             ])\
             .add_footer(
-                self.get_footer(str(new_version), self.repo.github_user_repo, self.repo.repo_name)
+                self._get_footer(str(new_version), self.repo.github_user_repo, self.repo.repo_name)
             )
 
-    def get_header(self, new_version):
+    @staticmethod
+    def _get_header(new_version):
         return f"## [[`{new_version}`]] - {datetime.now().strftime('%Y-%m-%d')}\n"
 
-    def get_entry(self) -> list[str]:
-        return list(self.get_entries_from_commit_messages().create_category_entries())
+    def _get_entry(self) -> list[str]:
+        return list(self._get_entries_from_commit_messages().create_category_entries())
 
-    def get_footer(self, version: str, github_user: str, repo_name: str) -> str:
+    @staticmethod
+    def _get_footer(version: str, github_user: str, repo_name: str) -> str:
         return f"[`{version}`]: https://github.com/{github_user}/{repo_name}/releases/tag/{version}\n"
 
-    def get_entries_from_commit_messages(self) -> ChangelogEntry:
+    def _get_entries_from_commit_messages(self) -> ChangelogEntry:
         changelog_changes = ChangelogEntry()
         for commit in self.repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
             if commit.summary.commit_tag.exist():

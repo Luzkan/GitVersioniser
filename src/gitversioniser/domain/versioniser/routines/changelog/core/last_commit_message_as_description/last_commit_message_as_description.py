@@ -12,23 +12,25 @@ class LastCommitMessageAsDescription(RoutineChangelog):
     def update_changelog(self, new_version: VersionInfo, changelog: ChangelogFile) -> ChangelogFile:
         return changelog\
             .add_header([
-                self.get_header(str(new_version)),
+                self._get_header(str(new_version)),
                 "\n",
-                self.get_description(),
+                self._get_description(),
                 "\n"
             ])\
             .add_footer(
-                self.get_footer(str(new_version), self.repo.github_user_repo, self.repo.repo_name)
+                self._get_footer(str(new_version), self.repo.github_user_repo, self.repo.repo_name)
             )
 
-    def get_header(self, new_version) -> str:
+    @staticmethod
+    def _get_header(new_version: str) -> str:
         return f"## [[`{new_version}`]] - {datetime.now().strftime('%Y-%m-%d')}\n"
 
-    def get_footer(self, version: str, github_user: str, repo_name: str) -> str:
-        return f"[`{version}`]: https://github.com/{github_user}/{repo_name}/releases/tag/{version}\n"
-
-    def get_description(self) -> str:
+    def _get_description(self) -> str:
         return f"{self.repo.commits.latest.message.value}\n"
+
+    @staticmethod
+    def _get_footer(version: str, github_user: str, repo_name: str) -> str:
+        return f"[`{version}`]: https://github.com/{github_user}/{repo_name}/releases/tag/{version}\n"
 
     @staticmethod
     def factory_name() -> str:

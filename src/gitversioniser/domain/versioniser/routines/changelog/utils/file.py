@@ -41,14 +41,14 @@ class ChangelogFile:
         return self._recreate(lines=[*self.lines, footer_line])
 
     def save_file(self) -> 'ChangelogFile':
-        with open(self.path, 'w') as changelog_file:
+        with open(self.path, 'w', encoding='utf-8') as changelog_file:
             changelog_file.writelines(self.lines)
         return self
 
     @staticmethod
     def init_from_path(changelog_path: Path) -> 'ChangelogFile':
         def load_changelog_lines():
-            with open(changelog_path, "r") as changelog_file:
+            with open(changelog_path, "r", encoding='utf-8') as changelog_file:
                 return changelog_file.readlines()
 
         return ChangelogFile(

@@ -7,5 +7,5 @@ from gitversioniser.domain.versioniser.utils.versions import Versions
 class RoutinePrefixTagWithV(Routine, ABC):
 
     @abstractmethod
-    def run(self, result: Versions) -> bool:
+    def run(self, versions: Versions) -> bool:
         pass

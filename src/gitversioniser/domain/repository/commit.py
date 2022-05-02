@@ -30,4 +30,4 @@ class Commit:
         return Commit(self.config, _commit=self._commit.parents[0])
 
     def is_made_by_author(self, author: str) -> bool:
-        return self._commit.committer.name == author or self._commit.author.name == author
+        return author in [self._commit.committer.name, self._commit.author.name]

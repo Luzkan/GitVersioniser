@@ -21,14 +21,15 @@ class Tags:
     @property
     def get_semvers_sorted(self) -> list[str]:
         return sorted([
-            self.truncate_v_from_semver(str(tag)) for tag in self.repo.git.tag("-l", "--sort=-v:refname", "*.*.*").split('\n')
+            self._truncate_v_from_semver(str(tag)) for tag in self.repo.git.tag("-l", "--sort=-v:refname", "*.*.*").split('\n')
         ], reverse=True)
 
     @property
     def get_sorted(self) -> list[str]:
         return [str(tag) for tag in self.repo.git.tag("--sort=-v:refname").split('\n')]
 
-    def truncate_v_from_semver(self, tag_semver: str) -> str:
+    @staticmethod
+    def _truncate_v_from_semver(tag_semver: str) -> str:
         return tag_semver[1:] if tag_semver and tag_semver[0] == 'v' else tag_semver
 
     @property

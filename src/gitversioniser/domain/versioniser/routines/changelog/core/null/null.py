@@ -7,7 +7,7 @@ from gitversioniser.domain.versioniser.routines.changelog.abstract import Routin
 
 @dataclass
 class Null(RoutineChangelog):
-    def run(self, version: VersionInfo) -> None:
+    def run(self, new_version: VersionInfo) -> None:
         """ This routine does nothing. """
 
     @staticmethod

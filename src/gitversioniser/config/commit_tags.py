@@ -25,5 +25,4 @@ class CommitTags:
         raise ValueError(f"Unknown Commit Tag in message: {message}")
 
     def has_commit_tag(self, commit_message: str) -> bool:
-        BEGINNING_OF_STRING = 5
-        return any([commit_tag.pattern in commit_message[:BEGINNING_OF_STRING] for commit_tag in self.__dict__.values()])
+        return any([commit_tag.pattern in commit_message for commit_tag in self.__dict__.values()])

@@ -8,19 +8,17 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ## [[`1.2.3-rc.2+build.3`]] - [date]
 
-### Changed
+### Added
 
 - Feature2
 - Feature3
 
+### Fixed
+
+- Bugged Thing
+
 ### Removed
 
-- Bugged Thing #minor
-- Useless Stuff
-
-### Security
-
-- Useless Stuff
 - Useless Stuff
 
 

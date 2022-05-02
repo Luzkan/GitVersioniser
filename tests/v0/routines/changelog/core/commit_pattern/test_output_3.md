@@ -6,23 +6,28 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
-## [[`1.2.3-rc.2+build.3`]] - [date]
+## [[`1.2.3-rc.1+build.2`]] - [date]
 
 ### Changed
 
+- Feature1
 - Feature2
 - Feature3
+- Feature4
+- Feature5
+- Feature6
+- Feature7
+- Feature8
 
-### Removed
+### Fixed
 
-- Bugged Thing #minor
-- Useless Stuff
+- Fixed something here in the commit too!
 
 ### Security
 
-- Useless Stuff
-- Useless Stuff
+- Security Feature 1
+- Security Feature 2
 
 
 
-[`1.2.3-rc.2+build.3`]: https://github.com/Luzkan/GitVersioniserTest/releases/tag/1.2.3-rc.2+build.3
+[`1.2.3-rc.1+build.2`]: https://github.com/Luzkan/GitVersioniserTest/releases/tag/1.2.3-rc.1+build.2

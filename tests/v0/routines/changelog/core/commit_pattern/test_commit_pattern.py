@@ -11,18 +11,18 @@ class TestCommitPattern(TestRoutineChangelog):
         (
             SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
             [
-                'A: Feature1',
+                'Last GitVersioniser Commit',
                 'A: Feature2',
                 'A: Feature3',
                 'F: Bugged Thing',
                 'R: Useless Stuff',
             ],
-            ('test_output_1',)
+            ('test_output_0',)
         ),
         (
             SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
             [
-                'C: Feature1',
+                'Last GitVersioniser Commit',
                 'C: Feature2',
                 'C: Feature3',
                 'R: Bugged Thing #minor \n #minor \n [1.2.3]',
@@ -30,12 +30,12 @@ class TestCommitPattern(TestRoutineChangelog):
                 'S: Useless Stuff',
                 'S: Useless Stuff',
             ],
-            ('test_output_2',)
+            ('test_output_1',)
         ),
         (
             SemverTag.init_spec(3, 63, 19, 'build.55323'),
             [
-                'A: Versioniser',
+                'Last GitVersioniser Commit',
                 'A: Added Add',
                 'C: Changed Change',
                 'D: Deprecated Deprecation ',
@@ -43,7 +43,42 @@ class TestCommitPattern(TestRoutineChangelog):
                 'F: Fixed Fix',
                 'S: Security Secure',
             ],
-            ('test_output_3_1', 'test_output_3_2')
+            ('test_output_2_1', 'test_output_2_2')
+        ),
+        (
+            SemverTag.init('1.2.3-rc.1+build.1'),
+            [
+                'Last GitVersioniser Commit',
+                'C: Feature1\n\n\n',
+                'C: Feature2',
+                'C: Feature3\n',
+                'C: Feature4',
+                'C: Feature5\nHere is a small elaboration on the topic at hand.\nYeah.',
+                'C: Feature6',
+                'C: Feature7\nF: Fixed something here in the commit too!',
+                'C: Feature8',
+                'S: Security Feature 1',
+                'S: Security Feature 2',
+            ],
+            ('test_output_3',)
+        ),
+        (
+            SemverTag.init('1.2.3-rc.1+build.1'),
+            [
+                'Last GitVersioniser Commit',
+                'Merge Commit #fin \n'
+                '* C: Feature1\n\n'
+                '* C: Feature2\n\n'
+                '* C: Feature3\n\n'
+                '* C: Feature4\n\n'
+                '* C: Feature5\nHere is a small elaboration on the topic at hand.\nYeah.\n\n'
+                '* C: Feature6\n\n'
+                '* C: Feature7\nF: Fixed something here in the commit too!\n'
+                '* C: Feature8\n\n'
+                '* S: Security Feature 1\n\n'
+                '* S: Security Feature 2\n',
+            ],
+            ('test_output_4',)
         ),
     ])
     def test_create_changelog(self, new_version: SemverTag, commit_messages: list[str], test_output_names: tuple[str]):

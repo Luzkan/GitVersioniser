@@ -11,4 +11,9 @@ class CommitTagUtils(TagUtils):
 
     def get(self) -> tuple[ChangelogCategory, str]:
         """ The str in the tuple is the commit message, without the commit tag. """
-        return self.config.patterns.commit_tags.parse_commit(self.value)
+        return self.config.patterns.commit_tags.parse_line(self.value)
+
+    def get_all(self) -> list[tuple[ChangelogCategory, str]]:
+        """ The str in the tuple is the commit message, without the commit tag. """
+        commit_tags = self.config.patterns.commit_tags
+        return [commit_tags.parse_line(value) for value in self.value.split("\n") if commit_tags.has_commit_tag(value)]

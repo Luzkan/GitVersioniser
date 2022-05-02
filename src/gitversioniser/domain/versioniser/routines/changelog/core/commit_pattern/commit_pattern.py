@@ -36,10 +36,12 @@ class CommitPattern(RoutineChangelog):
     def _get_entries_from_commit_messages(self) -> ChangelogEntry:
         changelog_changes = ChangelogEntry()
         for commit in self.repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
-            if commit.summary.commit_tag.exist():
-                changelog_changes.add(*commit.summary.commit_tag.get())
-            else:
-                changelog_changes.add_custom('Other', str(commit.summary))
+            if not commit.message.commit_tag.exist():
+                changelog_changes.add_custom('Other', str(commit.message))
+                continue
+
+            for category, message in commit.message.commit_tag.get_all():
+                changelog_changes.add(category, message)
         return changelog_changes
 
     @staticmethod

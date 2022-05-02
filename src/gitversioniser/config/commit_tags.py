@@ -16,13 +16,14 @@ class CommitTags:
     def get_default_dict_for_changelog(self) -> dict[str, list[str]]:
         return {str(commit_tag.changelog_category.value): list() for commit_tag in self.__dict__.values()}
 
-    def parse_commit(self, commit_message: str) -> tuple[ChangelogCategory, str]:
+    def parse_line(self, message: str) -> tuple[ChangelogCategory, str]:
         """ The str in the tuple is the commit message, without the commit tag. """
         commit_tag: CommitTag
         for commit_tag in self.__dict__.values():
-            if str(commit_tag.pattern) in commit_message:
-                return (commit_tag.changelog_category, commit_message.replace(f"{str(commit_tag.pattern)} ", ""))
-        raise ValueError(f"Unknown Commit Tag in message: {commit_message}")
+            if str(commit_tag.pattern) in message:
+                return (commit_tag.changelog_category, message[len(commit_tag.pattern) + message.find(commit_tag.pattern) + 1:])
+        raise ValueError(f"Unknown Commit Tag in message: {message}")
 
     def has_commit_tag(self, commit_message: str) -> bool:
-        return any([commit_message.startswith(commit_tag.pattern) for commit_tag in self.__dict__.values()])
+        BEGINNING_OF_STRING = 5
+        return any([commit_tag.pattern in commit_message[:BEGINNING_OF_STRING] for commit_tag in self.__dict__.values()])

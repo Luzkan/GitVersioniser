@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.3+build.1`]] - 2022-05-02
+
+### Changed
+
+- Changelog now also parses the commit description looking for the commit tags
+
+
+
 ## [[`0.3.3`]] - 2022-05-02
 
 ### Added
@@ -371,3 +379,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.2+build.9`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.9
 [`0.3.2+build.10`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.10
 [`0.3.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3
+[`0.3.3+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.1

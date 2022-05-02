@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.2+build.5`]] - 2022-05-02
+
+### Added
+
+- Code of Conduct
+
+
+
 ## [[`0.3.2+build.4`]] - 2022-05-02
 
 ### Changed
@@ -308,3 +316,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.2+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.2
 [`0.3.2+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.3
 [`0.3.2+build.4`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.4
+[`0.3.2+build.5`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.5

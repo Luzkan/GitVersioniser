@@ -99,7 +99,7 @@ class SemverTag:
             "alpha": 1000,
             "beta": 2000,
             "rc": 3000,
-            None: 0,
+            None: 10000,
         }
         return SCORES_TABLE[next((key for key in SCORES_TABLE if str(key) in str(prerelease_name)), None)]
 

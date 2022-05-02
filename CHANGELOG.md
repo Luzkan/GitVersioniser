@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.2+build.10`]] - 2022-05-02
+
+### Added
+
+- Description property to Commit
+
+
+
 ## [[`0.3.2+build.9`]] - 2022-05-02
 
 ### Fixed
@@ -353,3 +361,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.2+build.7`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.7
 [`0.3.2+build.8`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.8
 [`0.3.2+build.9`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.9
+[`0.3.2+build.10`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.10

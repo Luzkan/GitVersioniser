@@ -19,6 +19,10 @@ class Commit:
         """ Summary is just a part of message, but it's handy to use it as a property. """
         return self.message.summary
 
+    @property
+    def description(self) -> str:
+        return self.message.value.split('\n', 1)[1]
+
     def __post_init__(self):
         self.message = Message(self.config, str(self._commit.message))
 

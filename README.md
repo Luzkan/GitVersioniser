@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.3+build.4]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.3+build.5]</code></i>
     </div>
 </div>
 
@@ -38,7 +38,7 @@ Copy the [GitVersioniser.yml](./docs/example/GitVersioniser.yml) to the `.github
 
 ## 🙌 **How can I use this?**
 
-- You can start commit message with `A:`, `F:`, `R:`, ... etc., to [tag](commit_tags) that you _added_, _fixed_, _removed_ something, which will create corresponding changelog entry.
+- You can start start any line in message with `A:` _(added)_, `F:` _(fixed)_, `R:` _(removed)_, ... etc., to [tag](commit_tags) the action you did, which will create corresponding changelog entry.
 - You can add `#major`, `#minor`, `#patch`, ... etc., to [increment](src\gitversioniser\config\increments.py) version of the repository.
 
 ---
@@ -67,14 +67,14 @@ _Hint: Think about the repository as a device that can be entirely customized by
 
 ### [**Version**](./src/gitversioniser/domain/versioniser/routines/version/) based on:
 
-- [Commits Till Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/commits_till_last_gitversioniser_commit.py) _(default)_
-- [Last Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_commit.py)
+- [_Version Tag In_ Commits Till Last GitVersioniser Commit](./src/gitversioniser/domain/versioniser/routines/version/core/commits_till_last_gitversioniser_commit.py) _(default)_
+- [_Version Tag In_ Last Commit](./src/gitversioniser/domain/versioniser/routines/version/core/last_commit.py)
 
 ### [**Should Contribute**](./src/gitversioniser/domain/versioniser/routines/version/) when:
 
-- [If _(new version is)_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_build_or_higher.py) _(default)_
-- [If _(new version is)_ Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_prerelease_or_higher.py)
-- [If _(new version is)_ Patch or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_patch_or_higher.py)
+- [If _new version is_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_build_or_higher.py) _(default)_
+- [If _new version is_ Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_prerelease_or_higher.py)
+- [If _new version is_ Patch or Higher](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/if_patch_or_higher.py)
 - [Never](./src/gitversioniser/domain/versioniser/routines/should_contribute/core/never.py)
 
 ### [**Tagging**](./src/gitversioniser/domain/versioniser/routines/tagging/):
@@ -86,9 +86,9 @@ _Hint: Think about the repository as a device that can be entirely customized by
 ### [**Prefix Tag with '`v`'**](./src/gitversioniser/domain/versioniser/routines/tagging/):
 
 - [Always](./src/gitversioniser/domain/versioniser/routines/tagging/core/always.py) _(default)_
-- [If _(new version is)_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_build_or_higher.py)
-- [If _(new version is)_ Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
-- [If _(new version is)_ Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
+- [If _new version is_ Build or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_build_or_higher.py)
+- [If _new version is_ Pre-Release or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_prerelease_or_higher.py)
+- [If _new version is_ Patch or Higher](./src/gitversioniser/domain/versioniser/routines/tagging/core/if_patch_or_higher.py)
 - [Never](./src/gitversioniser/domain/versioniser/routines/tagging/core/never.py)
 
 ### [**Commit Message**](./src/gitversioniser/domain/versioniser/routines/commit_message/):
@@ -108,7 +108,7 @@ _Hint: Think about the repository as a device that can be entirely customized by
 ### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/commiting/):
 
 - [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_amend.py) _(default)_
-- [Push Main New](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_new.py)
+- [Push Main New Commit](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_new_commit.py)
 
 ### [**File Updater**](./src/gitversioniser/domain/versioniser/routines/file_updater/):
 

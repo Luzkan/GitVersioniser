@@ -96,10 +96,10 @@ class SemverTag:
     @staticmethod
     def _evaluate_common_prerelease_name(prerelease_name: str | None) -> int:
         SCORES_TABLE: dict[str | None, int] = {
-            "alpha": 1000,
-            "beta": 2000,
-            "rc": 3000,
-            None: 10000,
+            "alpha": 100000,
+            "beta": 200000,
+            "rc": 300000,
+            None: 999999,
         }
         return SCORES_TABLE[next((key for key in SCORES_TABLE if str(key) in str(prerelease_name)), None)]
 

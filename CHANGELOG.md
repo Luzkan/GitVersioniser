@@ -6,6 +6,15 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.3+build.4`]] - 2022-05-02
+
+### Changed
+
+- Checking for Commit Tags only in the first 5 letters at the beginning of a string
+- Changed the increment values for alpha/beta/rc
+
+
+
 ## [[`0.3.3+build.3`]] - 2022-05-02
 
 ### Fixed
@@ -398,3 +407,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.3+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.1
 [`0.3.3+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.2
 [`0.3.3+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.3
+[`0.3.3+build.4`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.4

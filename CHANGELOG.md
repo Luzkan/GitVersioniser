@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.2+build.8`]] - 2022-05-02
+
+### Changed
+
+- Console Width set to 140 for stdout
+
+
+
 ## [[`0.3.2+build.7`]] - 2022-05-02
 
 ### Changed
@@ -335,3 +343,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.2+build.5`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.5
 [`0.3.2+build.6`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.6
 [`0.3.2+build.7`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.7
+[`0.3.2+build.8`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.2+build.8

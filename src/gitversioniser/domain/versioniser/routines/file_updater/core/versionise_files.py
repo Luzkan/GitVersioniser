@@ -16,8 +16,8 @@ class VersioniseFiles(RoutineFileUpdater):
     def _find_file(self, filename: str) -> Path:
         try:
             return sorted(Path(self.config.target_repository_path).glob(f'**/{filename}'))[0]
-        except IndexError:
-            raise FileNotFoundError(f'File {filename} not found in the repository.')
+        except IndexError as error:
+            raise FileNotFoundError(f'File {filename} not found in the repository.') from error
 
     @staticmethod
     def _replace_version(filepath: Path, versions: Versions) -> Path | None:

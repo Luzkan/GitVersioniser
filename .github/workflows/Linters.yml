@@ -4,10 +4,9 @@
 name: Linters
 
 on:
-  create:
-    tags:
-      - 'v*'
   push:
+    tags:
+      - '**'
     branches:
       - main
   pull_request:

@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
       - name: Running GitVersioniser
         id: gitversioniser
-        uses: luzkan/GitVersioniser@v0
+        uses: luzkan/GitVersioniser@main
         with:
           # ---------------------------
           # Versioniser Git Credentials

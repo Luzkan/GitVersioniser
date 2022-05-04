@@ -18,8 +18,8 @@ ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
 ]
 ROUTINE_COMMITING_TYPE = Literal[
     "null",
-    "push_main_amend",
-    "push_main_new_commit",
+    "push_origin_amend",
+    "push_origin_new_commit",
 ]
 ROUTINE_TAGGING_TYPE = Literal[
     "force",

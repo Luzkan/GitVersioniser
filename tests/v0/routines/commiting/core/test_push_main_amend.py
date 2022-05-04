@@ -13,7 +13,7 @@ from tests.v0.routines.commiting.routine import TestRoutineCommiting
 class TestPushMainAmend(TestRoutineCommiting):
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('push_main_amend')
+        self.routine = self.get_routine('push_origin_amend')
 
     def cant_test_through_routine_because_no_remote_assigned(self, commit_message_for_amend: str):
         try:

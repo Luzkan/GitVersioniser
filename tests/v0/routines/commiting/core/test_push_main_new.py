@@ -13,7 +13,7 @@ from tests.v0.routines.commiting.routine import TestRoutineCommiting
 class TestPushMainNew(TestRoutineCommiting):
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('push_main_new_commit')
+        self.routine = self.get_routine('push_origin_new_commit')
 
     def cant_test_through_routine_because_no_remote_assigned(self, commit_message_for_amend: str):
         try:
@@ -30,7 +30,7 @@ class TestPushMainNew(TestRoutineCommiting):
         ('Tbh, this just', 'tests that, the'),
         ('git commit works', 'through the git library')
     ])
-    def test_push_main_new_commit(self, last_commit_message, new_commit_message):
+    def test_push_origin_new_commit(self, last_commit_message, new_commit_message):
         self.routine.repo.commits.commit(last_commit_message)
         self.cant_test_through_routine_because_no_remote_assigned(new_commit_message)
         self.routine.repo.files.add_all()

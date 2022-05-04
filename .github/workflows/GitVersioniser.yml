@@ -33,7 +33,7 @@ jobs:
           # Contributing
           # ----
           routine_should_contribute: "if_build_or_higher"
-          routine_commiting: "push_main_amend"
+          routine_commiting: "push_origin_amend"
           # ---------------------------
           # Commit Message
           # ----

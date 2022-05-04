@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.3+build.6]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.3.3+build.7]</code></i>
     </div>
 </div>
 
@@ -107,8 +107,8 @@ _Hint: Think about the repository as a device that can be entirely customized by
 
 ### [**Commiting**](./src/gitversioniser/domain/versioniser/routines/commiting/):
 
-- [Push Main Amend](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_amend.py) _(default)_
-- [Push Main New Commit](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_main_new_commit.py)
+- [Push Origin Amend](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_origin_amend.py) _(default)_
+- [Push Origin New Commit](./src/gitversioniser/domain/versioniser/routines/commiting/core/push_origin_new_commit.py)
 
 ### [**File Updater**](./src/gitversioniser/domain/versioniser/routines/file_updater/):
 

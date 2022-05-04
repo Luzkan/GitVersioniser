@@ -5,7 +5,7 @@ from gitversioniser.domain.versioniser.utils.routine_result import VersioningRes
 
 
 @dataclass
-class PushMainNewCommit(RoutineCommiting):
+class PushOriginNewCommit(RoutineCommiting):
     def run(self, result: VersioningResult):
         self.repo.remote.raise_if_changes()
         self.repo.files.add_all()
@@ -14,4 +14,4 @@ class PushMainNewCommit(RoutineCommiting):
 
     @staticmethod
     def factory_name() -> str:
-        return 'push_main_new_commit'
+        return 'push_origin_new_commit'

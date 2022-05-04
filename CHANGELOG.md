@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.3.3+build.7`]] - 2022-05-04
+
+### Changed
+
+- Commiting routines names were corrected to match their behaviour
+
+
+
 ## [[`0.3.3+build.6`]] - 2022-05-04
 
 ### Added
@@ -427,3 +435,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.3.3+build.4`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.4
 [`0.3.3+build.5`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.5
 [`0.3.3+build.6`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.6
+[`0.3.3+build.7`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.3.3+build.7

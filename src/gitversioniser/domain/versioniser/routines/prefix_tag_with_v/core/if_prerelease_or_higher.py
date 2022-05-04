@@ -15,7 +15,3 @@ class IfPrereleaseOrHigher(RoutinePrefixTagWithV):
             version_comparer.is_new_patch(),
             version_comparer.is_new_prerelease()
         ])
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'if_prerelease_or_higher'

@@ -13,7 +13,3 @@ class Regular(RoutineTagging):
     @staticmethod
     def _create_tag_string(result: VersioningResult) -> str:
         return f"v{str(result.versions.new)}" if result.prefix_tag_with_v else str(result.versions.new)
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'regular'

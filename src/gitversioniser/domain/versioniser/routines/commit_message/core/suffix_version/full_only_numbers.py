@@ -12,7 +12,3 @@ class SuffixVersionFullOnlyNumbers(RoutineCommitMessage):
     @staticmethod
     def _filter_only_digits(version: str) -> str:
         return "".join(filter(str.isdigit, version))
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'suffix_version_full_only_numbers'

@@ -77,7 +77,7 @@ class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('commits_till_last_gitversioniser_commit')
+        self.routine = self.get_routine('commits_till_last_git_versioniser_commit')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

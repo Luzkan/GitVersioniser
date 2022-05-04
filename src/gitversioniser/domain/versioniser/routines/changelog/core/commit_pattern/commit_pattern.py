@@ -43,7 +43,3 @@ class CommitPattern(RoutineChangelog):
             for category, message in commit.message.commit_tag.get_all():
                 changelog_changes.add(category, message)
         return changelog_changes
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'commit_pattern'

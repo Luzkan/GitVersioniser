@@ -14,7 +14,3 @@ class IfPatchOrHigher(RoutineShouldContribute):
             version_comparer.is_new_minor(),
             version_comparer.is_new_patch()
         ])
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'if_patch_or_higher'

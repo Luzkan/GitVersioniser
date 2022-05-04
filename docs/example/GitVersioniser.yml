@@ -26,7 +26,7 @@ jobs:
           # ---------------------------
           # Versioning
           # ----
-          routine_version: "commits_till_last_gitversioniser_commit"
+          routine_version: "commits_till_last_git_versioniser_commit"
           # ---------------------------
           # Contributing
           # ----

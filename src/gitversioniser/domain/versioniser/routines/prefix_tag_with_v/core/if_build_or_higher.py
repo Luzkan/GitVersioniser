@@ -16,7 +16,3 @@ class IfBuildOrHigher(RoutinePrefixTagWithV):
             version_comparer.is_new_prerelease(),
             version_comparer.is_new_build()
         ])
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'if_build_or_higher'

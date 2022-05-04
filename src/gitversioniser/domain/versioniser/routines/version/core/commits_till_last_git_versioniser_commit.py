@@ -6,7 +6,7 @@ from gitversioniser.domain.versioniser.routines.version.abstract import RoutineV
 
 
 @dataclass
-class CommitsTillLastGitVersioniserCommits(RoutineVersion):
+class CommitsTillLastGitVersioniserCommit(RoutineVersion):
     """
     Works best with:
         - Pushing to main repository branch with multiple commits
@@ -26,7 +26,3 @@ class CommitsTillLastGitVersioniserCommits(RoutineVersion):
         for increment in commit.message.increment_tag.get():
             version = increment.bump_version(version)
         return version
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'commits_till_last_gitversioniser_commit'

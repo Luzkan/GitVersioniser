@@ -11,7 +11,3 @@ class PushOriginAmend(RoutineCommiting):
         self.repo.files.add_all()
         self.repo.commits.commit_amend(message=result.commit_message.new)
         self.repo.remote.push_force()
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'push_origin_amend'

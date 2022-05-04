@@ -12,7 +12,3 @@ class Null(RoutineCommitMessage):
 
     def new_commit_message(self, new_version: SemverTag) -> str:
         return str(self.repo.commits.latest.message.value.rstrip())
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'null'

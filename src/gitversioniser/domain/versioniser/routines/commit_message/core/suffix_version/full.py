@@ -8,7 +8,3 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 class SuffixVersionFull(RoutineCommitMessage):
     def new_commit_message(self, new_version: SemverTag) -> str:
         return f"{self.repo.commits.latest.message.value.rstrip()} [`{str(new_version)}`]"
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'suffix_version'

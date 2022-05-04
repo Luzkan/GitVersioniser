@@ -8,7 +8,3 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 class PrefixVersionFull(RoutineCommitMessage):
     def new_commit_message(self, new_version: SemverTag) -> str:
         return f"[`{str(new_version)}`] {self.repo.commits.latest.message.value.rstrip()}"
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'prefix_version_full'

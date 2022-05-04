@@ -11,7 +11,3 @@ class PushOriginNewCommit(RoutineCommiting):
         self.repo.files.add_all()
         self.repo.commits.commit(message=result.commit_message.new)
         self.repo.remote.push()
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'push_origin_new_commit'

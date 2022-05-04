@@ -8,7 +8,3 @@ from gitversioniser.domain.versioniser.utils.routine_result import VersioningRes
 class Never(RoutineTagging):
     def run(self, result: VersioningResult):
         """ This routine does nothing. """
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'never'

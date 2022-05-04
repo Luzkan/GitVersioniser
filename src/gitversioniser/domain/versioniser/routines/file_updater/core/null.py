@@ -8,7 +8,3 @@ from gitversioniser.domain.versioniser.utils.versions import Versions
 class Null(RoutineFileUpdater):
     def run(self, versions: Versions) -> None:
         """ This routine does nothing. """
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'null'

@@ -3,7 +3,7 @@ from typing import Literal
 
 ROUTINE_VERSION_TYPE = Literal[
     "last_commit",
-    "commits_till_last_gitversioniser_commit",
+    "commits_till_last_git_versioniser_commit",
 ]
 ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
     "null",
@@ -11,7 +11,7 @@ ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
     "prefix_version_full_only_numbers",
     "prefix_version_major_minor_patch",
     "prefix_version_major_minor_patch_prerelease",
-    "suffix_version",
+    "suffix_version_full",
     "suffix_version_full_only_numbers",
     "suffix_version_major_minor_patch",
     "suffix_version_major_minor_patch_prerelease",

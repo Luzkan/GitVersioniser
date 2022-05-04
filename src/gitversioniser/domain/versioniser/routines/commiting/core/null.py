@@ -8,7 +8,3 @@ from gitversioniser.domain.versioniser.utils.routine_result import VersioningRes
 class Null(RoutineCommiting):
     def run(self, result: VersioningResult):
         """ This routine does nothing. """
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'null'

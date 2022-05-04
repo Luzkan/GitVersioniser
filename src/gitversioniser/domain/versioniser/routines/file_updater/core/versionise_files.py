@@ -28,7 +28,3 @@ class VersioniseFiles(RoutineFileUpdater):
             file.write(old_content.replace(str(versions.old), str(versions.new)))
 
         return filepath if str(versions.old) in old_content else None
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'versionise_files'

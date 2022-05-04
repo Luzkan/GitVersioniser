@@ -30,7 +30,3 @@ class LastCommitMessageAsDescription(RoutineChangelog):
     @staticmethod
     def _get_footer(version: str, github_user: str, repo_name: str) -> str:
         return f"[`{version}`]: https://github.com/{github_user}/{repo_name}/releases/tag/{version}\n"
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'last_commit_message_as_description'

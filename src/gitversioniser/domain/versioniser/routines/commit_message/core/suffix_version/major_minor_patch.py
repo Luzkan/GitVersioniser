@@ -9,7 +9,3 @@ class SuffixVersionMajorMinorPatch(RoutineCommitMessage):
     def new_commit_message(self, new_version: SemverTag) -> str:
         return f"{self.repo.commits.latest.message.value.rstrip()} " +\
                f"[`{new_version.to_string(with_prerelease=False, with_build=False)}`]"
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'suffix_version_major_minor_patch'

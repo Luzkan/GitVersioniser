@@ -25,7 +25,3 @@ class LastCommit(RoutineVersion):
         for increment in commit.message.increment_tag.get():
             version = increment.bump_version(version)
         return version
-
-    @staticmethod
-    def factory_name() -> str:
-        return 'last_commit'

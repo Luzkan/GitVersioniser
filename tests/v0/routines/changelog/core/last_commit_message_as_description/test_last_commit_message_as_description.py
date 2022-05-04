@@ -52,7 +52,7 @@ class TestLastCommitAsSummary(TestRoutineChangelog):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('last_commit_message_as_description')
+        self.routine = self.get_routine('LastCommitMessageAsDescription')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
         self.repo_utils.delete_remote()
         self.repo_utils.create_remote()

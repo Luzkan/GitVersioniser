@@ -12,7 +12,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.4.0+build.2]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.5.0]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -22,35 +22,35 @@ class Arguments:
             help="(Setting) Decides which files will be versionised. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rv", "--routine_version", default='commits_till_last_git_versioniser_commit',
+            "-rv", "--routine_version", default='VersionTagInCommitsTillLastGitVersioniserCommit',
             help="(Routine) The way the repository should be versionised. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rcm", "--routine_commit_message", default='prefix_version_full',
+            "-rcm", "--routine_commit_message", default='PrefixVersionFull',
             help="(Routine) Decides how the Commit Message made by GitVersioniser will be made. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rfu", "--routine_file_updater", default='versionise_files',
+            "-rfu", "--routine_file_updater", default='VersioniseFiles',
             help="(Routine) Decides which files will be versionised. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rc", "--routine_commiting", default='push_origin_amend',
+            "-rc", "--routine_commiting", default='PushOriginAmend',
             help="(Routine) The way of contributing the GitVersioniser changes to remote repository. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rptwv", "--routine_prefix_tag_with_v", default='always',
+            "-rptwv", "--routine_prefix_tag_with_v", default='Always',
             help="(Routine) When the tag should receive the 'v' letter as prefix. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rsc", "--routine_should_contribute", default='if_build_or_higher',
+            "-rsc", "--routine_should_contribute", default='IfNewVersionIsBuildOrHigher',
             help="(Routine) When should the GitVersioniser contribute anything to the remote repository. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rcl", "--routine_changelog", default='commit_pattern',
+            "-rcl", "--routine_changelog", default='CommitChangelogTags',
             help="(Routine) The way GitVersioniser will handle changelog. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rt", "--routine_tagging", default='regular',
+            "-rt", "--routine_tagging", default='Regular',
             help="(Routine) How should GitVersioniser tag the repository. (default: %(default)s)"
         )
         parsed_arguments = parser.parse_args()

@@ -23,32 +23,32 @@ jobs:
           # ---------------------------
           # Versioniser Git Credentials
           # ----
-          versioniser-username: "GitVersioniser"
-          versioniser-email: "luzkan.gitversioniser@github.com"
+          versioniser_username: "GitVersioniser"
+          versioniser_email: "luzkan.gitversioniser@github.com"
           # ---------------------------
           # Versioning
           # ----
-          routine_version: "commits_till_last_git_versioniser_commit"
+          routine_version: "VersionTagInCommitsTillLastGitVersioniserCommit"
           # ---------------------------
           # Contributing
           # ----
-          routine_should_contribute: "if_build_or_higher"
-          routine_commiting: "push_origin_amend"
+          routine_should_contribute: "IfNewVersionIsBuildOrHigher"
+          routine_commiting: "PushOriginAmend"
           # ---------------------------
           # Commit Message
           # ----
-          routine_commit_message: "prefix_version_full_only_numbers"
+          routine_commit_message: "PrefixVersionFullButOnlyDigits"
           # ---------------------------
           # Tagging
           # ----
-          routine_tagging: "regular"
-          routine_prefix_tag_with_v: "always"
+          routine_tagging: "Regular"
+          routine_prefix_tag_with_v: "Always"
           # ---------------------------
           # Changelog Handling
           # -----
-          routine_changelog: "commit_pattern"
+          routine_changelog: "CommitChangelogTags"
           # ---------------------------
           # File Versioning
           # ----
-          routine_file_updater: "versionise_files"
+          routine_file_updater: "VersioniseFiles"
           versioned_files: "README.md main.py setup.py arguments.py"

@@ -9,7 +9,7 @@ from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.should_contribute.routine import TestRoutineShouldContribute
 
 
-class TestIfPrereleaseOrHigher(TestRoutineShouldContribute):
+class TestIfNewVersionIsPrereleaseOrHigher(TestRoutineShouldContribute):
     @parameterized.expand([
         (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 4)),
         (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 3, 0)),
@@ -36,7 +36,7 @@ class TestIfPrereleaseOrHigher(TestRoutineShouldContribute):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('if_prerelease_or_higher')
+        self.routine = self.get_routine('IfNewVersionIsPrereleaseOrHigher')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

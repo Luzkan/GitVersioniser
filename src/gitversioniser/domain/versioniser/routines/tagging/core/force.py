@@ -6,10 +6,6 @@ from gitversioniser.domain.versioniser.utils.routine_result import VersioningRes
 
 @dataclass
 class Force(RoutineTagging):
-    def run(self, result: VersioningResult):
-        self.repo.remote.create_tag(version=self._create_tag_string(result))
+    def run(self, result: VersioningResult) -> None:
+        self.repo.remote.create_tag(version=result.versions.new.to_string(with_prefix_v=result.prefix_tag_with_v))
         self.repo.remote.push_tags_force()
-
-    @staticmethod
-    def _create_tag_string(result: VersioningResult) -> str:
-        return f"v{str(result.versions.new)}" if result.prefix_tag_with_v else str(result.versions.new)

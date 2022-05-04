@@ -39,7 +39,7 @@ class TestRegular(TestRoutineTagging):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('regular')
+        self.routine = self.get_routine('Regular')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

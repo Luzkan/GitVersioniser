@@ -6,17 +6,18 @@ from gitversioniser.domain.versioniser.routines.version.abstract import RoutineV
 
 
 @dataclass
-class LastCommit(RoutineVersion):
+class VersionTagInCommitsTillLastGitVersioniserCommit(RoutineVersion):
     """
     Works best with:
-        - Pushing to main repository branch after each commit
+        - Pushing to main repository branch with multiple commits
         - Merging develop branches to main repository branch
     """
 
     def generate_new_version(self) -> SemverTag:
-        latest_commit: Commit = self.repo.commits.latest
         last_version: SemverTag = self.repo.tags.latest_semver
-        return self._bump_version(latest_commit, last_version)
+        for commit in self.repo.commits.get_commits_till_last_commit_made_by_author(self.config.credentials.username):
+            last_version = self._bump_version(commit, last_version)
+        return last_version
 
     @staticmethod
     def _bump_version(commit: Commit, version: SemverTag) -> SemverTag:

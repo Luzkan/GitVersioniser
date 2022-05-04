@@ -5,7 +5,6 @@ from gitversioniser.domain.versioniser.utils.routine_result import VersioningRes
 
 
 class RoutineTagging(Routine, ABC):
-
     @abstractmethod
-    def run(self, result: VersioningResult):
+    def run(self, result: VersioningResult) -> None:
         pass

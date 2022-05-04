@@ -3,12 +3,12 @@ from datetime import datetime
 
 from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.domain.versioniser.routines.changelog.abstract import RoutineChangelog
-from gitversioniser.domain.versioniser.routines.changelog.core.commit_pattern.entry import ChangelogEntry
+from gitversioniser.domain.versioniser.routines.changelog.core.commit_changelog_tags.entry import ChangelogEntry
 from gitversioniser.domain.versioniser.routines.changelog.utils.file import ChangelogFile
 
 
 @dataclass
-class CommitPattern(RoutineChangelog):
+class CommitChangelogTags(RoutineChangelog):
     def update_changelog(self, new_version: SemverTag, changelog: ChangelogFile) -> ChangelogFile:
         return changelog\
             .add_header([

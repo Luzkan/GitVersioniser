@@ -21,7 +21,7 @@ class TestNever(TestRoutinePrefixTagWithV):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('never')
+        self.routine = self.get_routine('Never')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

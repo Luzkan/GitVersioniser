@@ -6,7 +6,7 @@ from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.version.routine import TestRoutineVersion
 
 
-class TestLastCommit(TestRoutineVersion):
+class TestVersionTagInLastCommit(TestRoutineVersion):
 
     def perform_version_test(self, old_version, last_commit_message, new_version):
         self.routine.repo.tags.create(str(old_version))
@@ -53,7 +53,7 @@ class TestLastCommit(TestRoutineVersion):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('last_commit')
+        self.routine = self.get_routine('VersionTagInLastCommit')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

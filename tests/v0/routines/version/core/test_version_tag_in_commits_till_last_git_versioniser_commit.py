@@ -6,7 +6,7 @@ from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.version.routine import TestRoutineVersion
 
 
-class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
+class TestVersionTagInCommitsTillLastGitversioniserCommit(TestRoutineVersion):
     @parameterized.expand([
         (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 3, 0), [
             'A: This is last GitVerisoniser Commit.',
@@ -77,7 +77,7 @@ class TestCommitsTillLastGitversioniserCommit(TestRoutineVersion):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('commits_till_last_git_versioniser_commit')
+        self.routine = self.get_routine('VersionTagInCommitsTillLastGitVersioniserCommit')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

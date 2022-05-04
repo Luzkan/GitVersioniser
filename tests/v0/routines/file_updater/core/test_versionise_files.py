@@ -13,7 +13,7 @@ class TestVersioniseFiles(TestRoutineFileUpdater):
     def setUp(self):
         super().setUp()
         self.temp_file = TempFile()
-        self.routine = self.get_routine('versionise_files')
+        self.routine = self.get_routine('VersioniseFiles')
 
     def tearDown(self):
         super().tearDown()

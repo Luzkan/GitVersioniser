@@ -4,10 +4,10 @@ from gitversioniser.domain.repository.semver_tag import SemverTag
 from tests.v0.routines.commit_message.routine import TestRoutineCommitMessage
 
 
-class TestPrefixVersionFullOnlyNumbers(TestRoutineCommitMessage):
+class TestPrefixVersionFullButOnlyDigits(TestRoutineCommitMessage):
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('prefix_version_full_only_numbers')
+        self.routine = self.get_routine('PrefixVersionFullButOnlyDigits')
 
     @parameterized.expand([
         (SemverTag.init_spec(1, 0, 0), 'Initial Commit', '[`1.0.0`] Initial Commit'),

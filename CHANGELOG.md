@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.0`]] - 2022-05-04
+
+### Changed
+
+- Routine Configuration is now Class name based (thus removal of snake case versions of class names) #minor
+
+
+
 ## [[`0.4.0+build.2`]] - 2022-05-04
 
 ### Fixed
@@ -333,7 +341,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ### Fixed
 
-- Changed path in `versionise_files` to use config instead of hardcoded value
+- Changed path in `VersioniseFiles` to use config instead of hardcoded value
 
 
 
@@ -390,7 +398,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ### Fixed
 
-- Adjusted the `\n` in changelog `commit_pattern` #patch
+- Adjusted the `\n` in changelog `CommitChangelogTags` #patch
 
 
 
@@ -464,3 +472,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.4.0`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.4.0
 [`0.4.0+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.4.0+build.1
 [`0.4.0+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.4.0+build.2
+[`0.5.0`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.0

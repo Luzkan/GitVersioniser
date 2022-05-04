@@ -7,7 +7,7 @@ from tests.v0.routines.commit_message.routine import TestRoutineCommitMessage
 class TestSuffixVersionMajorMinorPatchPrerelease(TestRoutineCommitMessage):
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('suffix_version_major_minor_patch_prerelease')
+        self.routine = self.get_routine('SuffixVersionMajorMinorPatchPrerelease')
 
     @parameterized.expand([
         (SemverTag.init_spec(1, 0, 0), 'Initial Commit', 'Initial Commit [`1.0.0`]'),

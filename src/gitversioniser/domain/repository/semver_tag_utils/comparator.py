@@ -5,7 +5,7 @@ from gitversioniser.helpers.regex_pattern import RegexPattern
 
 
 @dataclass
-class VersionComparer:
+class SemverTagComparer:
     versions: Versions
 
     def is_new_major(self) -> bool:

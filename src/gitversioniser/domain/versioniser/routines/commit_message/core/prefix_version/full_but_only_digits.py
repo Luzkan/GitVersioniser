@@ -5,9 +5,9 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 
 
 @dataclass
-class SuffixVersionFullOnlyNumbers(RoutineCommitMessage):
+class PrefixVersionFullButOnlyDigits(RoutineCommitMessage):
     def new_commit_message(self, new_version: SemverTag) -> str:
-        return f"{self.repo.commits.latest.message.value.rstrip()} [`{new_version.to_acronym()}`]"
+        return f"[`{new_version.to_acronym()}`] {self.repo.commits.latest.message.value.rstrip()}"
 
     @staticmethod
     def _filter_only_digits(version: str) -> str:

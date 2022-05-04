@@ -1,16 +1,16 @@
 from .null import Null
-from .prefix_version import PrefixVersionFull, PrefixVersionFullOnlyNumbers, PrefixVersionMajorMinorPatch, PrefixVersionMajorMinorPatchPrerelease
-from .suffix_version import SuffixVersionFull, SuffixVersionFullOnlyNumbers, SuffixVersionMajorMinorPatch, SuffixVersionMajorMinorPatchPrerelease
+from .prefix_version import PrefixVersionFull, PrefixVersionFullButOnlyDigits, PrefixVersionMajorMinorPatch, PrefixVersionMajorMinorPatchPrerelease
+from .suffix_version import SuffixVersionFull, SuffixVersionFullButOnlyDigits, SuffixVersionMajorMinorPatch, SuffixVersionMajorMinorPatchPrerelease
 
 
 __all__ = [
     'Null',
     'PrefixVersionFull',
-    'PrefixVersionFullOnlyNumbers',
+    'PrefixVersionFullButOnlyDigits',
     'PrefixVersionMajorMinorPatch',
     'PrefixVersionMajorMinorPatchPrerelease',
     'SuffixVersionFull',
-    'SuffixVersionFullOnlyNumbers',
+    'SuffixVersionFullButOnlyDigits',
     'SuffixVersionMajorMinorPatch',
     'SuffixVersionMajorMinorPatchPrerelease'
 ]

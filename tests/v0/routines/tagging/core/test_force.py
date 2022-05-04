@@ -28,7 +28,7 @@ class TestForce(TestRoutineTagging):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('force')
+        self.routine = self.get_routine('Force')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

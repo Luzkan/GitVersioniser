@@ -30,7 +30,7 @@ class Commit:
     def get_parents_count(self) -> int:
         return int(self._commit.count())
 
-    def get_parents(self) -> tuple['Commit']:
+    def get_parents(self) -> tuple['Commit', ...]:
         return tuple(Commit(self.config, _commit=parent) for parent in self._commit.parents)
 
     def is_made_by_author(self, author: str) -> bool:

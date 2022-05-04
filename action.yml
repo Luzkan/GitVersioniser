@@ -3,11 +3,11 @@ description: 'Updates the Semantic Version of the Repository & tracks the change
 inputs:
   # ---------------------------
   # Versioniser Git Credentials
-  versioniser-username:
+  versioniser_username:
     description: '(Git Credential) Username for the Versioniser that will be displayed in the commit.'
     required: false
     default: 'GitVersioniser'
-  versioniser-email:
+  versioniser_email:
     description: '(Git Credential) Email for the Versioniser.'
     required: false
     default: 'luzkan.gitversioniser@github.com'
@@ -16,23 +16,23 @@ inputs:
   routine_version:
     description: '(Routine) Routine which will the GitVersioniser follow when versioning your repository.'
     required: false
-    default: 'commits_till_last_git_versioniser_commit'
+    default: 'VersionTagInCommitsTillLastGitVersioniserCommit'
   # ---------------------------
   # (Routine) Contributing
   routine_should_contribute:
     description: '(Routine) When should the GitVersioniser contribute anything to the remote repository.'
     required: false
-    default: 'if_build_or_higher'
+    default: 'IfNewVersionIsBuildOrHigher'
   routine_commiting:
     description: '(Routine) The way of contributing changes made by GitVersioniser to your repository.'
     required: false
-    default: 'push_origin_amend'
+    default: 'PushOriginAmend'
   # ---------------------------
   # (Routine) Commit Message
   routine_commit_message:
     description: '(Routine) Decides how the Commit Message made by GitVersioniser will be made.'
     required: false
-    default: 'prefix_version_full'
+    default: 'PrefixVersionFull'
   # ---------------------------
   # (Routine) Tagging
   routine_tagging:
@@ -48,13 +48,13 @@ inputs:
   routine_changelog:
     description: '(Routine) Handles the changelog automatically.'
     required: false
-    default: 'commit_pattern'
+    default: 'CommitChangelogTags'
   # ---------------------------
   # (Routine) File Versioning
   routine_file_updater:
     description: '(Routine) Decides how files will be versionised.'
     required: false
-    default: 'versionise_files'
+    default: 'VersioniseFiles'
   versioned_files:
     description: '(Setting) Decides which files will be versionised.'
     required: false
@@ -68,8 +68,8 @@ runs:
   args:
     # ---------------------------
     # Versioniser Git Credentials
-    - ${{ inputs.versioniser-username }}
-    - ${{ inputs.versioniser-email }}
+    - ${{ inputs.versioniser_username }}
+    - ${{ inputs.versioniser_email }}
     # ---------------------------
     # Versioning
     - ${{ inputs.routine_version }}

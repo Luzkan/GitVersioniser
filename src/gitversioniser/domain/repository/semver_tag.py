@@ -69,17 +69,17 @@ class SemverTag:
     def finalize_version(self) -> 'SemverTag':
         return SemverTag(self._semver.finalize_version())
 
-    def to_acronym(self, with_prerelease=True, with_build=True) -> str:
+    def to_acronym(self, with_prerelease=True, with_build=True, with_prefix_v=False) -> str:
         version_tag: str = f"{self.major}.{self.minor}.{self.patch}"
         version_tag += f"-{self._filter_to_digit(self.prerelease)}" if self.prerelease and with_prerelease else ""
         version_tag += f"+{self._filter_to_digit(self.build)}" if self.build and with_build else ""
-        return version_tag
+        return version_tag if not with_prefix_v else f"v{version_tag}"
 
-    def to_string(self, with_prerelease=True, with_build=True) -> str:
+    def to_string(self, with_prerelease=True, with_build=True, with_prefix_v=False) -> str:
         version_tag: str = f"{self.major}.{self.minor}.{self.patch}"
         version_tag += f"-{self.prerelease}" if self.prerelease and with_prerelease else ""
         version_tag += f"+{self.build}" if self.build and with_build else ""
-        return version_tag
+        return version_tag if not with_prefix_v else f"v{version_tag}"
 
     def to_tuple(self) -> tuple[int, int, int, int, int]:
         return (

@@ -2,49 +2,49 @@ from typing import Literal
 
 
 ROUTINE_VERSION_TYPE = Literal[
-    "last_commit",
-    "commits_till_last_git_versioniser_commit",
+    "VersionTagInLastCommit",
+    "VersionTagInCommitsTillLastGitVersioniserCommit",
 ]
 ROUTINE_COMMIT_MESSAGE_TYPE = Literal[
-    "null",
-    "prefix_version_full",
-    "prefix_version_full_only_numbers",
-    "prefix_version_major_minor_patch",
-    "prefix_version_major_minor_patch_prerelease",
-    "suffix_version_full",
-    "suffix_version_full_only_numbers",
-    "suffix_version_major_minor_patch",
-    "suffix_version_major_minor_patch_prerelease",
+    "Null",
+    "PrefixVersionFull",
+    "PrefixVersionFullButOnlyDigits",
+    "PrefixVersionMajorMinorPatch",
+    "PrefixVersionMajorMinorPatchPrerelease",
+    "SuffixVersionFull",
+    "SuffixVersionFullButOnlyDigits",
+    "SuffixVersionMajorMinorPatch",
+    "SuffixVersionMajorMinorPatchPrerelease",
 ]
 ROUTINE_COMMITING_TYPE = Literal[
-    "null",
-    "push_origin_amend",
-    "push_origin_new_commit",
+    "Null",
+    "PushOriginAmend",
+    "PushOriginNewCommit",
 ]
 ROUTINE_TAGGING_TYPE = Literal[
-    "force",
-    "regular",
-    "never",
+    "Force",
+    "Regular",
+    "Never",
 ]
 ROUTINE_SHOULD_CONTRIBUTE = Literal[
-    "never",
-    "if_build_or_higher",
-    "if_patch_or_higher",
-    "if_prerelease_or_higher",
+    "Never",
+    "IfNewVersionIsBuildOrHigher",
+    "IfNewVersionIsPatchOrHigher",
+    "IfNewVersionIsPrereleaseOrHigher",
 ]
 ROUTINE_PREFIX_TAG_WITH_V = Literal[
-    "never",
-    "if_build_or_higher",
-    "if_patch_or_higher",
-    "if_prerelease_or_higher",
-    "always",
+    "Never",
+    "IfNewVersionIsBuildOrHigher",
+    "IfNewVersionIsPatchOrHigher",
+    "IfNewVersionIsPrereleaseOrHigher",
+    "Always",
 ]
 ROUTINE_FILE_UPDATER_TYPE = Literal[
-    "null",
-    "versionise_files",
+    "Null",
+    "VersioniseFiles",
 ]
 ROUTINE_CHANGELOG_TYPE = Literal[
-    "null",
-    "commit_pattern",
-    "last_commit_message_as_description",
+    "Null",
+    "CommitChangelogTags",
+    "LastCommitMessageAsDescription",
 ]

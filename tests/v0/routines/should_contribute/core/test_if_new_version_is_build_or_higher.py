@@ -9,23 +9,28 @@ from tests.utils.pseudo_repo import PseudoRepo
 from tests.v0.routines.should_contribute.routine import TestRoutineShouldContribute
 
 
-class TestNever(TestRoutineShouldContribute):
+class TestIfNewVersionIsBuildOrHigher(TestRoutineShouldContribute):
     @parameterized.expand([
         (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 4)),
-        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 3)),
-        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 2)),
         (SemverTag.init_spec(5, 0, 0), SemverTag.init_spec(6, 0, 0)),
+        (SemverTag.init_spec(0, 3, 2, None, None), SemverTag.init_spec(0, 3, 2, build='build.1')),
+    ])
+    def test_true(self, old_version, new_version):
+        self.routine.repo.tags.create(str(old_version))
+        self.assertEqual(self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock, Mock)), True)
+
+    @parameterized.expand([
+        (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 2)),
         (SemverTag.init_spec(1, 1, 1), SemverTag.init_spec(0, 0, 0)),
-        (SemverTag.init_spec(3, 3, 3), SemverTag.init_spec(3, 3, 3)),
+        (SemverTag.init_spec(0, 3, 2, None, 'build.2'), SemverTag.init_spec(0, 3, 2, build='build.1')),
     ])
     def test_false(self, old_version, new_version):
         self.routine.repo.tags.create(str(old_version))
-        self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock, Mock))
-        self.assertEqual(self.routine.repo.tags.latest_semver, old_version)
+        self.assertEqual(self.routine.run(VersioningResult(Versions(old_version, new_version), Mock, Mock, Mock, Mock)), False)
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('Never')
+        self.routine = self.get_routine('IfNewVersionIsBuildOrHigher')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
 
     def tearDown(self):

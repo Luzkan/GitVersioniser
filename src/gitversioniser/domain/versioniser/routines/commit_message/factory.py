@@ -2,11 +2,11 @@ from gitversioniser.domain.versioniser.routines.commit_message.abstract import R
 from gitversioniser.domain.versioniser.routines.commit_message.core import (
     Null,
     PrefixVersionFull,
-    PrefixVersionFullOnlyNumbers,
+    PrefixVersionFullButOnlyDigits,
     PrefixVersionMajorMinorPatch,
     PrefixVersionMajorMinorPatchPrerelease,
     SuffixVersionFull,
-    SuffixVersionFullOnlyNumbers,
+    SuffixVersionFullButOnlyDigits,
     SuffixVersionMajorMinorPatch,
     SuffixVersionMajorMinorPatchPrerelease,
 )
@@ -20,11 +20,11 @@ class RoutineCommitMessageFactory(RoutineFactory):
         return {
             RoutineFactory.skip_init(Null).factory_name(): Null,
             RoutineFactory.skip_init(PrefixVersionFull).factory_name(): PrefixVersionFull,
-            RoutineFactory.skip_init(PrefixVersionFullOnlyNumbers).factory_name(): PrefixVersionFullOnlyNumbers,
+            RoutineFactory.skip_init(PrefixVersionFullButOnlyDigits).factory_name(): PrefixVersionFullButOnlyDigits,
             RoutineFactory.skip_init(PrefixVersionMajorMinorPatch).factory_name(): PrefixVersionMajorMinorPatch,
             RoutineFactory.skip_init(PrefixVersionMajorMinorPatchPrerelease).factory_name(): PrefixVersionMajorMinorPatchPrerelease,
             RoutineFactory.skip_init(SuffixVersionFull).factory_name(): SuffixVersionFull,
-            RoutineFactory.skip_init(SuffixVersionFullOnlyNumbers).factory_name(): SuffixVersionFullOnlyNumbers,
+            RoutineFactory.skip_init(SuffixVersionFullButOnlyDigits).factory_name(): SuffixVersionFullButOnlyDigits,
             RoutineFactory.skip_init(SuffixVersionMajorMinorPatch).factory_name(): SuffixVersionMajorMinorPatch,
             RoutineFactory.skip_init(SuffixVersionMajorMinorPatchPrerelease).factory_name(): SuffixVersionMajorMinorPatchPrerelease,
         }[routine_commit_name]

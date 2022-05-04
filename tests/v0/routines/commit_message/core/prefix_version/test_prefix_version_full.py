@@ -7,7 +7,7 @@ from tests.v0.routines.commit_message.routine import TestRoutineCommitMessage
 class TestPrefixVersionFull(TestRoutineCommitMessage):
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('prefix_version_full')
+        self.routine = self.get_routine('PrefixVersionFull')
 
     @parameterized.expand([
         (SemverTag.init_spec(1, 0, 0), 'Initial Commit', '[`1.0.0`] Initial Commit'),

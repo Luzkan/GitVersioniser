@@ -9,12 +9,12 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
         self.assertEqual(self.config.versioned_files, [])
 
     def test_default_arguments_routines(self):
-        self.assertEqual(self.config.routines.version, 'commits_till_last_git_versioniser_commit')
-        self.assertEqual(self.config.routines.commit_message, 'prefix_version_full')
-        self.assertEqual(self.config.routines.file_updater, 'versionise_files')
-        self.assertEqual(self.config.routines.commiting, 'push_origin_amend')
-        self.assertEqual(self.config.routines.tagging, 'regular')
-        self.assertEqual(self.config.routines.changelog, 'commit_pattern')
+        self.assertEqual(self.config.routines.version, 'VersionTagInCommitsTillLastGitVersioniserCommit')
+        self.assertEqual(self.config.routines.commit_message, 'PrefixVersionFull')
+        self.assertEqual(self.config.routines.file_updater, 'VersioniseFiles')
+        self.assertEqual(self.config.routines.commiting, 'PushOriginAmend')
+        self.assertEqual(self.config.routines.tagging, 'Regular')
+        self.assertEqual(self.config.routines.changelog, 'CommitChangelogTags')
 
     def test_default_configuration_credentials(self):
         self.assertEqual(self.config.credentials.username, "GitVersioniser")

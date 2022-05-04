@@ -6,5 +6,5 @@ from gitversioniser.domain.versioniser.utils.routine_result import VersioningRes
 
 @dataclass
 class Never(RoutineTagging):
-    def run(self, result: VersioningResult):
+    def run(self, result: VersioningResult) -> None:
         """ This routine does nothing. """

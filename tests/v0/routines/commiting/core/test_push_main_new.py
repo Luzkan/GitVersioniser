@@ -36,4 +36,4 @@ class TestPushMainNew(TestRoutineCommiting):
         self.routine.repo.files.add_all()
         self.routine.repo.commits.commit(new_commit_message)
         self.assertEqual(self.routine.repo.commits.latest.message.value, f"{new_commit_message}\n")
-        self.assertEqual(self.routine.repo.commits.latest.get_parent().message.value, f"{last_commit_message}\n")
+        self.assertEqual(self.routine.repo.commits.latest.get_parents()[0].message.value, f"{last_commit_message}\n")

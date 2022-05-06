@@ -5,7 +5,7 @@ from gitversioniser.domain.repository.semver_tag import SemverTag
 from gitversioniser.helpers.version_bump import VersionBump
 
 
-@dataclass
+@dataclass(frozen=True)
 class Increment:
     version_bump: VersionBump
     precedence: int

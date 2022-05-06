@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.0+build.1`]] - 2022-05-06
+
+### Changed
+
+- Frozen Configuration (made them immutable)
+
+
+
 ## [[`0.5.0`]] - 2022-05-04
 
 ### Changed
@@ -473,3 +481,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.4.0+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.4.0+build.1
 [`0.4.0+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.4.0+build.2
 [`0.5.0`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.0
+[`0.5.0+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.0+build.1

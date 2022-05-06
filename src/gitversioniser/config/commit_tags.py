@@ -4,7 +4,7 @@ from gitversioniser.config.commit_tag import CommitTag
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 
 
-@dataclass
+@dataclass(frozen=True)
 class CommitTags:
     added: CommitTag = CommitTag("A:", ChangelogCategory.ADDED)
     changed: CommitTag = CommitTag("C:", ChangelogCategory.CHANGED)

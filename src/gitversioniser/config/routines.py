@@ -12,7 +12,7 @@ from gitversioniser.helpers.types import (
 )
 
 
-@dataclass
+@dataclass(frozen=True)
 class Routines:
     changelog: ROUTINE_CHANGELOG_TYPE
     commit_message: ROUTINE_COMMIT_MESSAGE_TYPE

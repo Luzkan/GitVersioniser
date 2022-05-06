@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 
 
-@dataclass
+@dataclass(frozen=True)
 class CommitTag:
     pattern: str
     changelog_category: ChangelogCategory

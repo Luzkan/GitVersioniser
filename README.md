@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.5.0]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.5.0+build.1]</code></i>
     </div>
 </div>
 
@@ -23,8 +23,8 @@ This repository contains a tool for automatic git repository versioning. It can 
 
 ## ✨ **Features**
 
-- [Automatic Semantic Versioning](https://semver.org/) via Tags and prefixed Commit Messages.
-- [Automatic Changelog Entries Creation](https://keepachangelog.com/en/1.0.0/) based on the Commit Messages
+- [Automatic Semantic Versioning](https://semver.org/) via Tags, File Modifications and Commit Messages.
+- [Automatic Changelog Entries Creation](https://keepachangelog.com/en/1.0.0/) based on the Commit Messages.
 - Easily [adjustable](#-explore-more).
 - Easily [extendible](#-how-can-i-contribute) by creating a new class that overrides just a single _abstract method_.
 

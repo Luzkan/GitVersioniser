@@ -12,8 +12,8 @@ class Versioniser:
     config: Config
 
     def __post_init__(self):
-        self.repo = GitRepository(self.config, _repo=Repo(self.config.target_repository_path))
-        self.routine_manager = RoutineManager(self.config, self.repo)
+        self.repository = GitRepository(self.config, _repo=Repo(self.config.target_repository_path))
+        self.routine_manager = RoutineManager(self.config, self.repository)
 
     def run(self) -> None:
         self.routine_manager.run()

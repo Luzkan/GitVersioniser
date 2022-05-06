@@ -4,7 +4,7 @@ from gitversioniser.config.increment import Increment
 from gitversioniser.helpers.version_bump import VersionBump
 
 
-@dataclass
+@dataclass(frozen=True)
 class Increments:
     major: Increment = Increment(VersionBump.MAJOR, 1, "#major", lambda version: version.bump_major())
     minor: Increment = Increment(VersionBump.MINOR, 1, "#minor", lambda version: version.bump_minor())

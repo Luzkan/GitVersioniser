@@ -6,7 +6,7 @@ from gitversioniser.config.routines import Routines
 from gitversioniser.helpers.logger import CONSOLE
 
 
-@dataclass
+@dataclass(frozen=True)
 class Config:
     target_repository_path: str = field(repr=False)
     versioned_files: list[str]

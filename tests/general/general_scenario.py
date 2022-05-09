@@ -17,6 +17,7 @@ class TestGeneralScenario(unittest.TestCase):
                 target_repository_path=self.test_repo_path,
                 versioned_files=arguments.versioned_files,
                 routines=arguments.routines,
+                patterns=arguments.patterns,
             )
 
     def setUp(self):

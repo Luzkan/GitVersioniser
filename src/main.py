@@ -4,7 +4,7 @@ from gitversioniser.domain.versioniser.versioniser import Versioniser
 from gitversioniser.helpers.logger import CONSOLE
 
 
-__version__ = '0.5.0+build.2'
+__version__ = '0.5.1'
 
 
 def config() -> Config:
@@ -13,6 +13,7 @@ def config() -> Config:
         target_repository_path=arguments.target_directory,
         versioned_files=arguments.versioned_files,
         routines=arguments.routines,
+        patterns=arguments.patterns,
     )
 
 

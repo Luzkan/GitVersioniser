@@ -1,6 +1,12 @@
 from typing import Literal
 
 
+COMMIT_CHANGELOG_TAG_TYPE = Literal[
+    "ClassicChangelog",
+]
+COMMIT_INCREMENT_TAG_TYPE = Literal[
+    "HashtagExplicit",
+]
 ROUTINE_VERSION_TYPE = Literal[
     "VersionTagInLastCommit",
     "VersionTagInCommitsTillLastGitVersioniserCommit",

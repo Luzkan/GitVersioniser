@@ -12,6 +12,16 @@ inputs:
     required: false
     default: 'luzkan.gitversioniser@github.com'
   # ---------------------------
+  # Versioniser Git Credentials
+  commit_increment_tags:
+    description: '(Tags) Tags to look for in commit message for semver incrementation.'
+    required: false
+    default: 'HashtagExplicit'
+  commit_changelog_tags:
+    description: '(Tags) Tags to look for in commit message for changelog entries creation.'
+    required: false
+    default: 'ClassicChangelog'
+  # ---------------------------
   # (Routine) Versioning
   routine_version:
     description: '(Routine) Routine which will the GitVersioniser follow when versioning your repository.'
@@ -70,6 +80,10 @@ runs:
     # Versioniser Git Credentials
     - ${{ inputs.versioniser_username }}
     - ${{ inputs.versioniser_email }}
+    # ---------------------------
+    # Versioning
+    - ${{ inputs.commit_increment_tags }}
+    - ${{ inputs.commit_changelog_tags }}
     # ---------------------------
     # Versioning
     - ${{ inputs.routine_version }}

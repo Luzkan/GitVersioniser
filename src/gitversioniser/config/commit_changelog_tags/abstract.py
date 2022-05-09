@@ -1,18 +1,10 @@
-from dataclasses import dataclass
+from abc import ABC
 
-from gitversioniser.config.commit_tag import CommitTag
+from gitversioniser.config.commit_changelog_tags.commit_tag import CommitTag
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 
 
-@dataclass(frozen=True)
-class CommitTags:
-    added: CommitTag = CommitTag("A:", ChangelogCategory.ADDED)
-    changed: CommitTag = CommitTag("C:", ChangelogCategory.CHANGED)
-    deprecated: CommitTag = CommitTag("D:", ChangelogCategory.DEPRECATED)
-    removed: CommitTag = CommitTag("R:", ChangelogCategory.REMOVED)
-    fixed: CommitTag = CommitTag("F:", ChangelogCategory.FIXED)
-    security: CommitTag = CommitTag("S:", ChangelogCategory.SECURITY)
-
+class CommitChangelogTags(ABC):
     def get_default_dict_for_changelog(self) -> dict[str, list[str]]:
         return {str(commit_tag.changelog_category.value): list() for commit_tag in self.__dict__.values()}
 

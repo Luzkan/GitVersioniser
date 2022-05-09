@@ -1,4 +1,4 @@
-from gitversioniser.config.commit_tag import CommitTag
+from gitversioniser.config.commit_changelog_tags.commit_tag import CommitTag
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 from tests.v0.default_scenario_v0 import TestDefaultScenarioV0
 

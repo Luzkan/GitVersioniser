@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from gitversioniser.config.increment import Increment
+from gitversioniser.config.commit_increment_tags.increment import Increment
 from gitversioniser.domain.repository.commit_utils.tag import TagUtils
 
 

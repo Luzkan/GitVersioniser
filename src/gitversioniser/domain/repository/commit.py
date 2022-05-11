@@ -12,7 +12,9 @@ class Commit:
     """ Couldn't make it with inheritance. """
     config: Config = field(repr=False)
     _commit: GitCommit = field(repr=False)
-    message: Message = field(init=False)
+
+    def __post_init__(self):
+        self.message = Message(self.config, str(self._commit.message))
 
     @property
     def summary(self) -> Summary:
@@ -22,9 +24,6 @@ class Commit:
     @property
     def description(self) -> str:
         return self.message.value.replace(str(self.message.summary), '')
-
-    def __post_init__(self):
-        self.message = Message(self.config, str(self._commit.message))
 
     @property
     def get_parents_count(self) -> int:

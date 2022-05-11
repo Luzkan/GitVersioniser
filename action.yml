@@ -17,7 +17,7 @@ inputs:
     description: '(Tags) Tags to look for in commit message for semver incrementation.'
     required: false
     default: 'HashtagExplicit'
-  commit_changelog_tags:
+  commit_change_tags:
     description: '(Tags) Tags to look for in commit message for changelog entries creation.'
     required: false
     default: 'ClassicChangelog'
@@ -58,7 +58,7 @@ inputs:
   routine_changelog:
     description: '(Routine) Handles the changelog automatically.'
     required: false
-    default: 'CommitChangelogTags'
+    default: 'CommitChangeTags'
   # ---------------------------
   # (Routine) File Versioning
   routine_file_updater:
@@ -83,7 +83,7 @@ runs:
     # ---------------------------
     # Versioning
     - ${{ inputs.commit_increment_tags }}
-    - ${{ inputs.commit_changelog_tags }}
+    - ${{ inputs.commit_change_tags }}
     # ---------------------------
     # Versioning
     - ${{ inputs.routine_version }}

@@ -6,6 +6,18 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.3`]] - 2022-05-11
+
+### Added
+
+- Emoji Representation of Commit Change Tags
+
+### Changed
+
+- "Commit Changelog Tag name" to "Commit Change Tag"
+
+
+
 ## [[`0.5.2`]] - 2022-05-11
 
 ### Changed
@@ -430,7 +442,7 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ### Fixed
 
-- Adjusted the `\n` in changelog `CommitChangelogTags` #patch
+- Adjusted the `\n` in changelog `CommitChangeTags` #patch
 
 
 
@@ -509,3 +521,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.5.0+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.0+build.2
 [`0.5.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.1
 [`0.5.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.2
+[`0.5.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3

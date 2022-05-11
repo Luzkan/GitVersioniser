@@ -1,7 +1,7 @@
 from typing import Literal
 
 
-COMMIT_CHANGELOG_TAG_TYPE = Literal[
+COMMIT_CHANGE_TAG_TYPE = Literal[
     "ClassicChangelog",
 ]
 COMMIT_INCREMENT_TAG_TYPE = Literal[
@@ -51,6 +51,6 @@ ROUTINE_FILE_UPDATER_TYPE = Literal[
 ]
 ROUTINE_CHANGELOG_TYPE = Literal[
     "Null",
-    "CommitChangelogTags",
+    "CommitChangeTags",
     "LastCommitMessageAsDescription",
 ]

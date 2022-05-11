@@ -10,9 +10,6 @@ from gitversioniser.domain.repository.commit_utils.version_tag_utils import Vers
 class Summary:
     config: Config = field(repr=False)
     value: str
-    bump_tag: IncrementTagUtils = field(init=False)
-    commit_tag: CommitTagUtils = field(init=False)
-    version_tag: VersionTagUtils = field(init=False)
 
     def __post_init__(self):
         self.bump_tag = IncrementTagUtils(self.config, self.value)

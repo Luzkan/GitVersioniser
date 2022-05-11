@@ -11,10 +11,6 @@ from gitversioniser.domain.repository.commit_utils.version_tag_utils import Vers
 class Message:
     config: Config = field(repr=False)
     value: str
-    summary: Summary = field(init=False)
-    increment_tag: IncrementTagUtils = field(init=False)
-    commit_tag: CommitTagUtils = field(init=False)
-    version_tag: VersionTagUtils = field(init=False)
 
     def __post_init__(self):
         self.summary = Summary(self.config, self.value.split('\n', 1)[0])

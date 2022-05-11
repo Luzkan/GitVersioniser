@@ -9,7 +9,7 @@ git_credential_email=$2         # [Git Credential]
 # ----
 # Commit Tags
 commit_increment_tags=$3        # [Tags]
-commit_changelog_tags=$4        # [Tags]
+commit_change_tags=$4           # [Tags]
 # ----
 # Versioning
 routine_version=$5              # [Routine]
@@ -44,7 +44,7 @@ cd target_repository
 python -m pip install -e .
 python /src/main.py -d . \
     --commit_increment_tags $commit_increment_tags \
-    --commit_changelog_tags $commit_changelog_tags \
+    --commit_change_tags $commit_change_tags \
     --routine_version $routine_version \
     --routine_should_contribute $routine_should_contribute \
     --routine_commiting $routine_commiting \

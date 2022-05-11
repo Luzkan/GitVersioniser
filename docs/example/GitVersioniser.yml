@@ -44,7 +44,7 @@ jobs:
           # ---------------------------
           # Changelog Handling
           # -----
-          routine_changelog: "CommitChangelogTags"
+          routine_changelog: "CommitChangeTags"
           # ---------------------------
           # File Versioning
           # ----

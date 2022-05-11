@@ -6,7 +6,7 @@ from tests.v0.routines.changelog.routine import TestRoutineChangelog
 from tests.v0.routines.changelog.utils.changelog import TestChangelogManager
 
 
-class TestCommitChangelogTags(TestRoutineChangelog):
+class TestCommitChangeTags(TestRoutineChangelog):
     @parameterized.expand([
         (
             SemverTag.init_spec(1, 2, 3, 'rc.2', 'build.2'),
@@ -96,11 +96,11 @@ class TestCommitChangelogTags(TestRoutineChangelog):
 
     def setUp(self):
         super().setUp()
-        self.routine = self.get_routine('CommitChangelogTags')
+        self.routine = self.get_routine('CommitChangeTags')
         self.repo_utils = PseudoRepo(self.routine.config, self.routine.repo)
         self.repo_utils.delete_remote()
         self.repo_utils.create_remote()
-        self.test_changelog_manager = TestChangelogManager(self.routine, 'commit_changelog_tags')
+        self.test_changelog_manager = TestChangelogManager(self.routine, 'commit_change_tags')
         self.test_changelog_manager.rename_changelog_temporarily()
 
     def tearDown(self):

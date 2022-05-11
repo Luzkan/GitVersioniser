@@ -4,7 +4,7 @@ from gitversioniser.domain.versioniser.versioniser import Versioniser
 from gitversioniser.helpers.logger import CONSOLE
 
 
-__version__ = '0.5.2'
+__version__ = '0.5.3'
 
 
 def config() -> Config:

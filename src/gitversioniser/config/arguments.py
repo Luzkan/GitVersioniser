@@ -1,7 +1,7 @@
 import argparse
 from dataclasses import dataclass
 
-from gitversioniser.config.commit_changelog_tags.factory import CommitChangelogTagsFactory
+from gitversioniser.config.commit_change_tags.factory import CommitChangeTagsFactory
 from gitversioniser.config.commit_increment_tags.factory import CommitIncrementTagsFactory
 from gitversioniser.config.patterns import Patterns
 from gitversioniser.config.routines import Routines
@@ -16,7 +16,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.5.2]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.5.3]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"
@@ -34,7 +34,7 @@ class Arguments:
             help="(Tags) Tags to look for in commit message for semver incrementation. (default: %(default)s)"
         )
         parser.add_argument(
-            "-cct", "--commit_changelog_tags", default='ClassicChangelog',
+            "-cct", "--commit_change_tags", default='ClassicChangelog',
             help="(Tags) Tags to look for in commit message for changelog entries creation. (default: %(default)s)"
         )
         parser.add_argument(
@@ -58,7 +58,7 @@ class Arguments:
             help="(Routine) When should the GitVersioniser contribute anything to the remote repository. (default: %(default)s)"
         )
         parser.add_argument(
-            "-rcl", "--routine_changelog", default='CommitChangelogTags',
+            "-rcl", "--routine_changelog", default='CommitChangeTags',
             help="(Routine) The way GitVersioniser will handle changelog. (default: %(default)s)"
         )
         parser.add_argument(
@@ -81,6 +81,6 @@ class Arguments:
             ),
             patterns=Patterns(
                 increments=CommitIncrementTagsFactory.create(parsed_arguments.commit_increment_tags)(),
-                commit_tags=CommitChangelogTagsFactory.create(parsed_arguments.commit_changelog_tags)(),
+                commit_tags=CommitChangeTagsFactory.create(parsed_arguments.commit_change_tags)(),
             )
         )

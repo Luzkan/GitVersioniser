@@ -6,6 +6,22 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.3+build.2`]] - 2022-05-11
+
+### Refactorization
+
+- Summary in Commit Message is now string instead of a class
+
+### Removed
+
+- @property shortcut to summary and description in commit
+
+### CI
+
+- Updated configuration to use extended tags
+
+
+
 ## [[`0.5.3+build.1`]] - 2022-05-11
 
 ### Changed
@@ -531,3 +547,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.5.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.2
 [`0.5.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3
 [`0.5.3+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.1
+[`0.5.3+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.2

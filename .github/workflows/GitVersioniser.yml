@@ -20,11 +20,27 @@ jobs:
         id: gitversioniser
         uses: luzkan/GitVersioniser@main
         with:
+          # ===========================
+          #        Credentials
           # ---------------------------
           # Versioniser Git Credentials
           # ----
           versioniser_username: "GitVersioniser"
           versioniser_email: "luzkan.gitversioniser@github.com"
+
+          # ===========================
+          #          Patterns
+          # ---------------------------
+          # Commits
+          # ----
+          commit_pattern_increment_tags: "HashtagExplicit"
+          # ---------------------------
+          # Commits
+          # ----
+          commit_pattern_change_tags: "ClassicChangelogExtended"
+  
+          # ===========================
+          #          Routines
           # ---------------------------
           # Versioning
           # ----

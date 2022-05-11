@@ -14,7 +14,7 @@ class Arguments:
 
     @staticmethod
     def get_arguments() -> 'Arguments':
-        parser = argparse.ArgumentParser(description="GitVersioniser [0.5.3+build.1]")
+        parser = argparse.ArgumentParser(description="GitVersioniser [0.5.3+build.2]")
         parser.add_argument(
             "-d", "--target_directory", default='.',
             help="(Setting) Path to repository which shall be versionised. (default: %(default)s)"

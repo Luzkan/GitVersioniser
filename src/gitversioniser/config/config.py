@@ -12,7 +12,7 @@ class Config:
     versioned_files: list[str]
     routines: Routines
     credentials: Credentials = Credentials()
-    commit_patterns: CommitPatterns = field(default=CommitPatterns(), repr=False)
+    commit_patterns: CommitPatterns = CommitPatterns()
 
     def __post_init__(self):
         CONSOLE.rule('Configuration')

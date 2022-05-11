@@ -2,7 +2,10 @@ from typing import Literal
 
 
 COMMIT_CHANGE_TAG_TYPE = Literal[
+    "AngularCommits",
     "ClassicChangelog",
+    "ClassicChangelogExtended",
+    "ConventionalCommits",
 ]
 COMMIT_INCREMENT_TAG_TYPE = Literal[
     "HashtagExplicit",

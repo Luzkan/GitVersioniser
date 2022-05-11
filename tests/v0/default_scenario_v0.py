@@ -15,7 +15,7 @@ class TestDefaultScenarioV0(unittest.TestCase):
                 target_repository_path=self.test_repo_path,
                 versioned_files=arguments.versioned_files,
                 routines=arguments.routines,
-                patterns=arguments.patterns,
+                commit_patterns=arguments.patterns,
             )
 
     def setUp(self):

@@ -1,5 +1,5 @@
-from gitversioniser.config.commit_change_tags.abstract import CommitChangeTags
-from gitversioniser.config.commit_change_tags.core import AngularCommits, ClassicChangelog, ClassicChangelogExtended, ConventionalCommits
+from gitversioniser.config.patterns.commit_change_tags.abstract import CommitChangeTags
+from gitversioniser.config.patterns.commit_change_tags.core import AngularCommits, ClassicChangelog, ClassicChangelogExtended, ConventionalCommits
 from gitversioniser.helpers.types import COMMIT_CHANGE_TAG_TYPE
 
 

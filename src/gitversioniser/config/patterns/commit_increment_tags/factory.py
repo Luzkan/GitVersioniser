@@ -1,5 +1,5 @@
-from gitversioniser.config.commit_increment_tags.abstract import CommitIncrementTags
-from gitversioniser.config.commit_increment_tags.core.hashtag_explicit import HashtagExplicit
+from gitversioniser.config.patterns.commit_increment_tags.abstract import CommitIncrementTags
+from gitversioniser.config.patterns.commit_increment_tags.core.hashtag_explicit import HashtagExplicit
 from gitversioniser.helpers.types import COMMIT_INCREMENT_TAG_TYPE
 
 

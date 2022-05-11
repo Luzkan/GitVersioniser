@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 from gitversioniser.config.credentials import Credentials
-from gitversioniser.config.patterns import Patterns
+from gitversioniser.config.patterns import CommitPatterns
 from gitversioniser.config.routines import Routines
 from gitversioniser.helpers.logger import CONSOLE
 
@@ -12,7 +12,7 @@ class Config:
     versioned_files: list[str]
     routines: Routines
     credentials: Credentials = Credentials()
-    patterns: Patterns = field(default=Patterns(), repr=False)
+    commit_patterns: CommitPatterns = field(default=CommitPatterns(), repr=False)
 
     def __post_init__(self):
         CONSOLE.rule('Configuration')

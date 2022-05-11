@@ -1,7 +1,7 @@
 import re
 from abc import ABC
 
-from gitversioniser.config.commit_change_tags.commit_tag import CommitTag
+from gitversioniser.config.patterns.commit_change_tags.commit_tag import CommitTag
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 
 

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from gitversioniser.config.commit_increment_tags.abstract import CommitIncrementTags
-from gitversioniser.config.commit_increment_tags.increment import Increment
+from gitversioniser.config.patterns.commit_increment_tags.abstract import CommitIncrementTags
+from gitversioniser.config.patterns.commit_increment_tags.increment import Increment
 
 
 @dataclass(frozen=True)

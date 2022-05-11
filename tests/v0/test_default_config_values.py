@@ -1,4 +1,4 @@
-from gitversioniser.config.commit_change_tags.commit_tag import CommitTag
+from gitversioniser.config.patterns.commit_change_tags.commit_tag import CommitTag
 from gitversioniser.helpers.changelog_category import ChangelogCategory
 from tests.v0.default_scenario_v0 import TestDefaultScenarioV0
 
@@ -21,25 +21,25 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
         self.assertEqual(self.config.credentials.email, "luzkan.gitversioniser@github.com")
 
     def test_default_configuration_patterns_increments(self):
-        self.assertEqual(self.config.patterns.increments.major.pattern, '#major')
-        self.assertEqual(self.config.patterns.increments.major.precedence, 1)
-        self.assertEqual(self.config.patterns.increments.minor.pattern, '#minor')
-        self.assertEqual(self.config.patterns.increments.minor.precedence, 1)
-        self.assertEqual(self.config.patterns.increments.patch.pattern, '#patch')
-        self.assertEqual(self.config.patterns.increments.patch.precedence, 1)
-        self.assertEqual(self.config.patterns.increments.alpha.pattern, '#alpha')
-        self.assertEqual(self.config.patterns.increments.alpha.precedence, 2)
-        self.assertEqual(self.config.patterns.increments.beta.pattern, '#beta')
-        self.assertEqual(self.config.patterns.increments.beta.precedence, 3)
-        self.assertEqual(self.config.patterns.increments.prerelease.pattern, '#prerelease')
-        self.assertEqual(self.config.patterns.increments.prerelease.precedence, 4)
-        self.assertEqual(self.config.patterns.increments.finalized.pattern, '#fin')
-        self.assertEqual(self.config.patterns.increments.finalized.precedence, 9)
+        self.assertEqual(self.config.commit_patterns.increment_tags.major.pattern, '#major')
+        self.assertEqual(self.config.commit_patterns.increment_tags.major.precedence, 1)
+        self.assertEqual(self.config.commit_patterns.increment_tags.minor.pattern, '#minor')
+        self.assertEqual(self.config.commit_patterns.increment_tags.minor.precedence, 1)
+        self.assertEqual(self.config.commit_patterns.increment_tags.patch.pattern, '#patch')
+        self.assertEqual(self.config.commit_patterns.increment_tags.patch.precedence, 1)
+        self.assertEqual(self.config.commit_patterns.increment_tags.alpha.pattern, '#alpha')
+        self.assertEqual(self.config.commit_patterns.increment_tags.alpha.precedence, 2)
+        self.assertEqual(self.config.commit_patterns.increment_tags.beta.pattern, '#beta')
+        self.assertEqual(self.config.commit_patterns.increment_tags.beta.precedence, 3)
+        self.assertEqual(self.config.commit_patterns.increment_tags.prerelease.pattern, '#prerelease')
+        self.assertEqual(self.config.commit_patterns.increment_tags.prerelease.precedence, 4)
+        self.assertEqual(self.config.commit_patterns.increment_tags.finalized.pattern, '#fin')
+        self.assertEqual(self.config.commit_patterns.increment_tags.finalized.precedence, 9)
 
     def test_default_configuration_patterns_commit_tags(self):
-        self.assertEqual(self.config.patterns.commit_tags.added, CommitTag("A:", ChangelogCategory.ADDED, "💠"))
-        self.assertEqual(self.config.patterns.commit_tags.fixed, CommitTag("F:", ChangelogCategory.FIXED, "🛠️"))
-        self.assertEqual(self.config.patterns.commit_tags.changed, CommitTag("C:", ChangelogCategory.CHANGED, "🔸"))
-        self.assertEqual(self.config.patterns.commit_tags.removed, CommitTag("R:", ChangelogCategory.REMOVED, "🗑️"))
-        self.assertEqual(self.config.patterns.commit_tags.security, CommitTag("S:", ChangelogCategory.SECURITY, "🔐"))
-        self.assertEqual(self.config.patterns.commit_tags.deprecated, CommitTag("D:", ChangelogCategory.DEPRECATED, "🔚"))
+        self.assertEqual(self.config.commit_patterns.change_tags.added, CommitTag("A:", ChangelogCategory.ADDED, "💠"))
+        self.assertEqual(self.config.commit_patterns.change_tags.fixed, CommitTag("F:", ChangelogCategory.FIXED, "🛠️"))
+        self.assertEqual(self.config.commit_patterns.change_tags.changed, CommitTag("C:", ChangelogCategory.CHANGED, "🔸"))
+        self.assertEqual(self.config.commit_patterns.change_tags.removed, CommitTag("R:", ChangelogCategory.REMOVED, "🗑️"))
+        self.assertEqual(self.config.commit_patterns.change_tags.security, CommitTag("S:", ChangelogCategory.SECURITY, "🔐"))
+        self.assertEqual(self.config.commit_patterns.change_tags.deprecated, CommitTag("D:", ChangelogCategory.DEPRECATED, "🔚"))

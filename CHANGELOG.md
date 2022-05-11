@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.3+build.1`]] - 2022-05-11
+
+### Changed
+
+- Config Structure - Patterns
+
+
+
 ## [[`0.5.3`]] - 2022-05-11
 
 ### Added
@@ -522,3 +530,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.5.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.1
 [`0.5.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.2
 [`0.5.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3
+[`0.5.3+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.1

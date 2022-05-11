@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.5.3]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.5.3+build.1]</code></i>
     </div>
 </div>
 
@@ -39,7 +39,7 @@ Copy the [GitVersioniser.yml](./docs/example/GitVersioniser.yml) to the `.github
 ## 🙌 **How can I use this?**
 
 - You can start start any line in message with `A:` _(added)_, `F:` _(fixed)_, `R:` _(removed)_, ... etc., to [tag](./src/gitversioniser/config/commit_change_tags/core/classic_changelog.py) the action you did, which will create corresponding changelog entry.
-- You can add `#major`, `#minor`, `#patch`, ... etc., to [increment](./src/gitversioniser/config/commit_increment_tags/core/hashtag_explicit.py) version of the repository.
+- You can add `#major`, `#minor`, `#patch`, ... etc., to [increment](./src/gitversioniser/config/patterns/commit_increment_tags/core/hashtag_explicit.py) version of the repository.
 
 ---
 
@@ -51,7 +51,7 @@ If you would like to contribute, you are more than welcome by opening a new disc
 
 ## 💰 **Benefits**
 
-First and foremost - this tool will automatically create new semantic version tags for your repository. It will increment the build version by default, but you can choose what will get bumped using the [increment tags](./src/gitversioniser/config/commit_increment_tags/core/hashtag_explicit.py). GitVersioniser will automatically add the version tag to the commit message in the default version, which gives an excellent overview of which files were when modified.
+First and foremost - this tool will automatically create new semantic version tags for your repository. It will increment the build version by default, but you can choose what will get bumped using the [increment tags](./src/gitversioniser/config/patterns/commit_increment_tags/core/hashtag_explicit.py). GitVersioniser will automatically add the version tag to the commit message in the default version, which gives an excellent overview of which files were when modified.
 
 Using this repository out-of-the-box gives you a free, automatically managed `CHANGELOG.md` file. It uses [prefix tags](./src/gitversioniser/config/commit_change_tags/core/classic_changelog.py) that are one-letter shorthands of the joint summarization of a commit. This will encourage the developers to create tiny and descriptive commits. Additionally, there will be no more fights over the usage of imperative _"Fix"_ or declarative _"Fixed"_. Everyone can add the rest individually in their thoughts to their liking.
 

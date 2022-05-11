@@ -13,11 +13,11 @@ inputs:
     default: 'luzkan.gitversioniser@github.com'
   # ---------------------------
   # Versioniser Git Credentials
-  commit_increment_tags:
+  commit_pattern_increment_tags:
     description: '(Tags) Tags to look for in commit message for semver incrementation.'
     required: false
     default: 'HashtagExplicit'
-  commit_change_tags:
+  commit_pattern_change_tags:
     description: '(Tags) Tags to look for in commit message for changelog entries creation.'
     required: false
     default: 'ClassicChangelog'
@@ -82,8 +82,8 @@ runs:
     - ${{ inputs.versioniser_email }}
     # ---------------------------
     # Versioning
-    - ${{ inputs.commit_increment_tags }}
-    - ${{ inputs.commit_change_tags }}
+    - ${{ inputs.commit_pattern_increment_tags }}
+    - ${{ inputs.commit_pattern_change_tags }}
     # ---------------------------
     # Versioning
     - ${{ inputs.routine_version }}

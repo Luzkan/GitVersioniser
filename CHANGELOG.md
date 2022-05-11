@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.2`]] - 2022-05-11
+
+### Changed
+
+- Commit Tag Pattern now is checked via regex #patch
+
+
+
 ## [[`0.5.1`]] - 2022-05-09
 
 ### Added
@@ -500,3 +508,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.5.0+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.0+build.1
 [`0.5.0+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.0+build.2
 [`0.5.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.1
+[`0.5.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.2

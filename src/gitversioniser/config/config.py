@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 
 from gitversioniser.config.credentials import Credentials
 from gitversioniser.config.patterns import CommitPatterns
-from gitversioniser.config.routines import Routines
+from gitversioniser.config.routines.routines import Routines
 from gitversioniser.helpers.logger import CONSOLE
 
 

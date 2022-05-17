@@ -10,7 +10,7 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
 
     def test_default_arguments_routines(self):
         self.assertEqual(self.config.routines.version, 'VersionTagInCommitsTillLastGitVersioniserCommit')
-        self.assertEqual(self.config.routines.commit_message, 'PrefixVersionFull')
+        # self.assertEqual(self.config.routines.commit_message, 'PrefixVersionFull')
         self.assertEqual(self.config.routines.file_updater, 'VersioniseFiles')
         self.assertEqual(self.config.routines.commiting, 'PushOriginAmend')
         self.assertEqual(self.config.routines.tagging, 'Regular')
@@ -37,7 +37,7 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
         self.assertEqual(self.config.commit_patterns.increment_tags.finalized.precedence, 9)
 
     def test_default_configuration_patterns_commit_tags(self):
-        self.assertEqual(self.config.commit_patterns.change_tags.added, CommitTag("A:", ChangelogCategory.ADDED, "💠"))
+        self.assertEqual(self.config.commit_patterns.change_tags.added, CommitTag("A:", ChangelogCategory.ADDED, "✨"))
         self.assertEqual(self.config.commit_patterns.change_tags.fixed, CommitTag("F:", ChangelogCategory.FIXED, "🛠️"))
         self.assertEqual(self.config.commit_patterns.change_tags.changed, CommitTag("C:", ChangelogCategory.CHANGED, "🔸"))
         self.assertEqual(self.config.commit_patterns.change_tags.removed, CommitTag("R:", ChangelogCategory.REMOVED, "🗑️"))

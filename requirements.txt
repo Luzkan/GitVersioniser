@@ -1,3 +1,4 @@
 GitPython~=3.1.27
 semver~=2.13.0
 rich~=12.3.0
+typing-extensions~=4.2.0

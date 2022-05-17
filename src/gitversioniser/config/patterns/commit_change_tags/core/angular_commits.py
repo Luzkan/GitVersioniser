@@ -10,7 +10,7 @@ class AngularCommits(CommitChangeTags):
     build: CommitTag = CommitTag("Build:", ChangelogCategory.BUILD, "📦")
     ci: CommitTag = CommitTag("CI:", ChangelogCategory.CI, "🪢")
     docs: CommitTag = CommitTag("Docs:", ChangelogCategory.DOCUMENTATION, "📜")
-    feature: CommitTag = CommitTag("Feat:", ChangelogCategory.FEATURE, "💠")
+    feature: CommitTag = CommitTag("Feat:", ChangelogCategory.FEATURE, "✨")
     fix: CommitTag = CommitTag("Fix:", ChangelogCategory.FIXED, "🛠️")
     performance: CommitTag = CommitTag("Perf:", ChangelogCategory.PERFORMANCE, "⚡")
     refactored: CommitTag = CommitTag("Refactor:", ChangelogCategory.REFACTORIZATION, "♻️")

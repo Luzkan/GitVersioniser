@@ -1,8 +1,14 @@
-from .abstract import RoutineCommitMessage
-from .factory import RoutineCommitMessageFactory
+from .describe_changes.factory import DescribeChangesFactory
+from .format_version_tag.factory import FormatVersionTagFactory
+from .place_version_tag.factory import PlaceVersionTagFactory
+from .routine import RoutineCommitMessage
+from .summarize_changes.factory import SummarizeChangesFactory
 
 
 __all__ = [
     'RoutineCommitMessage',
-    'RoutineCommitMessageFactory',
+    'DescribeChangesFactory',
+    'FormatVersionTagFactory',
+    'PlaceVersionTagFactory',
+    'SummarizeChangesFactory'
 ]

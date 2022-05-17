@@ -4,33 +4,36 @@
 # Arguments:
 # ----
 # Versioniser Credentials
-git_credential_username=$1        # [Git Credential]
-git_credential_email=$2           # [Git Credential]
+git_credential_username=$1                          # [Git Credential]
+git_credential_email=$2                             # [Git Credential]
 # ----
 # Commit Tags
-commit_pattern_increment_tags=$3  # [Tags]
-commit_pattern_change_tags=$4     # [Tags]
+commit_pattern_increment_tags=$3                    # [Tags]
+commit_pattern_change_tags=$4                       # [Tags]
 # ----
 # Versioning
-routine_version=$5                # [Routine]
+routine_version=$5                                  # [Routine]
 # ----
 # Contributing
-routine_should_contribute=$6      # [Routine]
-routine_commiting=$7              # [Routine]
+routine_should_contribute=$6                        # [Routine]
+routine_commiting=$7                                # [Routine]
 # ----
 # Commit Message
-routine_commit_message=$8         # [Routine]
+routine_commit_message_describe_changes=${8}        # [Routine]
+routine_commit_message_format_version_tag=${9}      # [Routine]
+routine_commit_message_place_version_tag=${10}      # [Routine]
+routine_commit_message_summarize_changes=${11}      # [Routine]
 # ----
 # Tagging
-routine_tagging=$9                # [Routine]
-routine_prefix_tag_with_v=${10}   # [Routine]
+routine_tagging=${12}                               # [Routine]
+routine_prefix_tag_with_v=${13}                     # [Routine]
 # ----
 # Changelog
-routine_changelog=${11}           # [Routine]
+routine_changelog=${14}                             # [Routine]
 # ----
 # File Updating
-routine_file_updater=${12}        # [Routine]
-versionised_files=${13}           # [Setting] For: routine_file_updater
+routine_file_updater=${15}                          # [Routine]
+versionised_files=${16}                             # [Setting] For: routine_file_updater
 
 # -----------------
 # Git Configuration
@@ -48,7 +51,10 @@ python /src/main.py -d . \
     --routine_version $routine_version \
     --routine_should_contribute $routine_should_contribute \
     --routine_commiting $routine_commiting \
-    --routine_commit_message $routine_commit_message \
+    --routine_commit_message_describe_changes $routine_commit_message_describe_changes \
+    --routine_commit_message_format_version_tag $routine_commit_message_format_version_tag \
+    --routine_commit_message_place_version_tag $routine_commit_message_place_version_tag \
+    --routine_commit_message_summarize_changes $routine_commit_message_summarize_changes \
     --routine_tagging $routine_tagging \
     --routine_prefix_tag_with_v $routine_prefix_tag_with_v \
     --routine_changelog $routine_changelog \

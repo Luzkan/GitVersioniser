@@ -1,30 +1,24 @@
-from gitversioniser.domain.versioniser.routines.commit_message.abstract import RoutineCommitMessage
-from gitversioniser.domain.versioniser.routines.commit_message.core import (
-    Null,
-    PrefixVersionFull,
-    PrefixVersionFullButOnlyDigits,
-    PrefixVersionMajorMinorPatch,
-    PrefixVersionMajorMinorPatchPrerelease,
-    SuffixVersionFull,
-    SuffixVersionFullButOnlyDigits,
-    SuffixVersionMajorMinorPatch,
-    SuffixVersionMajorMinorPatchPrerelease,
+from dataclasses import dataclass
+
+from gitversioniser.config.routines.commit_message import CommitMessageArguments
+from gitversioniser.domain.versioniser.routines.commit_message import (
+    DescribeChangesFactory,
+    FormatVersionTagFactory,
+    PlaceVersionTagFactory,
+    RoutineCommitMessage,
+    SummarizeChangesFactory,
 )
-from gitversioniser.domain.versioniser.routines.factory import RoutineFactory
-from gitversioniser.helpers.types import ROUTINE_COMMIT_MESSAGE_TYPE
 
 
-class RoutineCommitMessageFactory(RoutineFactory):
-    @staticmethod
-    def create(routine_commit_name: ROUTINE_COMMIT_MESSAGE_TYPE) -> type[RoutineCommitMessage]:
-        return {
-            RoutineFactory.skip_init(Null).factory_name(): Null,
-            RoutineFactory.skip_init(PrefixVersionFull).factory_name(): PrefixVersionFull,
-            RoutineFactory.skip_init(PrefixVersionFullButOnlyDigits).factory_name(): PrefixVersionFullButOnlyDigits,
-            RoutineFactory.skip_init(PrefixVersionMajorMinorPatch).factory_name(): PrefixVersionMajorMinorPatch,
-            RoutineFactory.skip_init(PrefixVersionMajorMinorPatchPrerelease).factory_name(): PrefixVersionMajorMinorPatchPrerelease,
-            RoutineFactory.skip_init(SuffixVersionFull).factory_name(): SuffixVersionFull,
-            RoutineFactory.skip_init(SuffixVersionFullButOnlyDigits).factory_name(): SuffixVersionFullButOnlyDigits,
-            RoutineFactory.skip_init(SuffixVersionMajorMinorPatch).factory_name(): SuffixVersionMajorMinorPatch,
-            RoutineFactory.skip_init(SuffixVersionMajorMinorPatchPrerelease).factory_name(): SuffixVersionMajorMinorPatchPrerelease,
-        }[routine_commit_name]
+@dataclass
+class RoutineCommitMessageFactory:
+    commit_message_arguments: CommitMessageArguments
+
+    def create(self, dependencies) -> RoutineCommitMessage:
+        return RoutineCommitMessage(
+            *dependencies,
+            describe_changes=DescribeChangesFactory.create(self.commit_message_arguments.describe_changes)(*dependencies),
+            format_version_tag=FormatVersionTagFactory.create(self.commit_message_arguments.format_version_tag)(*dependencies),
+            place_version_tag=PlaceVersionTagFactory.create(self.commit_message_arguments.place_version_tag)(*dependencies),
+            summarize_changes=SummarizeChangesFactory.create(self.commit_message_arguments.summarize_changes)(*dependencies),
+        )

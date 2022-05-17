@@ -48,10 +48,10 @@ class TestEmojiVersionPrefix(TestRoutineCommitMessage):
                 'ISSUE: 342'
             ),
             (
-                '[`2.4.6-3+4`] 🛠️²🔸🗑️ The requested Foo Thing for Boo\n'
+                '[`2.4.6-3+4`] 🛠️²🔨🗑️ The requested Foo Thing for Boo\n'
                 '\n'
                 '🛠️ Bugged Foo\n'
-                '🔸 Looks of Foo\n'
+                '🔨 Looks of Foo\n'
                 '🛠️ Glitched Foo\n'
                 '🗑️ Width of Boo\n'
                 '\n'
@@ -67,11 +67,11 @@ class TestEmojiVersionPrefix(TestRoutineCommitMessage):
                 'Dep: No Footer\n'
             ),
             (
-                '[`1.0.0`] ✨🔸²🔚 Just the changes\n'
+                '[`1.0.0`] ✨🔨²🔚 Just the changes\n'
                 '\n'
                 '✨ Just the changes\n'
-                '🔸 No Summary\n'
-                '🔸 No Description\n'
+                '🔨 No Summary\n'
+                '🔨 No Description\n'
                 '🔚 No Footer'
             ),
         ),
@@ -89,9 +89,9 @@ class TestEmojiVersionPrefix(TestRoutineCommitMessage):
                 '* A: First Requested Feature. No footer in this MR Commit Message.\n'
             ),
             (
-                '[`2.0.0`] 🔸✨² This is a merge request.\n'
+                '[`2.0.0`] 🔨✨² This is a merge request.\n'
                 '\n'
-                '🔸 No Summary\n'
+                '🔨 No Summary\n'
                 '✨ Second Requested Feature.\n'
                 '✨ First Requested Feature. No footer in this MR Commit Message.\n'
                 '\n'
@@ -121,10 +121,10 @@ class TestEmojiVersionPrefix(TestRoutineCommitMessage):
                 'ID: 231\n'
             ),
             (
-                '[`2.0.0`] 🔸²✨ This is a merge request.\n'
+                '[`2.0.0`] 🔨²✨ This is a merge request.\n'
                 '\n'
-                '🔸 Did something\n'
-                '🔸 Second Requested Feature.\n'
+                '🔨 Did something\n'
+                '🔨 Second Requested Feature.\n'
                 '✨ First Requested Feature. No footer in this MR Commit Message.\n'
                 '\n'
                 'I wanted to greet everyone in my last commit of MR.\n'

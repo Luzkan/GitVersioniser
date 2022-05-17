@@ -21,7 +21,8 @@ class VersionTagInLastCommit(RoutineVersion):
     @staticmethod
     def _bump_version(commit: Commit, version: SemverTag) -> SemverTag:
         if not commit.message.increment_tag.exist():
-            return version.bump_build()
+            return version.bump_build() if (version.prerelease or version.build) else version.bump_patch().bump_prerelease('alpha')
+
         for increment in commit.message.increment_tag.get():
             version = increment.bump_version(version)
         return version

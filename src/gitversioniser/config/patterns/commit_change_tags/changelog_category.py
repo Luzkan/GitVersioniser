@@ -93,7 +93,7 @@ class ChangelogCategory(Enum):
         ["F:", "Feature:", "Features:"]
     )
     FIXED = CommitTag(
-        "Fixed", "F:", "🐛",
+        "Fixed", "F:", "🛠️",
         ["F:", "Fix:", "Fixes:", "Fixed:"]
     )
     FIXED_HOT = CommitTag(

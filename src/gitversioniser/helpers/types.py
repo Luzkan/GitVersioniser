@@ -2,6 +2,7 @@ from typing import Literal
 
 
 COMMIT_CHANGE_TAG_TYPE = Literal[
+    "All",
     "AngularCommits",
     "ClassicChangelog",
     "ClassicChangelogExtended",

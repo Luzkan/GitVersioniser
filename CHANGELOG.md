@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.0-rc.1+build.2`]] - 2022-05-17
+
+### Added
+
+- New CommitTags - "All"
+
+
+
 ## [[`0.6.0-rc.1+build.1`]] - 2022-05-17
 
 ### Changed
@@ -584,3 +592,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.5.3+build.4`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.4
 [`0.6.0-rc.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1
 [`0.6.0-rc.1+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.1
+[`0.6.0-rc.1+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.2

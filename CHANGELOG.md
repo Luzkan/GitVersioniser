@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.0-rc.1+build.4`]] - 2022-05-17
+
+### Style
+
+- Import Sort Order
+
+
+
 ## [[`0.6.0-rc.1+build.3`]] - 2022-05-17
 
 ### Continuous Integration
@@ -602,3 +610,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.6.0-rc.1+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.1
 [`0.6.0-rc.1+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.2
 [`0.6.0-rc.1+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.3
+[`0.6.0-rc.1+build.4`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.4

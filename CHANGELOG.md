@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.0-rc.1+build.3`]] - 2022-05-17
+
+### Continuous Integration
+
+- Using "All" ChangeTags
+
+
+
 ## [[`0.6.0-rc.1+build.2`]] - 2022-05-17
 
 ### Added
@@ -593,3 +601,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.6.0-rc.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1
 [`0.6.0-rc.1+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.1
 [`0.6.0-rc.1+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.2
+[`0.6.0-rc.1+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.3

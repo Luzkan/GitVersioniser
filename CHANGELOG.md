@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.0-rc.1+build.7`]] - 2022-05-17
+
+### Dependency Upgrade
+
+- Rich: `12.3.0` -> `12.4.1`
+
+
+
 ## [[`0.6.0-rc.1+build.6`]] - 2022-05-17
 
 ### Configuration
@@ -629,3 +637,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.6.0-rc.1+build.4`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.4
 [`0.6.0-rc.1+build.5`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.5
 [`0.6.0-rc.1+build.6`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.6
+[`0.6.0-rc.1+build.7`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.7

@@ -1,5 +1,6 @@
 from parameterized import parameterized
 
+from gitversioniser.config.routines.commit_message import CommitMessageArguments
 from gitversioniser.domain.repository.semver_tag import SemverTag
 from tests.v0.routines.commit_message.routine import TestRoutineCommitMessage
 
@@ -11,7 +12,7 @@ class TestNull(TestRoutineCommitMessage):
         (SemverTag.init_spec(3, 2), 'R: Random personal file'),
         (SemverTag.init_spec(0, 0, 0, prerelease='rc.2'), 'I will never release')
     ])
-    def test_null(self, version_info, commit_message):
-        self.routine = self.get_routine('Null')
-        self.routine.repo.commits.commit(commit_message)
-        self.assertEqual(self.routine.run(version_info).new, commit_message)
+    def test_null(self, version_info: SemverTag, commit_message: str):
+        routine = self.get_routine(CommitMessageArguments('Null', 'FullButOnlyDigits', 'Null', 'Null'))
+        routine.repo.commits.commit(commit_message)
+        self.assertEqual(str(routine.run(version_info).new), commit_message)

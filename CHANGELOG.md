@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.5.3+build.3`]] - 2022-05-17
+
+### Added
+
+- Commit Changes can be represented with emojis
+
+
+
 ## [[`0.5.3+build.2`]] - 2022-05-11
 
 ### Refactorization
@@ -548,3 +556,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.5.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3
 [`0.5.3+build.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.1
 [`0.5.3+build.2`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.2
+[`0.5.3+build.3`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.5.3+build.3

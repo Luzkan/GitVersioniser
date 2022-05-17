@@ -20,13 +20,21 @@ class Message:
     value: str
 
     def __post_init__(self):
-        self.summary: str = self.value.split('\n', 1)[0]
-        self.footer: str = self.value.split('\n', 1)[-1]
-        self.description: str = self.value.replace(self.summary, '').lstrip().replace(self.footer, '').rstrip()
-
         self.increment_tag = IncrementTagUtils(self.config, self.value)
         self.commit_tag = CommitTagUtils(self.config, self.value)
         self.version_tag = VersionTagUtils(self.config, self.value)
+
+    @property
+    def summary(self):
+        return self.value.split('\n', 1)[0]
+
+    @property
+    def description(self):
+        return self.value.replace(self.summary, '').lstrip().replace(self.footer, '').rstrip()
+
+    @property
+    def footer(self):
+        return self.value.rstrip().replace(self.summary, '').split('\n')[-1]
 
     def __str__(self):
         return self.value

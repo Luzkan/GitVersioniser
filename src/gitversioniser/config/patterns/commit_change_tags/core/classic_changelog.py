@@ -7,7 +7,7 @@ from gitversioniser.helpers.changelog_category import ChangelogCategory
 
 @dataclass(frozen=True)
 class ClassicChangelog(CommitChangeTags):
-    added: CommitTag = CommitTag("A:", ChangelogCategory.ADDED, "💠")
+    added: CommitTag = CommitTag("A:", ChangelogCategory.ADDED, "✨")
     fixed: CommitTag = CommitTag("F:", ChangelogCategory.FIXED, "🛠️")
     changed: CommitTag = CommitTag("C:", ChangelogCategory.CHANGED, "🔸")
     removed: CommitTag = CommitTag("R:", ChangelogCategory.REMOVED, "🗑️")

@@ -39,10 +39,22 @@ inputs:
     default: 'PushOriginAmend'
   # ---------------------------
   # (Routine) Commit Message
-  routine_commit_message:
-    description: '(Routine) Decides how the Commit Message made by GitVersioniser will be made.'
+  routine_commit_message_describe_changes:
+    description: '(Routine) Decides about the descriptive summarization after first commit message line.'
     required: false
-    default: 'PrefixVersionFull'
+    default: 'WithEmoji'
+  routine_commit_message_format_version_tag:
+    description: '(Routine) Decides the Version Tag string representation.'
+    required: false
+    default: 'FullButOnlyDigits'
+  routine_commit_message_place_version_tag:
+    description: '(Routine) Decides the placement of version tag in commit message.'
+    required: false
+    default: 'Prefix'
+  routine_commit_message_summarize_changes:
+    description: '(Routine) Decides the summarization of all changes in the first line of commit message.'
+    required: false
+    default: 'WithEmojiCounted'
   # ---------------------------
   # (Routine) Tagging
   routine_tagging:
@@ -93,7 +105,10 @@ runs:
     - ${{ inputs.routine_commiting }}
     # ---------------------------
     # Commiting Message
-    - ${{ inputs.routine_commit_message }}
+    - ${{ inputs.routine_commit_message_describe_changes }}
+    - ${{ inputs.routine_commit_message_format_version_tag }}
+    - ${{ inputs.routine_commit_message_place_version_tag }}
+    - ${{ inputs.routine_commit_message_summarize_changes }}
     # ---------------------------
     # Tagging
     - ${{ inputs.routine_tagging }}

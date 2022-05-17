@@ -30,6 +30,28 @@ ROUTINE_COMMITING_TYPE = Literal[
     "PushOriginAmend",
     "PushOriginNewCommit",
 ]
+ROUTINE_COMMIT_MESSAGE_DESCRIBE_CHANGES = Literal[
+    "Null",
+    "WithEmoji",
+    "WithLetters",
+]
+ROUTINE_COMMIT_MESSAGE_FORMAT_VERSION_TAG = Literal[
+    "Full",
+    "FullButOnlyDigits",
+    "MajorMinorPatch",
+    "MajorMinorPatchPrerelease",
+]
+ROUTINE_COMMIT_MESSAGE_PLACE_VERSION_TAG = Literal[
+    "Null",
+    "Prefix",
+    "Suffix",
+]
+ROUTINE_COMMIT_MESSAGE_SUMMARIZE_CHANGES = Literal[
+    "Null",
+    "WithEmojiSymbolic",
+    "WithEmojiCounted",
+    "WithLetters",
+]
 ROUTINE_TAGGING_TYPE = Literal[
     "Force",
     "Regular",

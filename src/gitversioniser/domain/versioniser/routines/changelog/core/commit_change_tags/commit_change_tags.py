@@ -40,6 +40,6 @@ class CommitChangeTags(RoutineChangelog):
                 changelog_changes.add_custom('Other', str(commit.message))
                 continue
 
-            for category, message in commit.message.commit_tag.get_all():
-                changelog_changes.add(category, message)
+            for parsed_commit_line in commit.message.commit_tag.get_all():
+                changelog_changes.add(parsed_commit_line.commit_tag.changelog_category, parsed_commit_line.plain)
         return changelog_changes

@@ -1,5 +1,3 @@
-from gitversioniser.config.patterns.commit_change_tags.commit_tag import CommitTag
-from gitversioniser.helpers.changelog_category import ChangelogCategory
 from tests.v0.default_scenario_v0 import TestDefaultScenarioV0
 
 
@@ -36,10 +34,10 @@ class TestDefaultConfigValues(TestDefaultScenarioV0):
         self.assertEqual(self.config.commit_patterns.increment_tags.finalized.pattern, '#fin')
         self.assertEqual(self.config.commit_patterns.increment_tags.finalized.precedence, 9)
 
-    def test_default_configuration_patterns_commit_tags(self):
-        self.assertEqual(self.config.commit_patterns.change_tags.added, CommitTag("A:", ChangelogCategory.ADDED, "✨"))
-        self.assertEqual(self.config.commit_patterns.change_tags.fixed, CommitTag("F:", ChangelogCategory.FIXED, "🛠️"))
-        self.assertEqual(self.config.commit_patterns.change_tags.changed, CommitTag("C:", ChangelogCategory.CHANGED, "🔸"))
-        self.assertEqual(self.config.commit_patterns.change_tags.removed, CommitTag("R:", ChangelogCategory.REMOVED, "🗑️"))
-        self.assertEqual(self.config.commit_patterns.change_tags.security, CommitTag("S:", ChangelogCategory.SECURITY, "🔐"))
-        self.assertEqual(self.config.commit_patterns.change_tags.deprecated, CommitTag("D:", ChangelogCategory.DEPRECATED, "🔚"))
+    # def test_default_configuration_patterns_commit_tags(self):
+    #     self.assertEqual(self.config.commit_patterns.change_tags.added, CommitTag("A:", ChangelogCategory.ADDED, "✨"))
+    #     self.assertEqual(self.config.commit_patterns.change_tags.fixed, CommitTag("F:", ChangelogCategory.FIXED, "🛠️"))
+    #     self.assertEqual(self.config.commit_patterns.change_tags.changed, CommitTag("C:", ChangelogCategory.CHANGED, "🔸"))
+    #     self.assertEqual(self.config.commit_patterns.change_tags.removed, CommitTag("R:", ChangelogCategory.REMOVED, "🗑️"))
+    #     self.assertEqual(self.config.commit_patterns.change_tags.security, CommitTag("S:", ChangelogCategory.SECURITY, "🔐"))
+    #     self.assertEqual(self.config.commit_patterns.change_tags.deprecated, CommitTag("D:", ChangelogCategory.DEPRECATED, "🔚"))

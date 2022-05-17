@@ -1,8 +1,6 @@
 from dataclasses import dataclass, field
 from typing import Generator
 
-from gitversioniser.helpers.changelog_category import ChangelogCategory
-
 
 @dataclass
 class ChangelogEntry:
@@ -14,8 +12,8 @@ class ChangelogEntry:
             yield from changes
             yield "\n"
 
-    def add(self, category: ChangelogCategory, message: str):
-        self.changes.setdefault(str(category.value), []).append(self._content(message))
+    def add(self, category: str, message: str):
+        self.changes.setdefault(str(category), []).append(self._content(message))
 
     def add_custom(self, category: str, message: str):
         self.changes.setdefault(category, []).append(self._content(message))

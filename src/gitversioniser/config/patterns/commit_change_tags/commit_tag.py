@@ -1,13 +1,12 @@
 from dataclasses import dataclass
 
-from gitversioniser.helpers.changelog_category import ChangelogCategory
-
 
 @dataclass(frozen=True)
 class CommitTag:
-    pattern: str
-    changelog_category: ChangelogCategory
+    full_name: str
+    short_name: str
     emoji_representation: str
+    patterns: list[str]
 
     def __str__(self):
-        return self.pattern
+        return self.patterns[0]

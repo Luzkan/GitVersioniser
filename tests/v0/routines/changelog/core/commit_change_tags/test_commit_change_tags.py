@@ -27,8 +27,8 @@ class TestCommitChangeTags(TestRoutineChangelog):
                 'C: Feature3',
                 'R: Bugged Thing #minor \n #minor \n [1.2.3]',
                 'R: Useless Stuff\nTest\nTest\nTest',
-                'S: Useless Stuff',
-                'S: Useless Stuff',
+                'Sec: Useless Stuff',
+                'Sec: Useless Stuff',
             ],
             ('test_output_1',)
         ),
@@ -38,10 +38,10 @@ class TestCommitChangeTags(TestRoutineChangelog):
                 'Last GitVersioniser Commit',
                 'A: Added Add',
                 'C: Changed Change',
-                'D: Deprecated Deprecation ',
+                'Dep: Deprecated Deprecation ',
                 'R: Removed Removal',
                 'F: Fixed Fix',
-                'S: Security Secure',
+                'Sec: Security Secure',
             ],
             ('test_output_2_1', 'test_output_2_2')
         ),
@@ -52,13 +52,13 @@ class TestCommitChangeTags(TestRoutineChangelog):
                 'C: Feature1\n\n\n',
                 'C: Feature2',
                 'C: Feature3\n',
-                'C: Feature4',
+                'Change: Feature4',
                 'C: Feature5\nHere is a small elaboration on the topic at hand.\nYeah.',
                 'C: Feature6',
                 'C: Feature7\nF: Fixed something here in the commit too!',
                 'C: Feature8',
-                'S: Security Feature 1',
-                'S: Security Feature 2',
+                'Sec: Security Feature 1',
+                'Sec: Security Feature 2',
             ],
             ('test_output_3',)
         ),
@@ -75,8 +75,8 @@ class TestCommitChangeTags(TestRoutineChangelog):
                 '* C: Feature6\n\n'
                 '* C: Feature7\nF: Fixed something here in the commit too!\n'
                 '* C: Feature8\n\n'
-                '* S: Security Feature 1\n\n'
-                '* S: Security Feature 2\n',
+                '* Sec: Security Feature 1\n\n'
+                '* Sec: Security Feature 2\n',
             ],
             ('test_output_4',)
         ),

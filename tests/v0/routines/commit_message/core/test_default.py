@@ -64,7 +64,7 @@ class TestEmojiVersionPrefix(TestRoutineCommitMessage):
                 'A: Just the changes\n'
                 'C: No Summary\n'
                 'C: No Description\n'
-                'D: No Footer\n'
+                'Dep: No Footer\n'
             ),
             (
                 '[`1.0.0`] ✨🔸²🔚 Just the changes\n'

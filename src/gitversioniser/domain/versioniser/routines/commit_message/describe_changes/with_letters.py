@@ -12,7 +12,7 @@ class WithLetters(DescribeChanges):
 
     @staticmethod
     def describe(list_of_changes: list[CommitMessageLine]) -> str:
-        return "\n".join([f"{commit_line.commit_tag.pattern} {commit_line.plain}" for commit_line in list_of_changes])
+        return "\n".join([f"{commit_line.commit_tag.patterns} {commit_line.plain}" for commit_line in list_of_changes])
 
     @staticmethod
     def message_without_changes(list_of_changes: list[CommitMessageLine], message: str) -> str:

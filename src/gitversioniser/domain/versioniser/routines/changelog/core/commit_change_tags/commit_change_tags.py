@@ -41,5 +41,5 @@ class CommitChangeTags(RoutineChangelog):
                 continue
 
             for parsed_commit_line in commit.message.commit_tag.get_all():
-                changelog_changes.add(parsed_commit_line.commit_tag.changelog_category, parsed_commit_line.plain)
+                changelog_changes.add(parsed_commit_line.commit_tag.full_name, parsed_commit_line.plain)
         return changelog_changes

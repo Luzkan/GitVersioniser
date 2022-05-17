@@ -11,7 +11,7 @@ class WithLetters(SummarizeChanges):
 
     @staticmethod
     def summarize(list_of_changes: list[CommitMessageLine]) -> str:
-        return "/".join([commit_line.commit_tag.pattern.replace(":", '') for commit_line in list_of_changes]) + ': '
+        return "/".join([commit_line.commit_tag.patterns.replace(":", '') for commit_line in list_of_changes]) + ': '
 
     @staticmethod
     def remove_redundancies(list_of_changes: list[CommitMessageLine], summary: str) -> str:

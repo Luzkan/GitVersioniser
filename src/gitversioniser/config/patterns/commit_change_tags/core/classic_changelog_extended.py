@@ -2,20 +2,20 @@ from dataclasses import dataclass
 
 from gitversioniser.config.patterns.commit_change_tags.abstract import CommitChangeTags
 from gitversioniser.config.patterns.commit_change_tags.commit_tag import CommitTag
-from gitversioniser.helpers.changelog_category import ChangelogCategory
+from gitversioniser.config.patterns.commit_change_tags.changelog_category import ChangelogCategory
 
 
 @dataclass(frozen=True)
 class ClassicChangelogExtended(CommitChangeTags):
-    ci: CommitTag = CommitTag("CI:", ChangelogCategory.CI, "🪢")
-    test: CommitTag = CommitTag("T:", ChangelogCategory.TEST, "🪛")
-    added: CommitTag = CommitTag("A:", ChangelogCategory.ADDED, "✨")
-    fixed: CommitTag = CommitTag("F:", ChangelogCategory.FIXED, "🛠️")
-    changed: CommitTag = CommitTag("C:", ChangelogCategory.CHANGED, "🔸")
-    removed: CommitTag = CommitTag("R:", ChangelogCategory.REMOVED, "🗑️")
-    tidied: CommitTag = CommitTag("TIDY:", ChangelogCategory.TIDIED, "🧹")
-    refactored: CommitTag = CommitTag("REF:", ChangelogCategory.REFACTORIZATION, "♻️")
-    security: CommitTag = CommitTag("SEC:", ChangelogCategory.SECURITY, "🔐")
-    performance: CommitTag = CommitTag("PERF:", ChangelogCategory.PERFORMANCE, "⚡")
-    deprecated: CommitTag = CommitTag("DEP:", ChangelogCategory.DEPRECATED, "🔚")
-    documentation: CommitTag = CommitTag("DOC:", ChangelogCategory.DOCUMENTATION, "📜")
+    ci: CommitTag = ChangelogCategory.CI.value
+    test: CommitTag = ChangelogCategory.TEST.value
+    added: CommitTag = ChangelogCategory.ADDED.value
+    fixed: CommitTag = ChangelogCategory.FIXED.value
+    changed: CommitTag = ChangelogCategory.CHANGED.value
+    removed: CommitTag = ChangelogCategory.REMOVED.value
+    tidied: CommitTag = ChangelogCategory.TIDIED.value
+    refactored: CommitTag = ChangelogCategory.REFACTORIZATION.value
+    security: CommitTag = ChangelogCategory.SECURITY.value
+    performance: CommitTag = ChangelogCategory.PERFORMANCE.value
+    deprecated: CommitTag = ChangelogCategory.DEPRECATED.value
+    documentation: CommitTag = ChangelogCategory.DOCUMENTATION.value

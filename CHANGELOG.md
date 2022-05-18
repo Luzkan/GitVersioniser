@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.0-rc.1+build.10`]] - 2022-05-18
+
+### Removed Dead Code
+
+- Old Git Commit Last Author Code
+
+
+
 ## [[`0.6.0-rc.1+build.9`]] - 2022-05-17
 
 ### Formal Documentation
@@ -656,3 +664,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.6.0-rc.1+build.7`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.7
 [`0.6.0-rc.1+build.8`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.8
 [`0.6.0-rc.1+build.9`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.9
+[`0.6.0-rc.1+build.10`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.10

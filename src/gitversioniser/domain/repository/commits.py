@@ -21,13 +21,6 @@ class Commits:
     def commit_amend(self, message: str):
         self.repo.git.commit("--allow-empty", "--amend", "-m", message)
 
-    def get_commits_till_last_commit_made_by_author_old(self, author: str) -> list[Commit]:
-        def recursivelly_check(current_commit: Commit, acc: list[Commit]) -> list[Commit]:
-            if current_commit.is_made_by_author(author) or current_commit.get_parents_count <= 1:
-                return acc
-            return recursivelly_check(current_commit.get_parents()[0], [current_commit] + acc)
-        return recursivelly_check(self.latest, list())
-
     def get_commits_till_last_commit_made_by_author(self, author: str) -> list[Commit]:
         """ Returned list of commits is in descending date order. """
         def recursivelly_check(current_commits: tuple[Commit], acc: list[Commit]):

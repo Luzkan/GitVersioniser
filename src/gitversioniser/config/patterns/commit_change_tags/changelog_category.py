@@ -48,6 +48,10 @@ class ChangelogCategory(Enum):
         "Chore", "C:", "🧹",
         ["C:", "Chore:", "Chores:"]
     )
+    DATABASE = CommitTag(
+        "Database", "DB:", "🗃️",
+        ["DB:", "Database:"]
+    )
     DEPRECATED = CommitTag(
         "Deprecated", "Dep:", "🔚",
         ["Dep:", "Deprecated:", "Deprecation:", "Deprecations:"]
@@ -89,12 +93,16 @@ class ChangelogCategory(Enum):
         ["Exp:", "Experimental:"]
     )
     FEATURE = CommitTag(
-        "Feature", "F:", "🎉",
-        ["F:", "Feature:", "Features:"]
+        "Feature", "Feat:", "🎉",
+        ["Feat:", "Feature:", "Features:"]
     )
     FIXED = CommitTag(
         "Fixed", "F:", "🛠️",
         ["F:", "Fix:", "Fixes:", "Fixed:"]
+    )
+    FIXED_BUG = CommitTag(
+        "Bugfix", "Bug:", "🐛",
+        ["Bug:", "Bugfix:", "Bugfixes:", "Bugfix:", "Bugfixes:"]
     )
     FIXED_HOT = CommitTag(
         "Hotfix", "HF:", "🚑️",
@@ -111,6 +119,10 @@ class ChangelogCategory(Enum):
     FLAG = CommitTag(
         "Feature Flag", "Flag:", "🚩",
         ["Flag:", "Feature Flags:", "Feature Flag:"]
+    )
+    IGNORE = CommitTag(
+        "Ignore", "Ignore:", "🙈",
+        ["Ignore:", "Ignores:", "Gitignore:", "Git Ignore:"]
     )
     INFRASTRUCTURE = CommitTag(
         "Infrastructure", "I:", "🧱",
@@ -131,6 +143,10 @@ class ChangelogCategory(Enum):
     MERGE_BRANCHES = CommitTag(
         "Merge Branches", "Merged:", "🔀",
         ["Merge pull"]
+    )
+    MOBILE = CommitTag(
+        "Mobile", "Mobile:", "📱",
+        ["Mobile:"]
     )
     PACKAGE = CommitTag(
         "Dependencies", "Package:", "📦️",
@@ -176,6 +192,10 @@ class ChangelogCategory(Enum):
         "Style", "Style:", "🎨",
         ["Style:", "Formatting:"]
     )
+    SNAPSHOT = CommitTag(
+        "Snapshot", "Snap:", "📸",
+        ["Snap:", "Snapshot:", "Snapshots:"]
+    )
     USABILITY = CommitTag(
         "Usability", "U:", "🚸",
         ["U:", "Usability:"]
@@ -195,6 +215,10 @@ class ChangelogCategory(Enum):
     TIDIED = CommitTag(
         "Tidied", "Tidy:", "🧹",
         ["Tidy:", "Tidied:", "Tidying:"]
+    )
+    VERSION = CommitTag(
+        "Version", "V:", "🔖",
+        ["V:", "Version:", "Versions:"]
     )
     WORK_IN_PROGRESS = CommitTag(
         "Work in Progress", "WIP:", "🚧",

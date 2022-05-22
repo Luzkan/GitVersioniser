@@ -6,6 +6,14 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.0-rc.1+build.12`]] - 2022-05-22
+
+### Documentation
+
+- Updated Quick-Start CI File
+
+
+
 ## [[`0.6.0-rc.1+build.11`]] - 2022-05-18
 
 ### Added
@@ -674,3 +682,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.6.0-rc.1+build.9`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.9
 [`0.6.0-rc.1+build.10`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.10
 [`0.6.0-rc.1+build.11`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.11
+[`0.6.0-rc.1+build.12`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.12

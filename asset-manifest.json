@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GitVersioniser/static/css/main.03abc610.css",
-    "main.js": "/GitVersioniser/static/js/main.145fc947.js",
-    "static/media/preview.png": "/GitVersioniser/static/media/preview.2686a75a57b6892bbc97.png",
+    "main.js": "/GitVersioniser/static/js/main.6bcf7488.js",
+    "static/media/preview.png": "/GitVersioniser/static/media/preview.f9aa4157aae8d5cfb3d9.png",
     "static/media/versioning.png": "/GitVersioniser/static/media/versioning.318776058753d5e13505.png",
     "static/media/commit-tags.png": "/GitVersioniser/static/media/commit-tags.4a2db490b0f0e97f95c0.png",
     "static/media/increment-tags.png": "/GitVersioniser/static/media/increment-tags.9eb7848563badf8d9a09.png",
@@ -14,10 +14,10 @@
     "static/media/glyphicons-halflings-regular.woff2": "/GitVersioniser/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
     "index.html": "/GitVersioniser/index.html",
     "main.03abc610.css.map": "/GitVersioniser/static/css/main.03abc610.css.map",
-    "main.145fc947.js.map": "/GitVersioniser/static/js/main.145fc947.js.map"
+    "main.6bcf7488.js.map": "/GitVersioniser/static/js/main.6bcf7488.js.map"
   },
   "entrypoints": [
     "static/css/main.03abc610.css",
-    "static/js/main.145fc947.js"
+    "static/js/main.6bcf7488.js"
   ]
 }

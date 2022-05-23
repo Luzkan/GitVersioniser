@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/GitVersioniser/static/css/main.cf931a46.css",
+    "main.js": "/GitVersioniser/static/js/main.c11dd462.js",
+    "static/media/preview.png": "/GitVersioniser/static/media/preview.2ad14aa285cfd91f0803.png",
+    "static/media/versioning.png": "/GitVersioniser/static/media/versioning.318776058753d5e13505.png",
+    "static/media/glyphicons-halflings-regular.svg": "/GitVersioniser/static/media/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
+    "static/media/changelog.png": "/GitVersioniser/static/media/changelog.2ad14aa285cfd91f0803.png",
+    "static/media/glyphicons-halflings-regular.ttf": "/GitVersioniser/static/media/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf",
+    "static/media/glyphicons-halflings-regular.woff": "/GitVersioniser/static/media/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
+    "static/media/glyphicons-halflings-regular.eot": "/GitVersioniser/static/media/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
+    "static/media/glyphicons-halflings-regular.woff2": "/GitVersioniser/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
+    "index.html": "/GitVersioniser/index.html",
+    "main.cf931a46.css.map": "/GitVersioniser/static/css/main.cf931a46.css.map",
+    "main.c11dd462.js.map": "/GitVersioniser/static/js/main.c11dd462.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf931a46.css",
+    "static/js/main.c11dd462.js"
+  ]
+}

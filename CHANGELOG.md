@@ -6,6 +6,26 @@ _Note: New changelog entries are going to be created after the first horizontal 
 
 ---
 
+## [[`0.6.1`]] - 2022-08-15
+
+### Fixed
+
+- Version Comparing (properly detecting versions above 10ths)
+
+### Changed
+
+- Infrastructure is now called Structure
+
+### Documentation
+
+- Fixed path to Changelog Categories
+
+### Added Logging
+
+- Added verbosity to whether something is going to be contributed to repository or not
+
+
+
 ## [[`0.6.0-rc.1+build.13`]] - 2022-05-22
 
 ### Documentation
@@ -693,3 +713,4 @@ _Note: New changelog entries are going to be created after the first horizontal 
 [`0.6.0-rc.1+build.11`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.11
 [`0.6.0-rc.1+build.12`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.12
 [`0.6.0-rc.1+build.13`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.0-rc.1+build.13
+[`0.6.1`]: https://github.com/Luzkan/GitVersioniser/releases/tag/0.6.1

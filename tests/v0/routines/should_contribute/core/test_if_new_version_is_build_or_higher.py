@@ -12,6 +12,7 @@ from tests.v0.routines.should_contribute.routine import TestRoutineShouldContrib
 class TestIfNewVersionIsBuildOrHigher(TestRoutineShouldContribute):
     @parameterized.expand([
         (SemverTag.init_spec(1, 2, 3), SemverTag.init_spec(1, 2, 4)),
+        (SemverTag.init_spec(1, 0, 9), SemverTag.init_spec(1, 0, 10)),
         (SemverTag.init_spec(5, 0, 0), SemverTag.init_spec(6, 0, 0)),
         (SemverTag.init_spec(0, 3, 2, None, None), SemverTag.init_spec(0, 3, 2, build='build.1')),
     ])

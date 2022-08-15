@@ -9,6 +9,7 @@ from gitversioniser.domain.versioniser.routines.should_contribute import Routine
 from gitversioniser.domain.versioniser.routines.tagging import RoutineTagging
 from gitversioniser.domain.versioniser.routines.version import RoutineVersion
 from gitversioniser.domain.versioniser.utils.routine_result import VersioningResult
+from gitversioniser.helpers.logger import CONSOLE
 
 
 @dataclass(frozen=True)
@@ -33,11 +34,14 @@ class RoutineManager:
         )
 
     def contribute(self, result: VersioningResult) -> None:
+        CONSOLE.rule('Contribution')
         if not self.should_contribute.run(result):
+            CONSOLE.print('Skipping contribution.')
             return
 
         self.commiting.run(result)
         self.tagging.run(result)
+        CONSOLE.print('Contributed.')
 
     def run(self) -> None:
         self.contribute(self.versionise())

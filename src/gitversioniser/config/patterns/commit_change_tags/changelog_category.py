@@ -62,7 +62,7 @@ class ChangelogCategory(Enum):
     )
     DOCUMENTATION = CommitTag(
         "Documentation", "Doc:", "📝",
-        ["Doc:", "Documentation:"]
+        ["Doc:", "Docs:", "Documentation:"]
     )
     DOCUMENTATION_DOCSTRING = CommitTag(
         "Docstring", "Docstring:", "📜",
@@ -124,10 +124,6 @@ class ChangelogCategory(Enum):
         "Ignore", "Ignore:", "🙈",
         ["Ignore:", "Ignores:", "Gitignore:", "Git Ignore:"]
     )
-    INFRASTRUCTURE = CommitTag(
-        "Infrastructure", "I:", "🧱",
-        ["I:", "Infrastructure:", "Structure:"]
-    )
     LOGS_ON = CommitTag(
         "Added Logging", "Logs ON:", "🔊",
         ["Logs ON:", "Logging:", "Log:", "Logs:"]
@@ -187,6 +183,10 @@ class ChangelogCategory(Enum):
     SEED = CommitTag(
         "Seed", "Seed:", "🌱",
         ["Seed:"]
+    )
+    STRUCTURE = CommitTag(
+        "Structure", "S:", "🏰",
+        ["S:", "Structure:", "Infrastructure:"]
     )
     STYLE = CommitTag(
         "Style", "Style:", "🎨",

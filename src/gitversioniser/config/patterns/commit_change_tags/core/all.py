@@ -37,7 +37,6 @@ class All(CommitChangeTags):
     fixed_tweak: CommitTag = ChangelogCategory.FIXED_SMALL.value
     flag: CommitTag = ChangelogCategory.FLAG.value
     ignore: CommitTag = ChangelogCategory.IGNORE.value
-    infrastructure: CommitTag = ChangelogCategory.INFRASTRUCTURE.value
     logs_on: CommitTag = ChangelogCategory.LOGS_ON.value
     logs_off: CommitTag = ChangelogCategory.LOGS_OFF.value
     localization: CommitTag = ChangelogCategory.LOCALIZATION.value
@@ -54,6 +53,7 @@ class All(CommitChangeTags):
     seo: CommitTag = ChangelogCategory.SEO.value
     seed: CommitTag = ChangelogCategory.SEED.value
     style: CommitTag = ChangelogCategory.STYLE.value
+    structure: CommitTag = ChangelogCategory.STRUCTURE.value
     snapshot: CommitTag = ChangelogCategory.SNAPSHOT.value
     usability: CommitTag = ChangelogCategory.USABILITY.value
     text: CommitTag = ChangelogCategory.TEXT.value

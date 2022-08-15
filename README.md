@@ -2,7 +2,7 @@
     <img src="./docs/img/logo.png" style="height: 128px; width; 128px;"/>
     <h2 align="center">GitVersioniser</h2>
     <div>
-        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.6.0-rc.1+build.13]</code></i>
+        <i>Automatic Semantic Versioniser & Change Tracker <code>[0.6.1]</code></i>
     </div>
 </div>
 
@@ -38,9 +38,9 @@ Copy the [GitVersioniser.yml](./docs/example/GitVersioniser.yml) to the `.github
 
 ## 🙌 **How can I use this?**
 
-- You can start start any line in message with `A:` _(added)_, `F:` _(fixed)_, `R:` _(removed)_, ... etc., to [tag](./src/gitversioniser/config/commit_change_tags/core/classic_changelog.py) the action you did, which will create corresponding changelog entry.
+- You can start start any line in message with `A:` _(added)_, `F:` _(fixed)_, `R:` _(removed)_, ... etc., to [tag](./src/gitversioniser/config/patterns/commit_change_tags/changelog_category.py) the action you did, which will create corresponding changelog entry.
 - You can add `#major`, `#minor`, `#patch`, ... etc., to [increment](./src/gitversioniser/config/patterns/commit_increment_tags/core/hashtag_explicit.py) version of the repository.
-
+src\gitversioniser\config\patterns\commit_change_tags\changelog_category.py
 ---
 
 ## 🤔 **How can I contribute?**
